@@ -1,1 +1,1 @@
-# steam-workshop-stats
+# Steam Workshop Stats
