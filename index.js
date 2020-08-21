@@ -9,6 +9,9 @@ app.set("port", process.env.PORT || 3000);
 // App EJS
 app.set('view engine', 'ejs');
 
+// App Bodyparser
+app.use(express.urlencoded({ extended: false }));
+
 // App Routes
 app.use("/", require("./routes/index"));
 app.use(express.static(path.join(__dirname, './public')));
