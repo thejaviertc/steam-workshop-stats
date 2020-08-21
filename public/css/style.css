@@ -1,0 +1,37 @@
+/*#############
+### Colores ###
+#############*/
+
+body {
+	background-color: #1b2838 !important;
+}
+
+.bg-primary {
+	background-color: #171a21 !important;
+}
+
+.bg-info {
+    background-color: #54a5d4 !important;
+}
+
+/*#########
+### Nav ###
+#########*/
+
+.navbar-brand {
+    font-size: 25px;
+	font-weight: 700;
+	color: #b8b6b4 !important;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/*############
+### Addons ###
+############*/
+
+.card:hover {
+	box-shadow: 0 0 10px #171a21;
+}
