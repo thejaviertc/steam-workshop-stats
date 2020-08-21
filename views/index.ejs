@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Steam Workshop Stats</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Una comunidad de Garry's Mod que ofrece servidores públicos de juego y una infraestructura de comunicación para todos los miembros. Desde Cosa Nostra ofrecemos un 100% de diversion. En el servidor de Discord ofrecemos muchas posibilidades, no solo para que te comuniques dentro de nuestra comunidad, sino para que también puedas conecer personas y realizar grandes amistades y comunicarte o disfrutar de las herramientas del servidor para mejorar tu experiencia.">
-        <meta name="keywords" content="cosa, nostra, cosanostra, Cosa Nostra, gmod, garrysmod, gaming, gamer, comunidad, role-play, roleplay, españa, darkrp, rol serio, ciudad, ">
+  		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
         <meta name="author" content="Javiertc">
         <meta name="robot" content="index, follow">
         <meta name="googlebot" content="index, follow">
-  		<title>Steam Workshop Stats</title>
-  		<link rel='stylesheet' href='/css/bootstrap.min.css'>
-        <link rel='stylesheet' href='/css/style.css'>
+  		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel='stylesheet' href='css/style.css'>
 		<link rel="icon" type="image/x-icon" href="img/favicon.ico">
-		<script src="https://kit.fontawesome.com/995bcebc44.js"></script>
-  	</head>
+        <script src="https://kit.fontawesome.com/995bcebc44.js"></script>
+        <script src="https://unpkg.com/scrollreveal@4"></script>
+	    <script>
+		    ScrollReveal({ duration: 750 })
+	    </script>
+    </head>
   	<body>
-		<nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top" >
-			<div class="container">
-				<a href="#inicio" class="navbar-brand">Steam Workshop Stats</a>
-			</div>
-	  	</nav>
-		<section id="addons" class="pt-5 pb-3 mt-5">
+		<section id="navbar">
+			<nav class="navbar navbar-dark bg-primary navbar-expand-md animation_first">
+				<div class="container py-2">
+					<a class="navbar-brand" href="">
+						<img src="https://steamcommunity-a.akamaihd.net/public/shared/images/header/globalheader_logo.png?t=962016" width="180">
+					</a>
+					<a class="navbar-brand" href="">
+						<a href="" class="navbar-brand">Steam Workshop Stats</a>
+					</a>
+				</div>
+			</nav>
+		</section>
+		<section id="addons" class="py-5 animation_second">
 			<div class="container">
 				<div class="row">
 					<article class="col-12 col-md-6 col-lg-3 pb-5">
@@ -154,11 +165,20 @@
 					</article>
 				</div>
 			</div>
+		</section>
+		<section id="footer" class="py-4 bg-primary animation_down">
+            <div class="container text-center">
+                <p class="h3">Copyright &copy; 2020 - Todos los derechos reservados</p>
+				<p class="h3">Hecho por <a href="https://steamcommunity.com/id/javiertc"><b><u>Javiertc</u></b></a></p>
+            </div>
         </section>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   	  	<script src="js/jquery-3.3.1.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap-4.3.1.js"></script>
+        <script>
+            ScrollReveal().reveal('.animation_first')
+            ScrollReveal().reveal('.animation_second', { delay: 250 })
+            ScrollReveal().reveal('.animation_down')
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
