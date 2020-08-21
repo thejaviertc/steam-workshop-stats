@@ -31,23 +31,38 @@
 					</a>
 				</div>
 			</nav>
-        </section>
-        <section id="form">
+		</section>
+		<section id="header" class="py-5">
             <div class="container">
-                <form action="/workshop" method="post">
-                    <div class="form-group">
-                        <label>Steam ID:</label>
-                        <input type="text" class="form-control" name="id" placeholder="Tutorial" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Quantity of Addons:</label>
-                        <input type="number" class="form-control" name="quantity" placeholder="Quantity of Addons" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
+                <h1 class="display-3 text-center animation_first">Stats of Javiertc:</h1>
+				<h1 class="display-5 text-center animation_first">- Total Views: <%= viewers %></h1>
+				<h1 class="display-5 text-center animation_first">- Total Subs: <%= subs %></h1>
+				<h1 class="display-5 text-center animation_first">- Total Favorites: <%= favs %></h1>
             </div>
-        </section>
-        <section id="footer" class="py-4 bg-primary animation_down">
+		</section>
+		<section id="addons" class="pb-5 animation_second">
+			<div class="container">
+				<div class="row">
+					<% for (var results of array) { %>
+						<article class="col-12 col-md-6 col-lg-3 pb-5">
+							<div class="card bg-info">
+								<img src="<%= results.image %>" class="card-img-top">
+								<img src="<%= results.stars %>" class="mx-auto d-block pt-3" width="175px">
+								<div class="card-body">
+									<h5 class="card-title"><%= results.name %></h5>
+									<ul class="card-text">
+										<li class="h5">Visitors: <%= results.viewers %></li>
+										<li class="h5">Subscriptions: <%= results.subs %></li>
+										<li class="h5">Favorites: <%= results.favs %></li>
+									</ul>
+								</div>
+							</div>
+						</article>
+					<% } %>
+				</div>
+			</div>
+		</section>
+		<section id="footer" class="py-4 bg-primary animation_down">
             <div class="container text-center">
                 <p class="h3">Copyright &copy; 2020 - All rights reserved</p>
 				<p class="h3">Made by <a href="https://github.com/thejaviertc"><b><u>Javiertc</u></b></a></p>
