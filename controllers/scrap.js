@@ -3,44 +3,6 @@ const scrap = {};
 const request = require('request-promise');
 const $ = require("cheerio");
 
-// const url = [
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=2143878031",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=2072552206",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=2064163638",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1821273859",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1707130373",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1706110647",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1706097473",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1591399382",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1586644047",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1586640869",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1586636847",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1586630442",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1391291513",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1384845390",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1344898873",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1343453090",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=1129397431",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=951229129",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=951100143",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=951097085",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=856663574",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=856264732",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=856202832",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=851871971",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=851569336",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=843988439",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=836933262",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=835525732",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=820160895",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=819453573",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=766496731",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=766121584",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=766115310",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=746885345",
-//     "https://steamcommunity.com/sharedfiles/filedetails/?id=746402915"
-// ];
-
 let url = [];
 
 scrap.getUrl = (req, res) => {
