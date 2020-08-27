@@ -10,9 +10,9 @@ router.get('/', (req, res) => {
     res.render('index');
 });
 
-router.post("/workshop", scrap.getUrl);
+router.post("/workshop", scrap.getInfo);
 
 // Workshop
-router.get("/workshop", scrap.getInfo);
+router.get("/workshop");
 
 module.exports = router;

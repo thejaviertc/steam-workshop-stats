@@ -1,109 +1,86 @@
 // Scrap Module
 const scrap = {};
 const request = require('request-promise');
-const $ = require("cheerio");
-
-let url = [];
-
-scrap.getUrl = (req, res) => {
-    let urlRaw = [];
-    const { id, quantity } = req.body;
-    console.log(req.body)
-    if (quantity <= 0) {
-        return res.redirect("/")
-    }
-    if (quantity >= 1 && quantity <= 30) {
-        urlRaw.push(
-            "https://steamcommunity.com/id/" + id + "/myworkshopfiles/?p=1&numperpage=30"
-        )
-    }
-    if (quantity > 30 && quantity <= 60) {
-        urlRaw.push(
-            "https://steamcommunity.com/id/" + id + "/myworkshopfiles/?p=1&numperpage=30",
-            "https://steamcommunity.com/id/" + id + "/myworkshopfiles/?p=2&numperpage=30"
-        )
-    }
-    if (quantity > 60 && quantity <= 90) {
-        urlRaw.push(
-            "https://steamcommunity.com/id/" + id + "/myworkshopfiles/?p=1&numperpage=30",
-            "https://steamcommunity.com/id/" + id + "/myworkshopfiles/?p=2&numperpage=30",
-            "https://steamcommunity.com/id/" + id + "/myworkshopfiles/?p=3&numperpage=30"
-        )
-    }
-    let results = [];
-    urlRaw.forEach(function (url) {
-        request(url)
-            .then(html => {
-                const items = $('.workshopItem', html);
-                items.each((i, el) => {
-                    results.push(
-                        $('a', el).attr("href")
-                    )
-                });
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    });
-    setTimeout(() => {
-        url = results
-        res.redirect("/workshop")
-    }, 2000);
-}
 
 scrap.getInfo = (req, res) => {
-    let results = [];
-    url.forEach(function (url) {
-        request(url)
-            .then(html => {
-                results.push({
-                    name: $('.workshopItemTitle', html).text(),
-                    stars: $('.fileRatingDetails img', html).attr("src"),
-                    image: $('#previewImageMain', html).attr("src"),
-                    viewers: $('tbody tr:nth-child(1) td:nth-child(1)', html).text(),
-                    subs: $('tbody tr:nth-child(2) td:nth-child(1)', html).text(),
-                    favs: $('tbody tr:nth-child(3) td:nth-child(1)', html).text()
-                })
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    });
+    let idList = []
+    const { steamId, gameId, quantity } = req.body;
+    request.get("https://api.steampowered.com/IPublishedFileService/GetUserFiles/v1/?key=0E59F59542C9B1C2E33DFB89210B588F&steamid=" + steamId + "&appid=" + gameId + "&page=1&numperpage=" + quantity + "&sortmethod=date", (error, resp, body) => {
+        const data = JSON.parse(body);
+
+        for (let i = 0; i < quantity; i++) {
+            idList.push(
+                data["response"].publishedfiledetails[i].publishedfileid
+            )
+        }
+    })
     setTimeout(() => {
-        let viewersArrayString = [];
-        let subsArrayString = [];
-        let favsArrayString = [];
-        let i;
-
-        for (i = 0; i < results.length; i++) {
-            viewersArrayString.push(
-                results[i].viewers.replace(",", '')
-            )
+        let requestData = {
+            "format": 'json',
+            "itemcount": idList.length
         }
 
-        for (i = 0; i < results.length; i++) {
-            subsArrayString.push(
-                results[i].subs.replace(",", '')
-            )
+        for (let i = 0; i < idList.length; i++) {
+            requestData['publishedfileids[' + i + ']'] = idList[i];
         }
 
-        for (i = 0; i < results.length; i++) {
-            favsArrayString.push(
-                results[i].favs.replace(",", '')
-            )
-        }
+        request.post("https://api.steampowered.com/ISteamRemoteStorage/GetPublishedFileDetails/v1/", { form: requestData }, (error, resp, body) => {
+            const data = JSON.parse(body);
 
-        let viewersArray = viewersArrayString.map(Number).reduce((a, b) => a + b, 0);
-        let subsArray = subsArrayString.map(Number).reduce((a, b) => a + b, 0);
-        let favsArray = favsArrayString.map(Number).reduce((a, b) => a + b, 0);
+            let results = [];
 
-        res.render('workshop', {
-            array: results,
-            viewers: viewersArray,
-            subs: subsArray,
-            favs: favsArray
-        });
-    }, 7000);
+            for (let i = 0; i < idList.length; i++) {
+                results.push({
+                    image: data["response"].publishedfiledetails[i].preview_url,
+                    title: data["response"].publishedfiledetails[i].title,
+                    subs: data["response"].publishedfiledetails[i].subscriptions,
+                    favs: data["response"].publishedfiledetails[i].favorited,
+                    lifeSubs: data["response"].publishedfiledetails[i].lifetime_subscriptions,
+                    lifeFavs: data["response"].publishedfiledetails[i].lifetime_favorited,
+                    views: data["response"].publishedfiledetails[i].views
+                })
+            }
+
+            let subsArray = []
+            let favsArray = []
+            let lifeSubsArray = []
+            let lifeFavsArray = []
+            let viewersArray = []
+
+            for (let i = 0; i < idList.length; i++) {
+                subsArray.push(
+                    results[i].subs
+                )
+                favsArray.push(
+                    results[i].favs
+                )
+                lifeSubsArray.push(
+                    results[i].lifeSubs
+                )
+                lifeFavsArray.push(
+                    results[i].lifeFavs
+                )
+                viewersArray.push(
+                    results[i].views
+                )
+            }
+
+            let totalSubs = subsArray.map(Number).reduce((a, b) => a + b, 0);
+            let totalFavs = favsArray.map(Number).reduce((a, b) => a + b, 0);
+            let totalLifeSubs = lifeSubsArray.map(Number).reduce((a, b) => a + b, 0);
+            let totalLifeFavs = lifeFavsArray.map(Number).reduce((a, b) => a + b, 0);
+            let totalViewers = viewersArray.map(Number).reduce((a, b) => a + b, 0);
+
+            res.render("workshop", {
+                array: results,
+                subs: totalSubs,
+                favs: totalFavs,
+                lifeSubs: totalLifeSubs,
+                lifeFavs: totalLifeFavs,
+                viewers: totalViewers
+            });
+        })
+    }, 1000);
 }
 
 module.exports = scrap;
