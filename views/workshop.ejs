@@ -23,7 +23,7 @@
 		<section id="navbar">
 			<nav class="navbar navbar-dark bg-primary navbar-expand-md animation_first">
 				<div class="container py-2">
-					<a class="navbar-brand" href="">
+					<a class="navbar-brand" href="../">
 						<img src="https://steamcommunity-a.akamaihd.net/public/shared/images/header/globalheader_logo.png?t=962016" width="180">
 					</a>
 					<a class="navbar-brand" href="">
@@ -34,10 +34,12 @@
 		</section>
 		<section id="header" class="py-5">
             <div class="container">
-                <h1 class="display-3 text-center animation_first">Stats of Javiertc:</h1>
-				<h1 class="display-5 text-center animation_first">- Total Views: <%= viewers %></h1>
-				<h1 class="display-5 text-center animation_first">- Total Subs: <%= subs %></h1>
+				<h1 class="display-3 text-center animation_first">Stats of All Addons:</h1>
+				<h1 class="display-5 text-center animation_first">- Total Subscriptions: <%= subs %></h1>
 				<h1 class="display-5 text-center animation_first">- Total Favorites: <%= favs %></h1>
+				<h1 class="display-5 text-center animation_first">- Total Life Subscriptions: <%= lifeSubs %></h1>
+				<h1 class="display-5 text-center animation_first">- Total Life Favorites: <%= lifeFavs %></h1>
+				<h1 class="display-5 text-center animation_first">- Total Views: <%= viewers %></h1>
             </div>
 		</section>
 		<section id="addons" class="pb-5 animation_second">
@@ -47,13 +49,14 @@
 						<article class="col-12 col-md-6 col-lg-3 pb-5">
 							<div class="card bg-info">
 								<img src="<%= results.image %>" class="card-img-top">
-								<img src="<%= results.stars %>" class="mx-auto d-block pt-3" width="175px">
 								<div class="card-body">
-									<h5 class="card-title"><%= results.name %></h5>
+									<h5 class="card-title"><%= results.title %></h5>
 									<ul class="card-text">
-										<li class="h5">Visitors: <%= results.viewers %></li>
 										<li class="h5">Subscriptions: <%= results.subs %></li>
 										<li class="h5">Favorites: <%= results.favs %></li>
+										<li class="h5">Life Subscriptions: <%= results.lifeSubs %></li>
+										<li class="h5">Life Favorites: <%= results.lifeFavs %></li>
+										<li class="h5">Visitors: <%= results.views %></li>
 									</ul>
 								</div>
 							</div>
