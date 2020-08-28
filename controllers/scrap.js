@@ -10,14 +10,21 @@ scrap.getInfo = (req, res) => {
     request.get("https://api.steampowered.com/IPublishedFileService/GetUserFiles/v1/?key=0E59F59542C9B1C2E33DFB89210B588F&steamid=" + steamId + "&appid=" + gameId + "&page=1&numperpage=" + quantity + "&sortmethod=date", (error, resp, body) => {
         const data = JSON.parse(body);
 
-        console.log(error)
-
         // Get the IDs of all of his addons
         for (let i = 0; i < quantity; i++) {
             idList.push(
                 data["response"].publishedfiledetails[i].publishedfileid
             )
         }
+
+    })
+
+    let userName;
+    // Get All User Published Addons
+    request.get("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=0E59F59542C9B1C2E33DFB89210B588F&steamids=76561198117127629", (error, resp, body) => {
+        const data = JSON.parse(body);
+
+        userName = data["response"].players[0].personaname
 
     })
     setTimeout(() => {
@@ -84,6 +91,7 @@ scrap.getInfo = (req, res) => {
             let totalViewers = viewersArray.map(Number).reduce((a, b) => a + b, 0);
 
             res.render("workshop", {
+                user: userName,
                 array: results,
                 subs: totalSubs,
                 favs: totalFavs,
