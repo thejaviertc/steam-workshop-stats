@@ -5,30 +5,40 @@ const request = require('request-promise');
 scrap.getInfo = (req, res) => {
     let idList = []
     const { steamId, gameId, quantity } = req.body;
+
+    // Get All User Published Addons
     request.get("https://api.steampowered.com/IPublishedFileService/GetUserFiles/v1/?key=0E59F59542C9B1C2E33DFB89210B588F&steamid=" + steamId + "&appid=" + gameId + "&page=1&numperpage=" + quantity + "&sortmethod=date", (error, resp, body) => {
         const data = JSON.parse(body);
 
+        console.log(error)
+
+        // Get the IDs of all of his addons
         for (let i = 0; i < quantity; i++) {
             idList.push(
                 data["response"].publishedfiledetails[i].publishedfileid
             )
         }
+
     })
     setTimeout(() => {
+        // Data for API
         let requestData = {
             "format": 'json',
             "itemcount": idList.length
         }
 
+        // Add the IDs to the requestData
         for (let i = 0; i < idList.length; i++) {
             requestData['publishedfileids[' + i + ']'] = idList[i];
         }
 
+        // Get All Addon Stats
         request.post("https://api.steampowered.com/ISteamRemoteStorage/GetPublishedFileDetails/v1/", { form: requestData }, (error, resp, body) => {
             const data = JSON.parse(body);
 
             let results = [];
 
+            // Add the stats to results
             for (let i = 0; i < idList.length; i++) {
                 results.push({
                     image: data["response"].publishedfiledetails[i].preview_url,
@@ -47,6 +57,7 @@ scrap.getInfo = (req, res) => {
             let lifeFavsArray = []
             let viewersArray = []
 
+            // Add the specific stats to each array for sum it
             for (let i = 0; i < idList.length; i++) {
                 subsArray.push(
                     results[i].subs
@@ -65,6 +76,7 @@ scrap.getInfo = (req, res) => {
                 )
             }
 
+            // Sum all arrays
             let totalSubs = subsArray.map(Number).reduce((a, b) => a + b, 0);
             let totalFavs = favsArray.map(Number).reduce((a, b) => a + b, 0);
             let totalLifeSubs = lifeSubsArray.map(Number).reduce((a, b) => a + b, 0);
@@ -80,7 +92,7 @@ scrap.getInfo = (req, res) => {
                 viewers: totalViewers
             });
         })
-    }, 1000);
+    }, 1250);
 }
 
 module.exports = scrap;
