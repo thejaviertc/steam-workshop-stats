@@ -100,7 +100,7 @@ scrap.getInfo = (req, res) => {
                 viewers: totalViewers
             });
         })
-    }, 1250);
+    }, 2000);
 }
 
 module.exports = scrap;
