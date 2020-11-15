@@ -1,2 +1,5 @@
-.eslintrc.js
+# Dependencies
+/node_modules
+
+# Debug
 .vscode

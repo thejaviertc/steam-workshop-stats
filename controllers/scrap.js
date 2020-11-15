@@ -1,8 +1,9 @@
-// Scrap Module
+// Scrap Module Dependencies
 const scrap = {};
 const request = require('request-promise');
 
-scrap.getInfo = (req, res) => {
+// Get Info Function
+scrap.getInfo = (req, res) => { //FIXME #21 Change to Function
     let idList = []
     const { steamId, gameId, quantity } = req.body;
 
@@ -103,4 +104,5 @@ scrap.getInfo = (req, res) => {
     }, 2500);
 }
 
+// Module Export
 module.exports = scrap;
