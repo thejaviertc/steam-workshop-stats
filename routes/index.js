@@ -2,17 +2,18 @@
 const express = require('express');
 const router = express.Router();
 
-// Local Dependencies
+// Controllers
 const scrap = require("../controllers/scrap");
 
-// Index
+// Index Route
 router.get('/', (req, res) => {
     res.render('index');
 });
 
 router.post("/workshop", scrap.getInfo);
 
-// Workshop
+// Workshop Route
 router.get("/workshop");
 
+// Module Export
 module.exports = router;
