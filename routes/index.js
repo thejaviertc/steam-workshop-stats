@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     res.render('index');
 });
 
-router.post("/workshop", scrap.getInfo);
+router.post("/workshop", scrap.getAddonList);
 
 // Workshop Route
 router.get("/workshop");
