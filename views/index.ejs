@@ -39,16 +39,12 @@
             <div class="container">
                 <form action="/workshop" method="post">
                     <div class="form-group">
-                        <label>Steam ID 64: (You can get it <a href="https://steamid.io/" target="_blank">here</a>)</label> <!-- //FIXME #19 Change colors of hrefs -->
-                        <input type="number" class="form-control" name="steamId" placeholder="Steam ID 64" value="76561198117127629" required> <!-- Remove dev values -->
+                        <label>Steam ID 64: (You can get it <a href="https://steamid.io/" target="_blank">here</a>)</label>
+                        <input type="number" class="form-control" name="steamId" placeholder="Steam ID 64" value="76561198117127629" required>
                     </div>
                     <div class="form-group">
                         <label>Game ID: (ID of the game whose addons are made for)</label>
                         <input type="number" class="form-control" name="gameId" placeholder="Game ID" value="4000" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Quantity of Addons:</label>
-                        <input type="number" class="form-control" name="quantity" placeholder="Quantity of Addons" value="35" required>
                     </div>
                     <button type="submit" class="btn btn-info">Send</button>
                 </form>
