@@ -7,3 +7,6 @@
 # **Todo List:**
 - [ ] Improve Landing Page.
 - [ ] Start Using ReactJS.
+
+# **Suggestions/Bugs:**
+## **Do you have a suggestion/seen a bug? Make an issue.**
