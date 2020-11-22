@@ -1,6 +1,9 @@
 # **Steam Workshop Stats**
-![Steam Workshop Stats](https://thejaviertc.github.io/portfolio-javiertc/static/media/steamstats.468faa52.png)
-## **Category 1**
-- [x] Thing 1.
-- [ ] Thing 2.
-## **Category 2**
+![Steam Workshop Stats](https://thejaviertc.github.io/portfolio-javiertc/static/media/steamstats.c83daab1.png)
+
+# **About it:**
+## **This project is made for make people able to see all the stats from addons of Steam Workshop.**
+
+# **Todo List:**
+## - [ ] Improve Landing Page.
+## - [ ] Start Using ReactJS.
