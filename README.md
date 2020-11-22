@@ -5,5 +5,5 @@
 ## **This project is made for make people able to see all the stats from addons of Steam Workshop.**
 
 # **Todo List:**
-## - [ ] Improve Landing Page.
-## - [ ] Start Using ReactJS.
+- [ ] Improve Landing Page.
+- [ ] Start Using ReactJS.
