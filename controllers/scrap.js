@@ -1,25 +1,24 @@
 // Scrap Module Dependencies
-const scrap = {};
 const request = require('request-promise');
 
 // Module Export
 module.exports = function () {
     this.getAddonList = function (req, res) {
         // Required Data
-        const { steamId, gameId } = req.body;
+        const { steamId } = req.body;
 
         // getNumberAddons
-        request.get("https://api.steampowered.com/IPublishedFileService/GetUserFiles/v1/?key=" + process.env.STEAM_API_KEY + "&steamid=" + steamId + "&appid=" + gameId + "&totalonly=1", (error, resp, body) => {
+        request.get(`https://api.steampowered.com/IPublishedFileService/GetUserFiles/v1/?key=${process.env.STEAM_API_KEY}&steamid=${steamId}&totalonly=1`, (error, resp, body) => {
             const data = JSON.parse(body);
             const numberAddons = data["response"].total;
 
             // getUserName
-            request.get("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=" + process.env.STEAM_API_KEY + "&steamids=" + steamId, (error, resp, body) => {
+            request.get(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${process.env.STEAM_API_KEY}&steamids=${steamId}`, (error, resp, body) => {
                 const data = JSON.parse(body);
                 const userName = data["response"].players[0].personaname;
 
                 // getAddonsIds
-                request.get("https://api.steampowered.com/IPublishedFileService/GetUserFiles/v1/?key=" + process.env.STEAM_API_KEY + "&steamid=" + steamId + "&appid=" + gameId + "&numperpage=" + numberAddons + "&ids_only=1&sortmethod=date", (error, resp, body) => {
+                request.get(`https://api.steampowered.com/IPublishedFileService/GetUserFiles/v1/?key=${process.env.STEAM_API_KEY}&steamid=${steamId}&numperpage=${numberAddons}&ids_only=1&sortmethod=date`, (error, resp, body) => {
                     const data = JSON.parse(body);
                     const idsList = [];
 

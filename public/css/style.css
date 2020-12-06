@@ -6,18 +6,18 @@ html {
 	scroll-behavior: smooth;
 }
 
-h1{
+h1 {
     color: #b8b6b4;
     font-weight: 500 !important;
 }
 
-p{
+p {
     color: #b8b6b4;
     font-weight: 500 !important;
     font-size: 15px;
 }
 
-hr{
+hr {
     background-color: #ffffff;
     color: #ffffff;
     height: 5px;
