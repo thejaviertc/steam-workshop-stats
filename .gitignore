@@ -1,0 +1,8 @@
+# Dependencies
+/node_modules
+
+# Debug
+.vscode
+
+#Dotenv
+.env
