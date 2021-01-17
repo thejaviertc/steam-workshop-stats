@@ -9,8 +9,8 @@
 
 ## **Todo List:**
 - [ ] Improve Landing Page.
-- [ ] Start Using ReactJS.
-- [ ] Maybe create a Database to store data from all and made graphs with it?
+- [ ] Create Graphs with data.
+- [ ] Thinking more things...
 
 ## **Suggestions/Bugs:**
 ### **Do you have a suggestion/seen a bug? Make an issue.**
