@@ -5,7 +5,7 @@
 ### **This project is made for make people able to see all the stats from addons of Steam Workshop.**
 
 ## **Live Website:**
-### **https://steamworkshopstats.glitch.me/**
+### **https://thejaviertc.github.io/steam-workshop-stats/**
 
 # **Todo List:**
 - [x] Improve Landing Page.
