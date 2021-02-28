@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.fff118e0.chunk.css",
-    "main.js": "/static/js/main.7daf852d.chunk.js",
-    "main.js.map": "/static/js/main.7daf852d.chunk.js.map",
+    "main.css": "/static/css/main.e912b4ca.chunk.css",
+    "main.js": "/static/js/main.b7b771e9.chunk.js",
+    "main.js.map": "/static/js/main.b7b771e9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.fab1d9f3.js",
     "runtime-main.js.map": "/static/js/runtime-main.fab1d9f3.js.map",
     "static/css/2.ae9f1eb3.chunk.css": "/static/css/2.ae9f1eb3.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.cd421879.chunk.js.map": "/static/js/3.cd421879.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.ae9f1eb3.chunk.css.map": "/static/css/2.ae9f1eb3.chunk.css.map",
-    "static/css/main.fff118e0.chunk.css.map": "/static/css/main.fff118e0.chunk.css.map",
+    "static/css/main.e912b4ca.chunk.css.map": "/static/css/main.e912b4ca.chunk.css.map",
     "static/js/2.b9168988.chunk.js.LICENSE.txt": "/static/js/2.b9168988.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/BasierCircle-Bold.f0835b76.ttf"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.fab1d9f3.js",
     "static/css/2.ae9f1eb3.chunk.css",
     "static/js/2.b9168988.chunk.js",
-    "static/css/main.fff118e0.chunk.css",
-    "static/js/main.7daf852d.chunk.js"
+    "static/css/main.e912b4ca.chunk.css",
+    "static/js/main.b7b771e9.chunk.js"
   ]
 }
