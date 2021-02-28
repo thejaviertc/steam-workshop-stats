@@ -1,5 +1,5 @@
+![Steam Workshop Stats](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/master/src/img/github/steam-workshop-stats.jpg)
 # **Steam Workshop Stats**
-![Steam Workshop Stats](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/master/src/img/projects/steamstats.jpg)
 
 ## **About it:**
 ### **This project is made for make people able to see all the stats from addons of Steam Workshop.**
