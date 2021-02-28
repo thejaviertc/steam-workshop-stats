@@ -1,0 +1,75 @@
+/*###########
+### Basic ###
+###########*/
+
+@font-face {
+	font-family: 'Basier Circle';
+	src: local('Basier Circle'), url(./fonts/basiercircle/BasierCircle-Bold.ttf) format('truetype');
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+h1, h2, h3, h5, span, button, a {
+	font-family: 'Basier Circle';
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 85px;
+}
+
+h2 {
+	font-size: 50px;
+}
+
+h3 {
+	font-size: 40px;
+}
+
+.badge {
+	font-size: 20px;
+}
+
+.img-fluid {
+	border-radius: 50%;
+}
+
+input {
+	font-weight: 700 !important;
+}
+
+/*##############
+### Sections ###
+##############*/
+
+#header {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+/*############
+### Colors ###
+############*/
+
+.bg-primary {
+	background-color: #171A21 !important;
+}
+
+.bg-secondary {
+	background-color: #1B2838 !important;
+}
+
+.bg-info {
+	background-color: #54a5d4 !important;
+}
+
+.btn-primary {
+	background-color: #54a5d4 !important;
+}
+
+#header, #statistics {
+	color: white;
+}
