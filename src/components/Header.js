@@ -7,8 +7,8 @@ class Header extends Component {
         return (
             <section id="header" className="bg-primary">
                 <div className="container">
-                    <h1 className="text-center">Twitch Data</h1>
-                    <h2 className="text-center">Stats of all Twitch Users</h2>
+                    <h1 className="text-center">Steam Workshop Statistics</h1>
+                    <h2 className="text-center">Stats of all Users in Steam Workshop</h2>
                 </div>
             </section>
         );
