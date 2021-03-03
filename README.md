@@ -1,5 +1,6 @@
 ![Steam Workshop Stats](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/master/src/img/github/steam-workshop-stats.jpg)
 # **Steam Workshop Stats**
+[![Build](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml/badge.svg)](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml)
 
 ## **About it:**
 ### **This project is made for make people able to see all the stats from addons of Steam Workshop.**
