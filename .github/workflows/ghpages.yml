@@ -1,8 +1,11 @@
-name: Build and Deploy to Github Pages
+name: Build
 on:
   push:
     branches:
       - master
+    paths:
+      - 'src/**'
+      - 'public/**'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
