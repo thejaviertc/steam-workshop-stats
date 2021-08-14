@@ -2,10 +2,11 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'src/**'
       - 'public/**'
+      - '**.json'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

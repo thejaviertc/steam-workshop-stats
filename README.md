@@ -1,4 +1,4 @@
-![Steam Workshop Stats](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/master/src/img/github/steam-workshop-stats.jpg)
+![Steam Workshop Stats](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/main/src/img/github/steam-workshop-stats.jpg)
 # **Steam Workshop Stats**
 [![Build](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml/badge.svg)](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml)
 
