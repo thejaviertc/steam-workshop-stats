@@ -64,31 +64,35 @@ class Data extends Component {
                         </p>
                         <h2 className="text-center pt-4">Addons of {this.state.steamName}</h2>
                         {this.state.addonInfo.length ? (
-                            <div className="card-columns pt-5">
-                                {this.state.addonInfo.map((data, i) => {
-                                    if (this.state.addonInfo.length > 0) {
-                                        return (
-                                            <div key={'addon_' + i} className="card bg-info" >
-                                                <img className="card-img-top p-1" src={data.image} alt="Logo" />
-                                                <div className="card-body">
-                                                    <h5 className="card-title text-center">{data.title}</h5>
-                                                    <p className="text-center">
-                                                        <span className="badge badge-info mx-2 my-2">Views: {data.views}</span>
-                                                        <span className="badge badge-dark mx-2 my-2">Subs: {data.subs}</span>
-                                                        <span className="badge badge-dark mx-2 my-2">Life Subs: {data.lifeSubs}</span>
-                                                        <span className="badge badge-success mx-2 my-2">Favorites: {data.favs}</span>
-                                                        <span className="badge badge-success mx-2 my-2">Life Favorites: {data.lifeFavs}</span>
-                                                    </p>
-                                                    <div className="d-flex justify-content-center">
-                                                        <a href={data.url} target="_blank" rel="noreferrer" className="btn btn-info">See Addon</a>
+                            <div className="container pt-5">
+                                <div className="row">
+                                    {this.state.addonInfo.map((data, i) => {
+                                        if (this.state.addonInfo.length > 0) {
+                                            return (
+                                                <div key={'addon_' + i} className="col-12 col-md-3 col-sm-4 pb-5" >
+                                                    <div className="card bg-info">
+                                                        <img className="card-img-top p-1" src={data.image} alt="Logo" />
+                                                        <div className="card-body">
+                                                            <h5 className="card-title text-center">{data.title}</h5>
+                                                            <p className="text-center">
+                                                                <span className="badge badge-info mx-2 my-2">Views: {data.views}</span>
+                                                                <span className="badge badge-dark mx-2 my-2">Subs: {data.subs}</span>
+                                                                <span className="badge badge-dark mx-2 my-2">Life Subs: {data.lifeSubs}</span>
+                                                                <span className="badge badge-success mx-2 my-2">Favorites: {data.favs}</span>
+                                                                <span className="badge badge-success mx-2 my-2">Life Favorites: {data.lifeFavs}</span>
+                                                            </p>
+                                                            <div className="d-flex justify-content-center">
+                                                                <a href={data.url} target="_blank" rel="noreferrer" className="btn btn-info">See Addon</a>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        )
-                                    } else {
-                                        return null;
-                                    }
-                                })}
+                                            )
+                                        } else {
+                                            return null;
+                                        }
+                                    })}
+                                </div>
                             </div>
                         ) : (
                             <h3 className="text-center pt-4">There are no addons avaible!</h3>
