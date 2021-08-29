@@ -25,10 +25,10 @@ class Statistics extends Component {
         return (
             <section id="statistics" className="bg-secondary py-5" >
                 <div className="container">
-                    <h3 className="text-center">Enter the User Profile URL</h3>
+                    <h3 className="text-center">Enter a Steam Profile URL</h3>
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group d-flex justify-content-center">
-                            <input type="text" className="form-control text-center my-4" style={{ width: "70%" }} ref={this.input} placeholder="Enter Steam Profile URL" />
+                            <input type="text" className="form-control text-center my-4" style={{ width: "70%" }} ref={this.input} placeholder="Steam Profile URL" />
                         </div>
                         <div className="d-flex justify-content-center">
                             <button type="submit" className="btn btn-primary">Submit</button>

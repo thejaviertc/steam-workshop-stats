@@ -16,14 +16,18 @@ class Data extends Component {
     }
 
     async fetchData() {
+        // https://javiertcs-api.herokuapp.com
         await fetch(`https://javiertcs-api.herokuapp.com/api/steam-workshop-stats?${this.props.username}`).then(res => res.json()).then((result) => {
-            this.setState({
-                numberAddons: result.numberAddons,
-                steamName: result.steamName,
-                steamImage: result.steamImage,
-                addonInfo: result.addonInfo,
-                userStats: result.userStats
-            });
+            if (result) {
+                this.setState({
+                    numberAddons: result.numberAddons,
+                    steamName: result.steamName,
+                    steamImage: result.steamImage,
+                    addonInfo: result.addonInfo,
+                    userStats: result.userStats
+                });
+            } else
+                alert("This Steam Profile doesn't exist, try again");
         })
         this.setState({ loading: true });
     }
@@ -38,7 +42,7 @@ class Data extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.steamId !== prevProps.steamId) {
+        if (this.props.username !== prevProps.username) {
             this.fetchData();
         }
     }
@@ -47,7 +51,7 @@ class Data extends Component {
         return (
             <div className="pt-5">
                 <div ref={this.end} />
-                { this.state.loading ? (
+                {this.state.loading ? (
                     <div>
                         <h2 className="text-center">Statistics of {this.state.steamName}</h2>
                         <img src={this.state.steamImage} className="img-fluid mx-auto d-block py-3" alt="" />
@@ -59,7 +63,7 @@ class Data extends Component {
                             <span className="badge badge-success mx-2 my-2">Total Life Favorites: {this.state.userStats.totalLifeFavs}</span>
                         </p>
                         <h2 className="text-center pt-4">Addons of {this.state.steamName}</h2>
-                        { this.state.addonInfo.length ? (
+                        {this.state.addonInfo.length ? (
                             <div className="card-columns pt-5">
                                 {this.state.addonInfo.map((data, i) => {
                                     if (this.state.addonInfo.length > 0) {
@@ -87,17 +91,17 @@ class Data extends Component {
                                 })}
                             </div>
                         ) : (
-                                <h3 className="text-center pt-4">There are no addons avaible!</h3>
-                            )
+                            <h3 className="text-center pt-4">There are no addons avaible!</h3>
+                        )
                         }
                     </div>
                 ) : (
-                        <div className="d-flex justify-content-center">
-                            <div className="spinner-border" role="status">
-                                <span className="sr-only">Loading...</span>
-                            </div>
+                    <div className="d-flex justify-content-center">
+                        <div className="spinner-border" role="status">
+                            <span className="sr-only">Loading...</span>
                         </div>
-                    )
+                    </div>
+                )
                 }
             </div>
         );
