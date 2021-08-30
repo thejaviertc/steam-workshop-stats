@@ -1,17 +1,13 @@
 ![Steam Workshop Stats](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/main/src/img/github/steam-workshop-stats.jpg)
-# **Steam Workshop Stats**
 [![Build](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml/badge.svg)](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml)
 
-## **About it:**
-### **This project is made for make people able to see all the stats from addons of Steam Workshop.**
+# **Steam Workshop Stats**
+## **See the views, subscriptions and favs of your Steam Workshop addons!**
+
+#
 
 ## **Live Website:**
 ### **https://thejaviertc.github.io/steam-workshop-stats/**
-
-# **Todo List:**
-- [x] Improve Landing Page.
-- [x] Start Using ReactJS.
-- [ ] Graphs with data.
 
 ## **Suggestions/Bugs:**
 ### **Do you have a suggestion/seen a bug? Make an issue.**
