@@ -1,6 +1,9 @@
 // Basic
 import React, { Component } from "react";
 
+// Components
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
 // Data Component
 class Data extends Component {
     constructor(props) {
@@ -33,6 +36,7 @@ class Data extends Component {
                 steamImage: result.steamImage,
                 addonInfo: result.addonInfo,
                 userStats: result.userStats,
+                graphs: result.graphs,
                 loading: true
             });
         } else {
@@ -73,6 +77,44 @@ class Data extends Component {
                             <span className="badge badge-success mx-2 my-2">Total Favorites: {this.state.userStats.totalFavs}</span>
                             <span className="badge badge-success mx-2 my-2">Total Life Favorites: {this.state.userStats.totalLifeFavs}</span>
                         </p>
+                        <div className="container pb-2">
+                            <h3 className="text-center py-4">Views</h3>
+                            <div className="pl-5">
+                                <ResponsiveContainer width="90%" aspect={3}>
+                                    <LineChart width={400} height={400} data={this.state.graphs.views}>
+                                        <Line type="monotone" dataKey="views" stroke="#54a5d4" />
+                                        <CartesianGrid stroke="#54a5d4" />
+                                        <XAxis dataKey="name" />
+                                        <YAxis />
+                                        <Tooltip />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            </div>
+                            <h3 className="text-center py-4">Subscriptions</h3>
+                            <div className="pl-5">
+                                <ResponsiveContainer width="90%" aspect={3}>
+                                    <LineChart width={400} height={400} data={this.state.graphs.subs}>
+                                        <Line type="monotone" dataKey="subscriptions" stroke="#54a5d4" />
+                                        <CartesianGrid stroke="#54a5d4" />
+                                        <XAxis dataKey="name" />
+                                        <YAxis />
+                                        <Tooltip />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            </div>
+                            <h3 className="text-center py-4">Favourites</h3>
+                            <div className="pl-5">
+                                <ResponsiveContainer width="90%" aspect={3}>
+                                    <LineChart width={400} height={400} data={this.state.graphs.favs}>
+                                        <Line type="monotone" dataKey="favourites" stroke="#54a5d4" />
+                                        <CartesianGrid stroke="#54a5d4" />
+                                        <XAxis dataKey="name" />
+                                        <YAxis />
+                                        <Tooltip />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </div>
                         <h2 className="text-center pt-4">Addons of {this.state.steamName}</h2>
                         {this.state.addonInfo.length ? (
                             <div className="container pt-5">
