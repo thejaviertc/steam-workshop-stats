@@ -4,8 +4,6 @@
 # **Steam Workshop Stats**
 ## **See the views, subscriptions and favs of your Steam Workshop addons!**
 
-#
-
 ## **Live Website:**
 ### **https://thejaviertc.github.io/steam-workshop-stats/**
 
