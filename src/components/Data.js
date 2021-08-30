@@ -7,6 +7,8 @@ class Data extends Component {
         super(props);
         this.state = {
             loading: false,
+            error: false,
+            erroMessage: null,
             numberAddons: null,
             steamName: null,
             addonInfo: [],
@@ -16,20 +18,29 @@ class Data extends Component {
     }
 
     async fetchData() {
+        this.setState({
+            loading: false,
+            error: false
+        });
         // https://javiertcs-api.herokuapp.com
-        await fetch(`https://javiertcs-api.herokuapp.com/api/steam-workshop-stats?${this.props.username}`).then(res => res.json()).then((result) => {
-            if (result) {
-                this.setState({
-                    numberAddons: result.numberAddons,
-                    steamName: result.steamName,
-                    steamImage: result.steamImage,
-                    addonInfo: result.addonInfo,
-                    userStats: result.userStats
-                });
-            } else
-                alert("This Steam Profile doesn't exist, try again");
-        })
-        this.setState({ loading: true });
+        const response = await fetch(`http://localhost:3001/api/steam-workshop-stats?${this.props.username}`);
+        const result = await response.json();
+
+        if (response.status === 200) {
+            this.setState({
+                numberAddons: result.numberAddons,
+                steamName: result.steamName,
+                steamImage: result.steamImage,
+                addonInfo: result.addonInfo,
+                userStats: result.userStats,
+                loading: true
+            });
+        } else {
+            this.setState({
+                error: true,
+                errorMessage: result.message
+            });
+        }
     }
 
     scrollToBottom = () => {
@@ -69,7 +80,7 @@ class Data extends Component {
                                     {this.state.addonInfo.map((data, i) => {
                                         if (this.state.addonInfo.length > 0) {
                                             return (
-                                                <div key={'addon_' + i} className="col-12 col-md-3 col-sm-4 pb-5" >
+                                                <div key={'addon_' + i} className="col-12 col-md-4 col-sm-6 pb-5" >
                                                     <div className="card bg-info">
                                                         <img className="card-img-top p-1" src={data.image} alt="Logo" />
                                                         <div className="card-body">
@@ -100,11 +111,19 @@ class Data extends Component {
                         }
                     </div>
                 ) : (
-                    <div className="d-flex justify-content-center">
-                        <div className="spinner-border" role="status">
-                            <span className="sr-only">Loading...</span>
+                    this.state.error ? (
+                        <div className="d-flex justify-content-center">
+                            <div className="alert alert-danger text-center" style={{ width: "20%" }} role="alert">
+                                {this.state.errorMessage}
+                            </div>
                         </div>
-                    </div>
+                    ) : (
+                        <div className="d-flex justify-content-center">
+                            <div className="spinner-border" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    )
                 )
                 }
             </div>
