@@ -2,7 +2,7 @@
 [![Build](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml/badge.svg)](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml)
 
 # **Steam Workshop Stats**
-## **See the views, subscriptions and favs of your Steam Workshop addons!**
+### **See the views, subscriptions and favs of your Steam Workshop addons!**
 
 ## **Live Website:**
 ### **https://thejaviertc.github.io/steam-workshop-stats/**
