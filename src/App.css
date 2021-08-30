@@ -11,6 +11,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+h1, h2, h3, h5, button, a {
+	color: white;
+}
+
 h1, h2, h3, h5, span, button, a {
 	font-family: 'Basier Circle';
 	font-weight: bold;
@@ -70,6 +74,6 @@ input {
 	background-color: #54a5d4 !important;
 }
 
-#header, #statistics {
-	color: white;
+.spinner-border {
+	color: white !important;
 }
