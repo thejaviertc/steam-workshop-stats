@@ -71,11 +71,11 @@ class Data extends Component {
                         <h2 className="text-center">Statistics of {this.state.steamName}</h2>
                         <img src={this.state.steamImage} className="img-fluid mx-auto d-block py-3" alt="" />
                         <p className="text-center">
-                            <span className="badge badge-info mx-2 my-2">Total Views: {this.state.userStats.totalViewers}</span>
-                            <span className="badge badge-dark mx-2 my-2">Total Subs: {this.state.userStats.totalSubs}</span>
-                            <span className="badge badge-dark mx-2 my-2">Total Life Subs: {this.state.userStats.totalLifeSubs}</span>
-                            <span className="badge badge-success mx-2 my-2">Total Favorites: {this.state.userStats.totalFavs}</span>
-                            <span className="badge badge-success mx-2 my-2">Total Life Favorites: {this.state.userStats.totalLifeFavs}</span>
+                            <span className="badge bg-warning mx-2 my-2">Total Views: {this.state.userStats.totalViewers}</span>
+                            <span className="badge bg-dark mx-2 my-2">Total Subs: {this.state.userStats.totalSubs}</span>
+                            <span className="badge bg-dark mx-2 my-2">Total Life Subs: {this.state.userStats.totalLifeSubs}</span>
+                            <span className="badge bg-success mx-2 my-2">Total Favorites: {this.state.userStats.totalFavs}</span>
+                            <span className="badge bg-success mx-2 my-2">Total Life Favorites: {this.state.userStats.totalLifeFavs}</span>
                         </p>
                         <div className="container pb-2">
                             <h3 className="text-center py-4">Views</h3>
@@ -128,14 +128,14 @@ class Data extends Component {
                                                         <div className="card-body">
                                                             <h5 className="card-title text-center">{data.title}</h5>
                                                             <p className="text-center">
-                                                                <span className="badge badge-info mx-2 my-2">Views: {data.views}</span>
-                                                                <span className="badge badge-dark mx-2 my-2">Subs: {data.subs}</span>
-                                                                <span className="badge badge-dark mx-2 my-2">Life Subs: {data.lifeSubs}</span>
-                                                                <span className="badge badge-success mx-2 my-2">Favorites: {data.favs}</span>
-                                                                <span className="badge badge-success mx-2 my-2">Life Favorites: {data.lifeFavs}</span>
+                                                                <span className="badge bg-warning mx-2 my-2">Views: {data.views}</span>
+                                                                <span className="badge bg-dark mx-2 my-2">Subs: {data.subs}</span>
+                                                                <span className="badge bg-dark mx-2 my-2">Life Subs: {data.lifeSubs}</span>
+                                                                <span className="badge bg-success mx-2 my-2">Favorites: {data.favs}</span>
+                                                                <span className="badge bg-success mx-2 my-2">Life Favorites: {data.lifeFavs}</span>
                                                             </p>
                                                             <div className="d-flex justify-content-center">
-                                                                <a href={data.url} target="_blank" rel="noreferrer" className="btn btn-info">See Addon</a>
+                                                                <a href={data.url} target="_blank" rel="noreferrer" className="btn btn-info text-white">See Addon</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -162,7 +162,7 @@ class Data extends Component {
                     ) : (
                         <div className="d-flex justify-content-center">
                             <div className="spinner-border" role="status">
-                                <span className="sr-only">Loading...</span>
+                                <span className="sr-only"></span>
                             </div>
                         </div>
                     )
