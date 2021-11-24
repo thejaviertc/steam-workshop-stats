@@ -5,7 +5,7 @@
   "homepage": "https://thejaviertc.github.io/steam-workshop-stats/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.1.3",
