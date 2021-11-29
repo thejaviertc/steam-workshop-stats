@@ -1,6 +1,6 @@
 ![Steam Workshop Stats](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/main/src/img/github/steam-workshop-stats.jpg)
 [![Build](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml/badge.svg)](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml)
-![Dependencies](https://david-dm.org/thejaviertc/steam-workshop-stats.svg)
+![Known Vulnerabilities](https://snyk.io/test/github/thejaviertc/steam-workshop-stats/badge.svg)
 ![Version](https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats)
 ![Stars](https://img.shields.io/github/stars/thejaviertc/steam-workshop-stats)
 
