@@ -157,7 +157,7 @@ class Data extends Component<DataProps, DataState> {
                                                                 <span className="badge bg-success mx-2 my-2">Life Favorites: {data.lifeFavs}</span>
                                                             </p>
                                                             <div className="d-flex justify-content-center">
-                                                                <a href={data.url} target="_blank" rel="noreferrer" className="btn btn-info text-white">See Addon</a>
+                                                                <a href={data.url} target="_blank" rel="noreferrer" className="btn btn-secondary text-white">See Addon</a>
                                                             </div>
                                                         </div>
                                                     </div>
