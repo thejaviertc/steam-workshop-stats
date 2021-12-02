@@ -1,0 +1,96 @@
+// Fonts
+@font-face {
+	font-family: 'Basier Circle';
+	src: local('Basier Circle'), url(./fonts/basiercircle/BasierCircle-Bold.ttf) format('truetype');
+}
+
+// Variables
+$primary: #171A21;
+$secondary: #1B2838;
+$ternary: #54a5d4;
+
+// Global
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Basier Circle';
+}
+
+// Custom
+.fullpage {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+// Bootstrap
+.bg-primary {
+	background-color: $primary !important;
+}
+
+.bg-secondary {
+	background-color: $secondary !important;
+}
+
+.bg-info {
+	background-color: $ternary !important;
+}
+
+.bg-warning {
+	background-color: #0dcaf0 !important;
+}
+
+.btn-secondary {
+	background-color: $ternary !important;
+	border-color: $ternary !important;
+}
+
+.btn-secondary:hover {
+    color: white !important;
+    background-color: $secondary !important;
+    border-color: $ternary !important;
+}
+
+.btn-secondary:focus {
+    border-color: $secondary !important;
+    box-shadow: none !important;
+}
+
+.spinner-border {
+	color: white !important;
+}
+
+.badge {
+	font-size: 20px;
+}
+
+.img-fluid {
+	border-radius: 50%;
+}
+
+// Miscelaneous
+h1, h2, h3, h5, button, a {
+	color: white;
+}
+
+h1, h2, h3, h5, span, button, a {
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 75px;
+}
+
+h2 {
+	font-size: 50px;
+}
+
+h3 {
+	font-size: 40px;
+}
+
+input {
+	font-weight: 700 !important;
+}

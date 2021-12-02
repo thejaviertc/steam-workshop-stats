@@ -4,19 +4,41 @@ import React, { Component } from "react";
 // Components
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+// Props Interface
+interface DataProps {
+    username: string
+}
+
+// States Interface
+interface DataState {
+    loading: boolean,
+    error: boolean,
+    errorMessage: string | null,
+    numberAddons: number | null,
+    steamName: string | null,
+    steamImage: string | undefined,
+    addonInfo: any,
+    userStats: any,
+    graphs: any,
+}
+
 // Data Component
-class Data extends Component {
-    constructor(props) {
+class Data extends Component<DataProps, DataState> {
+    private end: React.RefObject<HTMLInputElement>;
+
+    constructor(props: DataProps) {
         super(props);
         this.state = {
             loading: false,
             error: false,
-            erroMessage: null,
+            errorMessage: null,
             numberAddons: null,
             steamName: null,
+            steamImage: undefined,
             addonInfo: [],
-            userStats: []
-        };
+            userStats: [],
+            graphs: [],
+        }
         this.end = React.createRef();
     }
 
@@ -48,7 +70,7 @@ class Data extends Component {
     }
 
     scrollToBottom = () => {
-        this.end.current.scrollIntoView({ behavior: 'smooth' })
+        this.end.current!.scrollIntoView({ behavior: 'smooth' })
     }
 
     async componentDidMount() {
@@ -56,7 +78,7 @@ class Data extends Component {
         await this.scrollToBottom();
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: any) {
         if (this.props.username !== prevProps.username) {
             this.fetchData();
         }
@@ -119,7 +141,7 @@ class Data extends Component {
                         {this.state.addonInfo.length ? (
                             <div className="container pt-5">
                                 <div className="row">
-                                    {this.state.addonInfo.map((data, i) => {
+                                    {this.state.addonInfo.map((data: any, i: number) => {
                                         if (this.state.addonInfo.length > 0) {
                                             return (
                                                 <div key={'addon_' + i} className="col-12 col-md-4 col-sm-6 pb-5" >

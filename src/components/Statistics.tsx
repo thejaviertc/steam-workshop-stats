@@ -4,9 +4,21 @@ import React, { Component } from "react";
 // Components
 import Data from "./Data";
 
+// Props Interface
+interface StatisticsProps {
+}
+
+// State Interface
+interface StatisticsState {
+    isSubmitted: boolean | any,
+    steamId: string
+}
+
 // Statistics Component
-class Statistics extends Component {
-    constructor(props) {
+class Statistics extends Component<StatisticsProps, StatisticsState> {
+    private input: React.RefObject<HTMLInputElement>;
+
+    constructor(props: StatisticsProps) {
         super(props);
         this.state = {
             isSubmitted: false,
@@ -16,8 +28,8 @@ class Statistics extends Component {
         this.input = React.createRef();
     }
 
-    handleSubmit(event) {
-        this.setState({ isSubmitted: true, steamId: this.input.current.value });
+    handleSubmit(event: any) {
+        this.setState({ isSubmitted: true, steamId: this.input.current!.value });
         event.preventDefault();
     }
 
@@ -31,7 +43,7 @@ class Statistics extends Component {
                             <input type="text" className="form-control text-center my-4" style={{ width: "70%" }} ref={this.input} placeholder="Steam Profile URL" />
                         </div>
                         <div className="d-flex justify-content-center">
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-secondary">Submit</button>
                         </div>
                     </form>
                     {this.state.isSubmitted && <Data username={this.state.steamId} />}
