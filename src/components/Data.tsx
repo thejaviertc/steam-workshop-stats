@@ -2,24 +2,37 @@
 import React, { Component } from "react";
 
 // Components
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
-// Props Interface
-interface DataProps {
+// Types
+type Addon = {
+    image: string,
+    url: string,
+    title: string,
+    subs: number,
+    lifeSubs: number,
+    favs: number,
+    lifeFavs: number,
+    views: number
+}
+
+type DataProps = {
     username: string
 }
 
-// States Interface
-interface DataState {
+type DataState = {
     loading: boolean,
     error: boolean,
-    errorMessage: string | null,
-    numberAddons: number | null,
-    steamName: string | null,
-    steamImage: string | undefined,
-    addonInfo: any,
-    userStats: any,
-    graphs: any,
+    errorMessage: string,
+    username: string,
+    profileImage: string,
+    numberAddons: number,
+    subs: number,
+    lifeSubs: number,
+    favs: number,
+    lifeFavs: number,
+    viewers: number,
+    addonList: Addon[]
 }
 
 // Data Component
@@ -31,34 +44,40 @@ class Data extends Component<DataProps, DataState> {
         this.state = {
             loading: false,
             error: false,
-            errorMessage: null,
-            numberAddons: null,
-            steamName: null,
-            steamImage: undefined,
-            addonInfo: [],
-            userStats: [],
-            graphs: [],
+            errorMessage: "",
+            username: "",
+            profileImage: "",
+            numberAddons: 0,
+            subs: 0,
+            lifeSubs: 0,
+            favs: 0,
+            lifeFavs: 0,
+            viewers: 0,
+            addonList: []
         }
         this.end = React.createRef();
     }
 
-    async fetchData() {
+    private async fetchData(): Promise<void> {
         this.setState({
             loading: false,
             error: false
         });
-        // http://localhost:3001
-        const response = await fetch(`https://javiertcs-api.herokuapp.com/api/steam-workshop-stats?${this.props.username}`);
+        // https://javiertcs-api.herokuapp.com
+        const response = await fetch(`http://localhost:3001/api/steam-workshop-stats?${this.props.username}`);
         const result = await response.json();
 
         if (response.status === 200) {
             this.setState({
+                username: result.username,
+                profileImage: result.profileImage,
                 numberAddons: result.numberAddons,
-                steamName: result.steamName,
-                steamImage: result.steamImage,
-                addonInfo: result.addonInfo,
-                userStats: result.userStats,
-                graphs: result.graphs,
+                subs: result.subs,
+                lifeSubs: result.lifeSubs,
+                favs: result.favs,
+                lifeFavs: result.lifeFavs,
+                viewers: result.viewers,
+                addonList: result.addonList,
                 loading: true
             });
         } else {
@@ -69,95 +88,71 @@ class Data extends Component<DataProps, DataState> {
         }
     }
 
-    scrollToBottom = () => {
+    private scrollToBottom(): void {
         this.end.current!.scrollIntoView({ behavior: 'smooth' })
     }
 
-    async componentDidMount() {
+    public async componentDidMount(): Promise<void> {
         await this.fetchData();
-        await this.scrollToBottom();
+        this.scrollToBottom();
     }
 
-    componentDidUpdate(prevProps: any) {
+    public componentDidUpdate(prevProps: any): void {
         if (this.props.username !== prevProps.username) {
             this.fetchData();
         }
     }
 
-    render() {
+    public render() {
         return (
             <div className="pt-5">
                 <div ref={this.end} />
                 {this.state.loading ? (
                     <div>
-                        <h2 className="text-center">Statistics of {this.state.steamName}</h2>
-                        <img src={this.state.steamImage} className="img-fluid mx-auto d-block py-3" alt="" />
+                        <h2 className="text-center">Statistics of {this.state.username}</h2>
+                        <img src={this.state.profileImage} className="img-fluid mx-auto d-block py-3" alt="" />
                         <p className="text-center">
-                            <span className="badge bg-warning mx-2 my-2">Total Views: {this.state.userStats.totalViewers}</span>
-                            <span className="badge bg-dark mx-2 my-2">Total Subs: {this.state.userStats.totalSubs}</span>
-                            <span className="badge bg-dark mx-2 my-2">Total Life Subs: {this.state.userStats.totalLifeSubs}</span>
-                            <span className="badge bg-success mx-2 my-2">Total Favorites: {this.state.userStats.totalFavs}</span>
-                            <span className="badge bg-success mx-2 my-2">Total Life Favorites: {this.state.userStats.totalLifeFavs}</span>
+                            <span className="badge bg-success mx-2 my-2">Total Views: {this.state.viewers}</span>
+                            <span className="badge bg-warning mx-2 my-2">Total Subs: {this.state.subs}</span>
+                            <span className="badge bg-warning mx-2 my-2">Total Life Subs: {this.state.lifeSubs}</span>
+                            <span className="badge bg-danger mx-2 my-2">Total Favorites: {this.state.favs}</span>
+                            <span className="badge bg-danger mx-2 my-2">Total Life Favorites: {this.state.lifeFavs}</span>
                         </p>
                         <div className="container pb-2">
-                            <h3 className="text-center py-4">Views</h3>
-                            <div className="pl-5">
-                                <ResponsiveContainer width="90%" aspect={3}>
-                                    <LineChart width={400} height={400} data={this.state.graphs.views}>
-                                        <Line type="monotone" dataKey="views" stroke="#54a5d4" />
-                                        <CartesianGrid stroke="#54a5d4" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                    </LineChart>
-                                </ResponsiveContainer>
-                            </div>
-                            <h3 className="text-center py-4">Subscriptions</h3>
-                            <div className="pl-5">
-                                <ResponsiveContainer width="90%" aspect={3}>
-                                    <LineChart width={400} height={400} data={this.state.graphs.subs}>
-                                        <Line type="monotone" dataKey="subscriptions" stroke="#54a5d4" />
-                                        <CartesianGrid stroke="#54a5d4" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                    </LineChart>
-                                </ResponsiveContainer>
-                            </div>
-                            <h3 className="text-center py-4">Favourites</h3>
-                            <div className="pl-5">
-                                <ResponsiveContainer width="90%" aspect={3}>
-                                    <LineChart width={400} height={400} data={this.state.graphs.favs}>
-                                        <Line type="monotone" dataKey="favourites" stroke="#54a5d4" />
-                                        <CartesianGrid stroke="#54a5d4" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                    </LineChart>
-                                </ResponsiveContainer>
-                            </div>
+                            <ResponsiveContainer width="99%" aspect={2}>
+                                <AreaChart width={500} height={300} data={this.state.addonList.slice().reverse()} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                                    <CartesianGrid stroke="" />
+                                    <XAxis dataKey="name" />
+                                    <YAxis />
+                                    <Tooltip />
+                                    <Legend />
+                                    <Area type="monotone" dataKey="views" stackId="1" stroke="#198754" fill="#198754" />
+                                    <Area type="monotone" dataKey="subs" stackId="1" stroke="#FFC107" fill="#FFC107" />
+                                    <Area type="monotone" dataKey="favs" stackId="1" stroke="#DC3545" fill="#DC3545" />
+                                </AreaChart>
+                            </ResponsiveContainer>
                         </div>
-                        <h2 className="text-center pt-4">Addons of {this.state.steamName}</h2>
-                        {this.state.addonInfo.length ? (
+                        <h2 className="text-center pt-4">Addons of {this.state.username}</h2>
+                        {this.state.addonList.length ? (
                             <div className="container pt-5">
                                 <div className="row">
-                                    {this.state.addonInfo.map((data: any, i: number) => {
-                                        if (this.state.addonInfo.length > 0) {
+                                    {this.state.addonList.map((addon: Addon, i: number) => {
+                                        if (this.state.addonList.length > 0) {
                                             return (
                                                 <div key={'addon_' + i} className="col-12 col-md-4 col-sm-6 pb-5" >
-                                                    <div className="card bg-info">
-                                                        <img className="card-img-top p-1" src={data.image} alt="Logo" />
+                                                    <div className="card bg-primary rounded">
+                                                        <img className="card-img-top p-3" src={addon.image} alt="Logo" />
                                                         <div className="card-body">
-                                                            <h5 className="card-title text-center">{data.title}</h5>
+                                                            <h5 className="card-title text-center">{addon.title}</h5>
                                                             <p className="text-center">
-                                                                <span className="badge bg-warning mx-2 my-2">Views: {data.views}</span>
-                                                                <span className="badge bg-dark mx-2 my-2">Subs: {data.subs}</span>
-                                                                <span className="badge bg-dark mx-2 my-2">Life Subs: {data.lifeSubs}</span>
-                                                                <span className="badge bg-success mx-2 my-2">Favorites: {data.favs}</span>
-                                                                <span className="badge bg-success mx-2 my-2">Life Favorites: {data.lifeFavs}</span>
+                                                                <span className="badge bg-success mx-2 my-2">Views: {addon.views}</span>
+                                                                <span className="badge bg-warning mx-2 my-2">Subs: {addon.subs}</span>
+                                                                <span className="badge bg-warning mx-2 my-2">Life Subs: {addon.lifeSubs}</span>
+                                                                <span className="badge bg-danger mx-2 my-2">Favorites: {addon.favs}</span>
+                                                                <span className="badge bg-danger mx-2 my-2">Life Favorites: {addon.lifeFavs}</span>
                                                             </p>
                                                             <div className="d-flex justify-content-center">
-                                                                <a href={data.url} target="_blank" rel="noreferrer" className="btn btn-secondary text-white">See Addon</a>
+                                                                <a href={addon.url} target="_blank" rel="noreferrer" className="btn btn-secondary text-white">See Addon</a>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -8,6 +8,7 @@
 $primary: #171A21;
 $secondary: #1B2838;
 $ternary: #54a5d4;
+$ternaryLight: #0dcaf0;
 
 // Global
 html {
@@ -25,6 +26,10 @@ body {
 	align-items: center;
 }
 
+.rounded {
+    border-radius: 0.5rem !important;
+}
+
 // Bootstrap
 .bg-primary {
 	background-color: $primary !important;
@@ -38,23 +43,18 @@ body {
 	background-color: $ternary !important;
 }
 
-.bg-warning {
-	background-color: #0dcaf0 !important;
-}
-
 .btn-secondary {
 	background-color: $ternary !important;
 	border-color: $ternary !important;
 }
 
 .btn-secondary:hover {
-    color: white !important;
-    background-color: $secondary !important;
-    border-color: $ternary !important;
+    background-color: $ternaryLight !important;
+    border-color: $ternaryLight !important;
 }
 
 .btn-secondary:focus {
-    border-color: $secondary !important;
+    border-color: $ternaryLight !important;
     box-shadow: none !important;
 }
 
