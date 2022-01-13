@@ -19,7 +19,7 @@
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "gh-pages": "^3.2.3",
-    "sass": "^1.47.0",
+    "sass": "^1.48.0",
     "typescript": "^4.5.4"
   },
   "resolutions": {
