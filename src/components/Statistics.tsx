@@ -43,7 +43,7 @@ class Statistics extends Component<StatisticsProps, StatisticsState> {
                             <input type="text" className="form-control text-center my-4" style={{ width: "70%" }} ref={this.input} placeholder="Steam Profile URL" />
                         </div>
                         <div className="d-flex justify-content-center">
-                            <button type="submit" className="btn btn-secondary">Submit</button>
+                            <button type="submit" className="btn btn-secondary"><i className="fa-solid fa-magnifying-glass"></i> Get Stats</button>
                         </div>
                     </form>
                     {this.state.isSubmitted && <Data username={this.state.steamId} />}
