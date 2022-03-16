@@ -5,21 +5,21 @@
     "main.js.map": "/steam-workshop-stats/static/js/main.b594ee41.chunk.js.map",
     "runtime-main.js": "/steam-workshop-stats/static/js/runtime-main.ef42c923.js",
     "runtime-main.js.map": "/steam-workshop-stats/static/js/runtime-main.ef42c923.js.map",
-    "static/css/2.07647b54.chunk.css": "/steam-workshop-stats/static/css/2.07647b54.chunk.css",
+    "static/css/2.6336c597.chunk.css": "/steam-workshop-stats/static/css/2.6336c597.chunk.css",
     "static/js/2.e8e655f4.chunk.js": "/steam-workshop-stats/static/js/2.e8e655f4.chunk.js",
     "static/js/2.e8e655f4.chunk.js.map": "/steam-workshop-stats/static/js/2.e8e655f4.chunk.js.map",
     "static/js/3.aa2180c5.chunk.js": "/steam-workshop-stats/static/js/3.aa2180c5.chunk.js",
     "static/js/3.aa2180c5.chunk.js.map": "/steam-workshop-stats/static/js/3.aa2180c5.chunk.js.map",
     "index.html": "/steam-workshop-stats/index.html",
-    "static/css/2.07647b54.chunk.css.map": "/steam-workshop-stats/static/css/2.07647b54.chunk.css.map",
+    "static/css/2.6336c597.chunk.css.map": "/steam-workshop-stats/static/css/2.6336c597.chunk.css.map",
     "static/css/main.15996f61.chunk.css.map": "/steam-workshop-stats/static/css/main.15996f61.chunk.css.map",
     "static/js/2.e8e655f4.chunk.js.LICENSE.txt": "/steam-workshop-stats/static/js/2.e8e655f4.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/steam-workshop-stats/static/media/BasierCircle-Bold.f0835b76.ttf",
-    "static/media/all.css": "/steam-workshop-stats/static/media/fa-v4compatibility.52eba2c5.ttf"
+    "static/media/all.css": "/steam-workshop-stats/static/media/fa-v4compatibility.83a9e035.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.ef42c923.js",
-    "static/css/2.07647b54.chunk.css",
+    "static/css/2.6336c597.chunk.css",
     "static/js/2.e8e655f4.chunk.js",
     "static/css/main.15996f61.chunk.css",
     "static/js/main.b594ee41.chunk.js"
