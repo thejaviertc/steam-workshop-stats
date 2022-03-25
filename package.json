@@ -20,7 +20,7 @@
     "@types/react-dom": "^17.0.14",
     "gh-pages": "^3.2.3",
     "sass": "^1.49.9",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.3"
   },
   "resolutions": {
     "ansi-html": "https://registry.npmjs.org/ansi-html-community/-/ansi-html-community-0.0.8.tgz",
