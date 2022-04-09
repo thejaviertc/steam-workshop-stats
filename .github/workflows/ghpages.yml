@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v3
 
       - name: 📗 Use NodeJS
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.13.0'
+          node-version: '16.14.0'
 
       - name: 🔨 Build Project
         run: |
@@ -27,7 +27,7 @@ jobs:
           npm run build
 
       - name: 🚀 Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.7
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:
           branch: gh-pages
           folder: build
