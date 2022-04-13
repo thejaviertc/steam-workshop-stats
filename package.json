@@ -25,6 +25,7 @@
   "resolutions": {
     "ansi-html": "https://registry.npmjs.org/ansi-html-community/-/ansi-html-community-0.0.8.tgz",
     "ansi-regex": "^5.0.1",
+    "async": "^3.2.2",
     "browserslist": "^4.16.8",
     "follow-redirects": "^1.14.7",
     "glob-parent": "^5.1.2",
