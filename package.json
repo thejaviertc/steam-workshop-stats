@@ -16,7 +16,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^14.1.1",
-    "@types/react": "^18.0.7",
+    "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.2",
     "gh-pages": "^3.2.3",
     "sass": "^1.51.0",
