@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/steam-workshop-stats/static/css/main.1c920db4.css",
-    "main.js": "/steam-workshop-stats/static/js/main.c1263d64.js",
+    "main.js": "/steam-workshop-stats/static/js/main.c371347b.js",
     "static/js/787.a532cd36.chunk.js": "/steam-workshop-stats/static/js/787.a532cd36.chunk.js",
     "static/media/fa-solid-900.ttf": "/steam-workshop-stats/static/media/fa-solid-900.e615bbcb258550973c16.ttf",
     "static/media/fa-brands-400.ttf": "/steam-workshop-stats/static/media/fa-brands-400.b823fc0dbb5a5f0c21bb.ttf",
@@ -14,11 +14,11 @@
     "static/media/fa-v4compatibility.woff2": "/steam-workshop-stats/static/media/fa-v4compatibility.afac89562a5301459069.woff2",
     "index.html": "/steam-workshop-stats/index.html",
     "main.1c920db4.css.map": "/steam-workshop-stats/static/css/main.1c920db4.css.map",
-    "main.c1263d64.js.map": "/steam-workshop-stats/static/js/main.c1263d64.js.map",
+    "main.c371347b.js.map": "/steam-workshop-stats/static/js/main.c371347b.js.map",
     "787.a532cd36.chunk.js.map": "/steam-workshop-stats/static/js/787.a532cd36.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1c920db4.css",
-    "static/js/main.c1263d64.js"
+    "static/js/main.c371347b.js"
   ]
 }
