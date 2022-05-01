@@ -64,8 +64,7 @@ class Data extends Component<DataProps, DataState> {
             error: false
         });
 
-        // https://javiertcs-api.herokuapp.com/api/steam-workshop-stats
-        const response = await fetch(`http://localhost:3001/steam-workshop-stats?url=${this.props.username}`);
+        const response = await fetch(`https://javiertcs-api.herokuapp.com/api/steam-workshop-stats?url=${this.props.username}`);
         const result = await response.json();
 
         if (response.status === 200) {
