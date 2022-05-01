@@ -13,7 +13,9 @@ type Addon = {
     lifeSubs: number,
     favs: number,
     lifeFavs: number,
-    views: number
+    viewers: number,
+    likes: number,
+    dislikes: number
 }
 
 type DataProps = {
@@ -26,13 +28,12 @@ type DataState = {
     errorMessage: string,
     username: string,
     profileImage: string,
-    numberAddons: number,
     subs: number,
     lifeSubs: number,
     favs: number,
     lifeFavs: number,
     viewers: number,
-    addonList: Addon[]
+    addons: Addon[]
 }
 
 // Data Component
@@ -47,13 +48,12 @@ class Data extends Component<DataProps, DataState> {
             errorMessage: "",
             username: "",
             profileImage: "",
-            numberAddons: 0,
             subs: 0,
             lifeSubs: 0,
             favs: 0,
             lifeFavs: 0,
             viewers: 0,
-            addonList: []
+            addons: []
         }
         this.end = React.createRef();
     }
@@ -64,20 +64,19 @@ class Data extends Component<DataProps, DataState> {
             error: false
         });
 
-        const response = await fetch(`https://javiertcs-api.herokuapp.com/api/steam-workshop-stats?${this.props.username}`);
+        const response = await fetch(`https://javiertcs-api.herokuapp.com/steam-workshop-stats?url=${this.props.username}`);
         const result = await response.json();
 
         if (response.status === 200) {
             this.setState({
                 username: result.username,
                 profileImage: result.profileImage,
-                numberAddons: result.numberAddons,
                 subs: result.subs,
                 lifeSubs: result.lifeSubs,
                 favs: result.favs,
                 lifeFavs: result.lifeFavs,
                 viewers: result.viewers,
-                addonList: result.addonList,
+                addons: result.addons,
                 loading: true
             });
         } else {
@@ -112,15 +111,15 @@ class Data extends Component<DataProps, DataState> {
                         <h2 className="text-center">Statistics of {this.state.username}</h2>
                         <img src={this.state.profileImage} className="img-fluid mx-auto d-block py-3" alt="" />
                         <p className="text-center">
-                            <span className="badge bg-success mx-2 my-2">Total Views: {this.state.viewers}</span>
-                            <span className="badge bg-warning mx-2 my-2">Total Subs: {this.state.subs}</span>
-                            <span className="badge bg-warning mx-2 my-2">Total Life Subs: {this.state.lifeSubs}</span>
-                            <span className="badge bg-danger mx-2 my-2">Total Favorites: {this.state.favs}</span>
-                            <span className="badge bg-danger mx-2 my-2">Total Life Favorites: {this.state.lifeFavs}</span>
+                            <span className="badge bg-success mx-2 my-2"><i className="fa-solid fa-eye"></i> Total Views: {this.state.viewers}</span>
+                            <span className="badge bg-warning mx-2 my-2"><i className="fa-solid fa-user"></i> Total Subs: {this.state.subs}</span>
+                            <span className="badge bg-warning mx-2 my-2"><i className="fa-solid fa-user"></i> Total Life Subs: {this.state.lifeSubs}</span>
+                            <span className="badge bg-danger mx-2 my-2"><i className="fa-solid fa-heart"></i> Total Favorites: {this.state.favs}</span>
+                            <span className="badge bg-danger mx-2 my-2"><i className="fa-solid fa-heart"></i> Total Life Favorites: {this.state.lifeFavs}</span>
                         </p>
                         <div className="container pb-2">
                             <ResponsiveContainer width="99%" aspect={2}>
-                                <AreaChart width={500} height={300} data={this.state.addonList.slice().reverse()} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                                <AreaChart width={500} height={300} data={this.state.addons.slice().reverse()} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                                     <CartesianGrid stroke="" />
                                     <XAxis dataKey="name" />
                                     <YAxis />
@@ -133,11 +132,11 @@ class Data extends Component<DataProps, DataState> {
                             </ResponsiveContainer>
                         </div>
                         <h2 className="text-center pt-4">Addons of {this.state.username}</h2>
-                        {this.state.addonList.length ? (
+                        {this.state.addons.length ? (
                             <div className="container pt-5">
                                 <div className="row">
-                                    {this.state.addonList.map((addon: Addon, i: number) => {
-                                        if (this.state.addonList.length > 0) {
+                                    {this.state.addons.map((addon: Addon, i: number) => {
+                                        if (this.state.addons.length > 0) {
                                             return (
                                                 <div key={'addon_' + i} className="col-12 col-md-4 col-sm-6 pb-5" >
                                                     <div className="card bg-primary rounded">
@@ -145,14 +144,18 @@ class Data extends Component<DataProps, DataState> {
                                                         <div className="card-body">
                                                             <h5 className="card-title text-center">{addon.title}</h5>
                                                             <p className="text-center">
-                                                                <span className="badge bg-success mx-2 my-2">Views: {addon.views}</span>
-                                                                <span className="badge bg-warning mx-2 my-2">Subs: {addon.subs}</span>
-                                                                <span className="badge bg-warning mx-2 my-2">Life Subs: {addon.lifeSubs}</span>
-                                                                <span className="badge bg-danger mx-2 my-2">Favorites: {addon.favs}</span>
-                                                                <span className="badge bg-danger mx-2 my-2">Life Favorites: {addon.lifeFavs}</span>
+                                                                <span className="badge bg-success mx-2 my-2"><i className="fa-solid fa-eye"></i> Views: {addon.viewers}</span>
+                                                                <span className="badge bg-warning mx-2 my-2"><i className="fa-solid fa-user"></i> Subs: {addon.subs}</span>
+                                                                <span className="badge bg-warning mx-2 my-2"><i className="fa-solid fa-user"></i> Life Subs: {addon.lifeSubs}</span>
+                                                                <span className="badge bg-danger mx-2 my-2"><i className="fa-solid fa-heart"></i> Favorites: {addon.favs}</span>
+                                                                <span className="badge bg-danger mx-2 my-2"><i className="fa-solid fa-heart"></i> Life Favorites: {addon.lifeFavs}</span>
+                                                            </p>
+                                                            <p className="text-center">
+                                                                <span className="badge bg-success mx-2 my-2"><i className="fa-solid fa-thumbs-up"></i> Likes: {addon.likes}</span>
+                                                                <span className="badge bg-danger mx-2 my-2"><i className="fa-solid fa-thumbs-down"></i> Dislikes: {addon.dislikes}</span>
                                                             </p>
                                                             <div className="d-flex justify-content-center">
-                                                                <a href={addon.url} target="_blank" rel="noreferrer" className="btn btn-secondary text-white">See Addon</a>
+                                                                <a href={addon.url} target="_blank" rel="noreferrer" className="btn btn-secondary text-white"><i className="fa-solid fa-magnifying-glass"></i> Search Addon</a>
                                                             </div>
                                                         </div>
                                                     </div>
