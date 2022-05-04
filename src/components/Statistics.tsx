@@ -40,7 +40,7 @@ class Statistics extends Component<StatisticsProps, StatisticsState> {
                     <div className="alert alert-danger text-center" role="alert">
                         <h4 className="alert-heading">Important Message!</h4>
                         <hr />
-                        <p>The API has been rewritten recently, so errors/crashes may occur!. If you see one, please make an issue in <a href="https://github.com/thejaviertc/steam-workshop-stats/issues">Github</a> !</p>
+                        <p>The API has been rewritten recently, so errors/crashes may occur! If you see one, please make an issue on <a href="https://github.com/thejaviertc/steam-workshop-stats/issues">Github</a> !</p>
                     </div>
                     <h3 className="text-center">Enter a Steam Profile URL</h3>
                     <form onSubmit={this.handleSubmit}>
