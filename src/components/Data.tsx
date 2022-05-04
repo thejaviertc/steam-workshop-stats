@@ -125,7 +125,7 @@ class Data extends Component<DataProps, DataState> {
                                     <YAxis />
                                     <Tooltip />
                                     <Legend />
-                                    <Area type="monotone" dataKey="views" stackId="1" stroke="#198754" fill="#198754" />
+                                    <Area type="monotone" dataKey="viewers" stackId="1" stroke="#198754" fill="#198754" />
                                     <Area type="monotone" dataKey="subs" stackId="1" stroke="#FFC107" fill="#FFC107" />
                                     <Area type="monotone" dataKey="favs" stackId="1" stroke="#DC3545" fill="#DC3545" />
                                 </AreaChart>
