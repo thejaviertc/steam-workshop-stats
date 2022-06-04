@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/steam-workshop-stats/static/css/main.afd641ef.css",
-    "main.js": "/steam-workshop-stats/static/js/main.42c2f941.js",
+    "main.js": "/steam-workshop-stats/static/js/main.dea88282.js",
     "static/js/787.a532cd36.chunk.js": "/steam-workshop-stats/static/js/787.a532cd36.chunk.js",
     "static/media/BasierCircle-Bold.ttf": "/steam-workshop-stats/static/media/BasierCircle-Bold.f0835b76763260c45740.ttf",
     "index.html": "/steam-workshop-stats/index.html",
     "main.afd641ef.css.map": "/steam-workshop-stats/static/css/main.afd641ef.css.map",
-    "main.42c2f941.js.map": "/steam-workshop-stats/static/js/main.42c2f941.js.map",
+    "main.dea88282.js.map": "/steam-workshop-stats/static/js/main.dea88282.js.map",
     "787.a532cd36.chunk.js.map": "/steam-workshop-stats/static/js/787.a532cd36.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.afd641ef.css",
-    "static/js/main.42c2f941.js"
+    "static/js/main.dea88282.js"
   ]
 }
