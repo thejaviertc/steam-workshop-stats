@@ -4,10 +4,13 @@
 ![Stars](https://img.shields.io/github/stars/thejaviertc/steam-workshop-stats)
 
 # **Steam Workshop Stats**
+
 ### **See the views, subscriptions and favs of your Steam Workshop addons!**
 
 ## **Live Website:**
+
 ### **https://thejaviertc.github.io/steam-workshop-stats/**
 
 ## **Suggestions/Bugs:**
+
 ### **Do you have a suggestion/seen a bug? Make an issue.**
