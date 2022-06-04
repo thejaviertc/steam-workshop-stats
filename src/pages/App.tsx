@@ -180,7 +180,7 @@ export default class App extends React.Component<unknown, AppState> {
 									</div>
 								</div>
 								<div
-									className="alert alert-warning mt-4"
+									className="alert alert-warning mt-4 text-center"
 									role="alert"
 								>
 									<FontAwesomeIcon icon={faCircleInfo} />{" "}
