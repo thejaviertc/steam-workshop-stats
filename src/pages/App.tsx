@@ -71,6 +71,7 @@ export default class App extends React.Component<unknown, AppState> {
 		// Starts showing the loading icon
 		this.setState({
 			oldUrl: this.state.url,
+			errorMessage: "",
 			isLoading: true,
 			isSubmitted: false,
 		});
@@ -347,6 +348,17 @@ export default class App extends React.Component<unknown, AppState> {
 										There are no addons avaible!
 									</h3>
 								)}
+							</div>
+						)}
+						{this.state.errorMessage && (
+							<div className="d-flex justify-content-center pt-5">
+								<div
+									className="alert alert-danger text-center"
+									style={{ width: "20%" }}
+									role="alert"
+								>
+									{this.state.errorMessage}
+								</div>
 							</div>
 						)}
 					</div>
