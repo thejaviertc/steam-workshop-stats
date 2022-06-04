@@ -1,12 +1,13 @@
 // Fonts
 @font-face {
-	font-family: 'Basier Circle';
-	src: local('Basier Circle'), url(./fonts/basiercircle/BasierCircle-Bold.ttf) format('truetype');
+	font-family: "Basier Circle";
+	src: local("Basier Circle"),
+		url(./fonts/basiercircle/BasierCircle-Bold.ttf) format("truetype");
 }
 
 // Variables
-$primary: #171A21;
-$secondary: #1B2838;
+$primary: #171a21;
+$secondary: #1b2838;
 $ternary: #54a5d4;
 $ternaryLight: #0dcaf0;
 
@@ -16,7 +17,7 @@ html {
 }
 
 body {
-	font-family: 'Basier Circle';
+	font-family: "Basier Circle";
 }
 
 // Custom
@@ -27,7 +28,7 @@ body {
 }
 
 .rounded {
-    border-radius: 0.5rem !important;
+	border-radius: 0.5rem !important;
 }
 
 // Bootstrap
@@ -49,13 +50,13 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: $ternaryLight !important;
-    border-color: $ternaryLight !important;
+	background-color: $ternaryLight !important;
+	border-color: $ternaryLight !important;
 }
 
 .btn-secondary:focus {
-    border-color: $ternaryLight !important;
-    box-shadow: none !important;
+	border-color: $ternaryLight !important;
+	box-shadow: none !important;
 }
 
 .spinner-border {
@@ -71,16 +72,27 @@ body {
 }
 
 // Miscelaneous
-h1, h2, h3, h5, button, a {
+h1,
+h2,
+h3,
+h5,
+button,
+a {
 	color: white;
 }
 
-h1, h2, h3, h5, span, button, a {
+h1,
+h2,
+h3,
+h5,
+span,
+button,
+a {
 	font-weight: bold;
 }
 
 h1 {
-	font-size: 75px;
+	font-size: 70px;
 }
 
 h2 {
