@@ -1,32 +1,32 @@
 name: 🎉 Build & Deploy
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/**'
-      - 'src/**'
-      - 'public/**'
-      - '**.json'
+    push:
+        branches:
+            - main
+        paths:
+            - ".github/**"
+            - "src/**"
+            - "public/**"
+            - "**.json"
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v3
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🚚 Get latest code
+              uses: actions/checkout@v3
 
-      - name: 📗 Use NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.14.0'
+            - name: 📗 Use NodeJS
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "lts/gallium"
 
-      - name: 🔨 Build Project
-        run: |
-          npm install
-          npm run build
+            - name: 🔨 Build Project
+              run: |
+                  npm install
+                  npm run build
 
-      - name: 🚀 Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
-          branch: gh-pages
-          folder: build
+            - name: 🚀 Deploy
+              uses: JamesIves/github-pages-deploy-action@v4.3.3
+              with:
+                  branch: gh-pages
+                  folder: build
