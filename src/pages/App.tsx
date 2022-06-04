@@ -93,6 +93,7 @@ export default class App extends React.Component<unknown, AppState> {
 		} else {
 			this.setState({
 				errorMessage: result.message,
+				steamUser: null,
 			});
 		}
 
