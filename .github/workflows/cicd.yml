@@ -2,7 +2,7 @@ name: 💻 CI/CD
 
 on:
     push:
-        branches: [v1.3.1]
+        branches: [main]
 
 jobs:
     cicd:
