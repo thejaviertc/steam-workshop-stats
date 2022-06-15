@@ -1,5 +1,5 @@
 ![Steam Workshop Stats](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/main/public/img/steam-workshop-stats.jpg)
-[![Build](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml/badge.svg)](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ghpages.yml)
+[![💻 CI/CD](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/cicd.yml/badge.svg)](https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/cicd.yml)
 ![Version](https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats)
 ![Stars](https://img.shields.io/github/stars/thejaviertc/steam-workshop-stats)
 
