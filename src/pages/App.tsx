@@ -8,22 +8,33 @@ import {
 	faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FormEvent } from "react";
 import {
-	Area,
-	AreaChart,
-	CartesianGrid,
+	CategoryScale,
+	Chart as ChartJS,
 	Legend,
-	ResponsiveContainer,
+	LinearScale,
+	LineElement,
+	PointElement,
+	Title,
 	Tooltip,
-	XAxis,
-	YAxis,
-} from "recharts";
+} from "chart.js";
+import React, { FormEvent } from "react";
+import { Line } from "react-chartjs-2";
 import Badge from "../components/Badge";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import IAddon from "../interfaces/IAddon";
 import ISteamUser from "../interfaces/ISteamUser";
+
+ChartJS.register(
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend
+);
 
 interface AppState {
 	isSubmitted: boolean;
@@ -253,52 +264,60 @@ export default class App extends React.Component<unknown, AppState> {
 									/>
 								</p>
 								{this.state.steamUser.addons.length && (
-									<div className="container pb-2 d-none d-md-block">
-										<ResponsiveContainer
-											width="99%"
-											aspect={2}
-										>
-											<AreaChart
-												width={500}
-												height={300}
-												data={this.state.steamUser.addons
-													.slice()
-													.reverse()}
-												margin={{
-													top: 5,
-													right: 30,
-													left: 20,
-													bottom: 5,
-												}}
-											>
-												<CartesianGrid stroke="" />
-												<XAxis dataKey="name" />
-												<YAxis />
-												<Tooltip />
-												<Legend />
-												<Area
-													type="monotone"
-													dataKey="viewers"
-													stackId="1"
-													stroke="#198754"
-													fill="#198754"
-												/>
-												<Area
-													type="monotone"
-													dataKey="subs"
-													stackId="1"
-													stroke="#FFC107"
-													fill="#FFC107"
-												/>
-												<Area
-													type="monotone"
-													dataKey="favs"
-													stackId="1"
-													stroke="#DC3545"
-													fill="#DC3545"
-												/>
-											</AreaChart>
-										</ResponsiveContainer>
+									<div className="container py-2 d-none d-md-block">
+										<Line
+											data={{
+												labels: this.state.steamUser.addons.map(
+													function (addon) {
+														return addon["title"];
+													}
+												),
+												datasets: [
+													{
+														label: "Viewers",
+														data: this.state.steamUser.addons.map(
+															function (addon) {
+																return addon[
+																	"viewers"
+																];
+															}
+														),
+														borderColor:
+															"rgb(25, 135, 84)",
+														backgroundColor:
+															"rgba(25, 135, 84, 0.5)",
+													},
+													{
+														label: "Subscribers",
+														data: this.state.steamUser.addons.map(
+															function (addon) {
+																return addon[
+																	"subs"
+																];
+															}
+														),
+														borderColor:
+															"rgb(255, 193, 7)",
+														backgroundColor:
+															"rgba(255, 193, 7, 0.5)",
+													},
+													{
+														label: "Favorites",
+														data: this.state.steamUser.addons.map(
+															function (addon) {
+																return addon[
+																	"favs"
+																];
+															}
+														),
+														borderColor:
+															"rgb(220, 53, 69)",
+														backgroundColor:
+															"rgba(220, 53, 69, 0.5)",
+													},
+												],
+											}}
+										/>
 									</div>
 								)}
 								<h2 className="text-center pt-4">
