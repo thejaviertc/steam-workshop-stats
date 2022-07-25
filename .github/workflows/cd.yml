@@ -1,4 +1,4 @@
-name: 💻 CI/CD
+name: 💻 CD
 
 on:
     push:
@@ -21,12 +21,8 @@ jobs:
                   npm install
                   npm run build
 
-            - name: 🧪 Test Project
-              run: |
-                  npm run test
-
             - name: 🚀 Deploy Project
-              uses: JamesIves/github-pages-deploy-action@v4.3.4
+              uses: JamesIves/github-pages-deploy-action@v4.4.0
               with:
                   branch: gh-pages
                   folder: build
