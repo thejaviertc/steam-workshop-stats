@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { _ } from "svelte-i18n";
 	import {
 		faMagnifyingGlass,
 		faStar,
@@ -7,6 +6,7 @@
 		faThumbsUp,
 		faUserGroup,
 	} from "@fortawesome/free-solid-svg-icons";
+	import { _ } from "svelte-i18n";
 	import Badge from "./Badge.svelte";
 	import Button from "./Button.svelte";
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { _ } from "svelte-i18n";
 	import Addon from "$lib/Addon.svelte";
 	import Badge from "$lib/Badge.svelte";
 	import Button from "$lib/Button.svelte";
@@ -16,8 +15,9 @@
 	import { Chart, registerables } from "chart.js";
 	import { Line } from "svelte-chartjs";
 	import Fa from "svelte-fa";
-	import type ISteamUser from "../interfaces/ISteamUser";
+	import { _ } from "svelte-i18n";
 	import type IAddon from "../interfaces/IAddon";
+	import type ISteamUser from "../interfaces/ISteamUser";
 
 	Chart.register(...registerables);
 
