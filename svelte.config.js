@@ -20,6 +20,10 @@ const config = {
 			process.env.NODE_ENV === "development"
 				? ""
 				: "/steam-workshop-stats",
+		asserts:
+			process.env.NODE_ENV === "development"
+				? ""
+				: "/steam-workshop-stats",
 	},
 };
 
