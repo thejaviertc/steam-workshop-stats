@@ -5,7 +5,7 @@ import preprocess from "svelte-preprocess";
 const config = {
 	preprocess: preprocess(),
 	kit: {
-		appDir: "app",
+		appDir: "steam-workshop-stats/app",
 		prerender: {
 			default: true,
 		},
