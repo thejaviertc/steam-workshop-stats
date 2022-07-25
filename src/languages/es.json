@@ -1,0 +1,28 @@
+{
+	"title": "Estadísticas de Steam Workshop",
+	"description": "Estadísticas de los usuarios en Steam Workshop",
+	"enterProfileUrl": "Introduce la URL de un Perfil de Steam",
+	"buttons": {
+		"go": "Vamos",
+		"getStats": "Obtener Estadísticas"
+	},
+	"notifications": {
+		"disclaimer": "¡Atención! Si tarda un poco, es debido a que la API se está despertando. Si tarda mucho, puede ser debido a un error."
+	},
+	"viewers": "Visitas",
+	"subs": "Suscriptores",
+	"favs": "Favoritos",
+	"statistics": {
+		"title": "Estadísticas de {username}",
+		"viewers": "Visitas Totales: {viewers}",
+		"subs": "Suscriptores Totales: {subs}",
+		"lifeSubs": "Suscriptores Totales (Vida): {lifeSubs}",
+		"favs": "Favoritos Totales: {favs}",
+		"lifeFavs": "Favoritos Totales (Vida): {lifeFavs}",
+		"addons": "Addons de {username}",
+		"noAddons": "¡No hay ningún addon disponible!",
+		"likes": "Likes: {likes}",
+		"dislikes": "Dislikes: {dislikes}",
+		"seeOnSteam": "Ver en Steam"
+	}
+}
