@@ -1,11 +1,11 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "app/immutable/start-7f2f9a86.js",
+    "file": "steam-workshop-stats/app/immutable/start-a56fe2ab.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_index-21421231.js",
-      "_index-61435d97.js"
+      "_index-ca08f602.js",
+      "_index-b1da2605.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
@@ -14,63 +14,63 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "app/immutable/pages/__layout.svelte-a6f9490f.js",
+    "file": "steam-workshop-stats/app/immutable/pages/__layout.svelte-cbcd9967.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-21421231.js",
-      "_runtime.esm-b9dfef69.js",
-      "_index-61435d97.js"
+      "_index-ca08f602.js",
+      "_runtime.esm-8e7c17cc.js",
+      "_index-b1da2605.js"
     ],
     "css": [
-      "app/immutable/assets/__layout-4cf50ede.css"
+      "steam-workshop-stats/app/immutable/assets/__layout-4cf50ede.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
-    "file": "app/immutable/error.svelte-a09ccb19.js",
+    "file": "steam-workshop-stats/app/immutable/error.svelte-ff701214.js",
     "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-21421231.js"
+      "_index-ca08f602.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "app/immutable/pages/index.svelte-9c22d00b.js",
+    "file": "steam-workshop-stats/app/immutable/pages/index.svelte-4d5a4c5f.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-21421231.js",
-      "_runtime.esm-b9dfef69.js",
-      "_index-61435d97.js"
+      "_index-ca08f602.js",
+      "_runtime.esm-8e7c17cc.js",
+      "_index-b1da2605.js"
     ],
     "css": [
-      "app/immutable/assets/index-3f238364.css"
+      "steam-workshop-stats/app/immutable/assets/index-3f238364.css"
     ]
   },
-  "_index-21421231.js": {
-    "file": "app/immutable/chunks/index-21421231.js"
+  "_index-ca08f602.js": {
+    "file": "steam-workshop-stats/app/immutable/chunks/index-ca08f602.js"
   },
-  "_index-61435d97.js": {
-    "file": "app/immutable/chunks/index-61435d97.js",
+  "_index-b1da2605.js": {
+    "file": "steam-workshop-stats/app/immutable/chunks/index-b1da2605.js",
     "imports": [
-      "_index-21421231.js"
+      "_index-ca08f602.js"
     ]
   },
-  "_runtime.esm-b9dfef69.js": {
-    "file": "app/immutable/chunks/runtime.esm-b9dfef69.js",
+  "_runtime.esm-8e7c17cc.js": {
+    "file": "steam-workshop-stats/app/immutable/chunks/runtime.esm-8e7c17cc.js",
     "imports": [
-      "_index-61435d97.js"
+      "_index-b1da2605.js"
     ]
   },
   "src/routes/index.css": {
-    "file": "app/immutable/assets/index-3f238364.css",
+    "file": "steam-workshop-stats/app/immutable/assets/index-3f238364.css",
     "src": "src/routes/index.css"
   },
   "src/routes/__layout.css": {
-    "file": "app/immutable/assets/__layout-4cf50ede.css",
+    "file": "steam-workshop-stats/app/immutable/assets/__layout-4cf50ede.css",
     "src": "src/routes/__layout.css"
   }
 }
