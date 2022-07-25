@@ -125,9 +125,6 @@
 			/>
 			<Button faIcon={faAngleDown} text={$_("buttons.go")} link="#form" />
 		</div>
-		<ErrorMessage
-			message="WARNING: I migrated this project from React to Svelte, and there are some weird problems with the fonts. I'm waiting a response on the Discord of Svelte for fixing it"
-		/>
 	</div>
 </section>
 <section id="form" class="bg-secondary py-5">
