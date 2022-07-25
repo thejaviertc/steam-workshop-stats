@@ -121,7 +121,7 @@
 			<Button
 				faIcon={faLanguage}
 				text={$_("buttons.helpTranslating")}
-				link="https://github.com/thejaviertc/steam-workshop-stats"
+				link="https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md"
 			/>
 			<Button faIcon={faAngleDown} text={$_("buttons.go")} link="#form" />
 		</div>
