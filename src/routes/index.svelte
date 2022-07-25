@@ -1,4 +1,7 @@
 <script lang="ts">
+	import type IAddon from "../interfaces/IAddon";
+	import type ISteamUser from "../interfaces/ISteamUser";
+
 	import Addon from "$lib/Addon.svelte";
 	import Badge from "$lib/Badge.svelte";
 	import Button from "$lib/Button.svelte";
@@ -16,40 +19,55 @@
 	import { Line } from "svelte-chartjs";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
-	import type IAddon from "../interfaces/IAddon";
-	import type ISteamUser from "../interfaces/ISteamUser";
 
+	// Registers all the elements of the chart automatically
 	Chart.register(...registerables);
 
 	let oldUrl: string = "";
 	let url: string = "";
 	let isSubmitted: boolean = false;
 
+	/**
+	 * Fetches the API and gets all the info of the Steam URL
+	 */
 	async function fetchSteamUser() {
 		oldUrl = url;
 
-		// https://javiertcs-api.herokuapp.com
 		const response = await fetch(
-			`http://localhost:3001/steam-workshop-stats?url=${url}`
+			`https://javiertcs-api.herokuapp.com/steam-workshop-stats?url=${url}`
 		);
+
 		return await response.json();
 	}
 
+	/**
+	 * Handles the form
+	 */
 	function submitSteamUser() {
 		if (oldUrl != url) {
 			isSubmitted = false;
+
+			// Delay of 100ms for Svelte noticing the variable updated
 			setTimeout(() => {
 				isSubmitted = true;
 			}, 100);
 		}
 	}
 
+	/**
+	 * Moves the view of the user to the id
+	 * @param id string
+	 */
 	function moveView(id: string) {
 		setTimeout(() => {
 			document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 		}, 100);
 	}
 
+	/**
+	 * Prepares the data for the graph from the ISteamUser
+	 * @param steamUser ISteamUser
+	 */
 	function prepareGraphData(steamUser: ISteamUser) {
 		return {
 			labels: steamUser.addons.map(function (addon: IAddon) {
