@@ -20,6 +20,7 @@ const config = {
 				? ""
 				: "/steam-workshop-stats",
 	},
+	appDir: "internal",
 };
 
 export default config;
