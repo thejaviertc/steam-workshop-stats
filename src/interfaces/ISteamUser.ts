@@ -1,4 +1,4 @@
-import type IAddon from "./IAddon";
+import IAddon from "./IAddon";
 
 interface ISteamUser {
 	steamId: string;
