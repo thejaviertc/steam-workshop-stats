@@ -1,76 +1,15 @@
 {
-  ".svelte-kit/runtime/client/start.js": {
-    "file": "_app/immutable/start-9fc3d3e7.js",
-    "src": ".svelte-kit/runtime/client/start.js",
-    "isEntry": true,
-    "imports": [
-      "_index-66d416d3.js",
-      "_index-bf9a6b63.js"
-    ],
-    "dynamicImports": [
-      "src/routes/__layout.svelte",
-      ".svelte-kit/runtime/components/error.svelte",
-      "src/routes/index.svelte"
-    ]
-  },
-  "src/routes/__layout.svelte": {
-    "file": "_app/immutable/pages/__layout.svelte-8387a00b.js",
-    "src": "src/routes/__layout.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_index-66d416d3.js",
-      "_runtime.esm-69b393df.js",
-      "_index-bf9a6b63.js"
-    ],
-    "css": [
-      "_app/immutable/assets/__layout-4cf50ede.css"
-    ]
-  },
-  ".svelte-kit/runtime/components/error.svelte": {
-    "file": "_app/immutable/error.svelte-75632c10.js",
-    "src": ".svelte-kit/runtime/components/error.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_index-66d416d3.js"
-    ]
-  },
-  "src/routes/index.svelte": {
-    "file": "_app/immutable/pages/index.svelte-29d3e914.js",
-    "src": "src/routes/index.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_index-66d416d3.js",
-      "_runtime.esm-69b393df.js",
-      "_index-bf9a6b63.js"
-    ],
-    "css": [
-      "_app/immutable/assets/index-3f238364.css"
-    ]
-  },
-  "_index-66d416d3.js": {
-    "file": "_app/immutable/chunks/index-66d416d3.js"
-  },
-  "_index-bf9a6b63.js": {
-    "file": "_app/immutable/chunks/index-bf9a6b63.js",
-    "imports": [
-      "_index-66d416d3.js"
-    ]
-  },
-  "_runtime.esm-69b393df.js": {
-    "file": "_app/immutable/chunks/runtime.esm-69b393df.js",
-    "imports": [
-      "_index-bf9a6b63.js"
-    ]
-  },
-  "src/routes/index.css": {
-    "file": "_app/immutable/assets/index-3f238364.css",
-    "src": "src/routes/index.css"
-  },
-  "src/routes/__layout.css": {
-    "file": "_app/immutable/assets/__layout-4cf50ede.css",
-    "src": "src/routes/__layout.css"
-  }
+  "short_name": "Steam Workshop Stats",
+  "name": "Steam Workshop Stats",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
