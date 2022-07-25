@@ -1,15 +1,76 @@
 {
-  "short_name": "Steam Workshop Stats",
-  "name": "Steam Workshop Stats",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "app/immutable/start-07275982.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-21421231.js",
+      "_index-61435d97.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/index.svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "app/immutable/pages/__layout.svelte-a6f9490f.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-21421231.js",
+      "_runtime.esm-b9dfef69.js",
+      "_index-61435d97.js"
+    ],
+    "css": [
+      "app/immutable/assets/__layout-4cf50ede.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "app/immutable/error.svelte-a09ccb19.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-21421231.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "app/immutable/pages/index.svelte-9c22d00b.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-21421231.js",
+      "_runtime.esm-b9dfef69.js",
+      "_index-61435d97.js"
+    ],
+    "css": [
+      "app/immutable/assets/index-3f238364.css"
+    ]
+  },
+  "_index-21421231.js": {
+    "file": "app/immutable/chunks/index-21421231.js"
+  },
+  "_index-61435d97.js": {
+    "file": "app/immutable/chunks/index-61435d97.js",
+    "imports": [
+      "_index-21421231.js"
+    ]
+  },
+  "_runtime.esm-b9dfef69.js": {
+    "file": "app/immutable/chunks/runtime.esm-b9dfef69.js",
+    "imports": [
+      "_index-61435d97.js"
+    ]
+  },
+  "src/routes/index.css": {
+    "file": "app/immutable/assets/index-3f238364.css",
+    "src": "src/routes/index.css"
+  },
+  "src/routes/__layout.css": {
+    "file": "app/immutable/assets/__layout-4cf50ede.css",
+    "src": "src/routes/__layout.css"
+  }
 }
