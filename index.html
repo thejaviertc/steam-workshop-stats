@@ -21,13 +21,20 @@
 		<meta http-equiv="content-security-policy" content=""><title>Steam Workshop Stats</title>
 	<link rel="stylesheet" href="/steam-workshop-stats/app/immutable/assets/__layout-4cf50ede.css">
 	<link rel="stylesheet" href="/steam-workshop-stats/app/immutable/assets/index-3f238364.css">
-	<link rel="modulepreload" href="/steam-workshop-stats/app/immutable/start-b9b5560e.js">
+	<link rel="modulepreload" href="/steam-workshop-stats/app/immutable/start-3f7f58ab.js">
 	<link rel="modulepreload" href="/steam-workshop-stats/app/immutable/chunks/index-21421231.js">
 	<link rel="modulepreload" href="/steam-workshop-stats/app/immutable/chunks/index-61435d97.js">
 	<link rel="modulepreload" href="/steam-workshop-stats/app/immutable/pages/__layout.svelte-a6f9490f.js">
 	<link rel="modulepreload" href="/steam-workshop-stats/app/immutable/chunks/runtime.esm-b9dfef69.js">
 	<link rel="modulepreload" href="/steam-workshop-stats/app/immutable/pages/index.svelte-1f5840e7.js">
 	</head>
+	<style>
+		@font-face {
+			font-family: "Basier Circle";
+			src: local("Basier Circle"),
+				url(/steam-workshop-stats/fonts/BasierCircle-Bold.ttf) format("truetype");
+		}
+	</style>
 	<body>
 		<div>
 
@@ -51,7 +58,7 @@
 
 
 		<script type="module" data-sveltekit-hydrate="mvhc6m">
-		import { start } from "/steam-workshop-stats/app/immutable/start-b9b5560e.js";
+		import { start } from "/steam-workshop-stats/app/immutable/start-3f7f58ab.js";
 		start({
 			target: document.querySelector('[data-sveltekit-hydrate="mvhc6m"]').parentNode,
 			paths: {"base":"/steam-workshop-stats","assets":"/steam-workshop-stats"},
