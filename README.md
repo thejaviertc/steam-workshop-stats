@@ -11,6 +11,10 @@
 
 ### **https://thejaviertc.github.io/steam-workshop-stats/**
 
+## **Contributing:**
+
+### **https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md**
+
 ## **Suggestions/Bugs:**
 
 ### **Do you have a suggestion/seen a bug? Make an issue.**

@@ -4,6 +4,7 @@
 	"enterProfileUrl": "Enter a Steam Profile URL",
 	"buttons": {
 		"go": "Let's Go",
+		"helpTranslating": "Help Translating",
 		"getStats": "Get Stats"
 	},
 	"notifications": {

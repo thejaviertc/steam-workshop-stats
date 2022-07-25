@@ -4,6 +4,7 @@
 	"enterProfileUrl": "Introduce la URL de un Perfil de Steam",
 	"buttons": {
 		"go": "Vamos",
+		"helpTranslating": "Ayuda a Traducir",
 		"getStats": "Obtener Estadísticas"
 	},
 	"notifications": {

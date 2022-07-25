@@ -11,6 +11,7 @@
 		faAngleDown,
 		faCircleInfo,
 		faEye,
+		faLanguage,
 		faMagnifyingGlass,
 		faStar,
 		faUserGroup,
@@ -115,6 +116,11 @@
 			<Button
 				faIcon={faGithub}
 				text="Github"
+				link="https://github.com/thejaviertc/steam-workshop-stats"
+			/>
+			<Button
+				faIcon={faLanguage}
+				text={$_("buttons.helpTranslating")}
 				link="https://github.com/thejaviertc/steam-workshop-stats"
 			/>
 			<Button faIcon={faAngleDown} text={$_("buttons.go")} link="#form" />
