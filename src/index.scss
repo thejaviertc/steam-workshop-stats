@@ -1,10 +1,8 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
-
 // Fonts
 @font-face {
 	font-family: "Basier Circle";
 	src: local("Basier Circle"),
-		url(/fonts/BasierCircle-Bold.ttf) format("truetype");
+		url(./fonts/basiercircle/BasierCircle-Bold.ttf) format("truetype");
 }
 
 // Variables
@@ -29,6 +27,10 @@ body {
 	align-items: center;
 }
 
+.rounded {
+	border-radius: 0.5rem !important;
+}
+
 // Bootstrap
 .bg-primary {
 	background-color: $primary !important;
@@ -36,6 +38,10 @@ body {
 
 .bg-secondary {
 	background-color: $secondary !important;
+}
+
+.bg-info {
+	background-color: $ternary !important;
 }
 
 .btn-secondary {
@@ -55,6 +61,10 @@ body {
 
 .spinner-border {
 	color: white !important;
+}
+
+.badge {
+	font-size: 20px;
 }
 
 .img-fluid {
