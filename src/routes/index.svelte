@@ -63,6 +63,8 @@
 		setTimeout(() => {
 			document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 		}, 100);
+
+		return "";
 	}
 
 	/**
