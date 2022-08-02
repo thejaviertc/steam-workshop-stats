@@ -1,4 +1,6 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 // Variables
 $primary: #171a21;
