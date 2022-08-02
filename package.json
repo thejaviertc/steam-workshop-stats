@@ -14,7 +14,6 @@
 		"svelte-i18n": "^3.4.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
