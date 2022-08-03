@@ -110,11 +110,14 @@
 	<title>Steam Workshop Stats</title>
 </svelte:head>
 
-<section id="home" class="fullpage bg-primary">
-	<div class="container text-center">
+<section
+	id="home"
+	class="bg-slate-800 min-h-screen flex justify-center items-center px-4"
+>
+	<div class="text-center">
 		<h1>{$_("title")}</h1>
-		<h2>{$_("description")}</h2>
-		<div class="d-flex justify-content-center py-4">
+		<h2 class="my-4">{$_("description")}</h2>
+		<div class="flex justify-center my-6">
 			<Button
 				faIcon={faGithub}
 				text="Github"
@@ -129,137 +132,131 @@
 		</div>
 	</div>
 </section>
-<section id="form" class="bg-secondary py-5">
-	<div class="container text-center">
-		<h3>{$_("enterProfileUrl")}</h3>
-		<form on:submit|preventDefault={submitSteamUser}>
-			<div class="form-group d-flex justify-content-center">
-				<input
-					type="text"
-					class="form-control text-center my-4"
-					style="width: 70%"
-					placeholder="https://steamcommunity.com/id/javiertc/"
-					bind:value={url}
-				/>
-			</div>
-			<div class="d-flex justify-content-center">
-				<button type="submit" class="btn btn-secondary">
-					<Fa icon={faMagnifyingGlass} />
-					{$_("buttons.getStats")}
-				</button>
-			</div>
-		</form>
-	</div>
+<section id="form" class="bg-gray-900 py-10 md:py-14 text-center">
+	<h2>{$_("enterProfileUrl")}</h2>
+	<form on:submit|preventDefault={submitSteamUser}>
+		<div class="flex justify-center my-10">
+			<input
+				type="text"
+				class="p-2 text-center w-3/4 rounded-lg"
+				placeholder="https://steamcommunity.com/id/javiertc/"
+				bind:value={url}
+			/>
+		</div>
+		<div class="flex justify-center">
+			<button
+				type="submit"
+				class="bg-sky-400 hover:bg-sky-600 text-white px-4 py-2 mx-2 rounded-xl"
+			>
+				<Fa icon={faMagnifyingGlass} />
+				{$_("buttons.getStats")}
+			</button>
+		</div>
+	</form>
 </section>
 {#if isSubmitted}
-	<section id="user" class="bg-secondary pb-5">
-		<div class="container">
-			{#await fetchSteamUser()}
-				<div id="loading">
-					<div class="d-flex justify-content-center py-2">
-						<div class="spinner-border" role="status">
-							<span class="sr-only" />
-						</div>
-					</div>
-					<div
-						class="alert alert-warning mt-4 text-center"
-						role="alert"
-					>
-						<Fa icon={faCircleInfo} />
-						{$_("notifications.disclaimer")}
-					</div>
+	<section id="user" class="bg-gray-900 py-10 md:py-14">
+		{#await fetchSteamUser()}
+			<div id="loading" class="container mx-auto px-6">
+				<div class="bg-yellow-400 px-2 py-6 text-center rounded-xl">
+					<Fa icon={faCircleInfo} />
+					{$_("notifications.disclaimer")}
 				</div>
-				{moveView("loading")}
-			{:then steamUser}
-				{#if steamUser.message}
-					<ErrorMessage message={steamUser.message} />
-				{:else}
-					<div id="user">
-						<h2 class="text-center">
-							{$_("statistics.title", {
-								values: { username: steamUser.username },
+			</div>
+			{moveView("loading")}
+		{:then steamUser}
+			{#if steamUser.message}
+				<ErrorMessage message={steamUser.message} />
+			{:else}
+				<div id="user">
+					<h2 class="text-center">
+						{$_("statistics.title", {
+							values: { username: steamUser.username },
+						})}
+					</h2>
+					<img
+						src={steamUser.profileImage}
+						class="h-36 md:h-44 mx-auto my-10 rounded-full"
+						alt="Steam Profile"
+					/>
+					<div
+						class="flex flex-col md:flex-row space-y-4 md:space-y-0 px-6 lg:px-0 justify-center"
+					>
+						<Badge
+							faIcon={faEye}
+							title={$_("statistics.viewers", {
+								values: { viewers: steamUser.viewers },
 							})}
-						</h2>
-						<img
-							src={steamUser.profileImage}
-							class="img-fluid mx-auto d-block py-3"
-							alt="Steam Profile"
+							type="bg-green-500"
 						/>
-						<p class="text-center">
-							<Badge
-								faIcon={faEye}
-								title={$_("statistics.viewers", {
-									values: { viewers: steamUser.viewers },
-								})}
-								type="success"
-							/>
-							<Badge
-								faIcon={faUserGroup}
-								title={$_("statistics.subs", {
-									values: { subs: steamUser.subs },
-								})}
-								type="warning"
-							/>
-							<Badge
-								faIcon={faUserGroup}
-								title={$_("statistics.lifeSubs", {
-									values: { lifeSubs: steamUser.lifeSubs },
-								})}
-								type="warning"
-							/>
-							<Badge
-								faIcon={faStar}
-								title={$_("statistics.favs", {
-									values: { favs: steamUser.favs },
-								})}
-								type="danger"
-							/>
-							<Badge
-								faIcon={faStar}
-								title={$_("statistics.lifeFavs", {
-									values: { lifeFavs: steamUser.lifeFavs },
-								})}
-								type="danger"
-							/>
-						</p>
-						{#if steamUser.addons.length > 0}
-							<div class="container py-2 d-none d-md-block">
-								<Line data={prepareGraphData(steamUser)} />
-							</div>
-						{/if}
-						<h2 class="text-center pt-4">
-							{$_("statistics.addons", {
-								values: { username: steamUser.username },
+						<Badge
+							faIcon={faUserGroup}
+							title={$_("statistics.subs", {
+								values: { subs: steamUser.subs },
 							})}
-						</h2>
-						{#if steamUser.addons.length > 0}
-							<div class="row pt-5">
-								{#each steamUser.addons as addon}
-									<Addon
-										title={addon.title}
-										image={addon.image}
-										url={addon.url}
-										viewers={addon.viewers}
-										subs={addon.subs}
-										lifeSubs={addon.lifeSubs}
-										favs={addon.favs}
-										lifeFavs={addon.lifeFavs}
-										likes={addon.likes}
-										dislikes={addon.dislikes}
-									/>
-								{/each}
-							</div>
-						{:else}
-							<h3 class="text-center pt-4">
-								{$_("statistics.noAddons")}
-							</h3>
-						{/if}
+							type="bg-yellow-400"
+						/>
+						<Badge
+							faIcon={faUserGroup}
+							title={$_("statistics.lifeSubs", {
+								values: { lifeSubs: steamUser.lifeSubs },
+							})}
+							type="bg-yellow-400"
+						/>
+						<Badge
+							faIcon={faStar}
+							title={$_("statistics.favs", {
+								values: { favs: steamUser.favs },
+							})}
+							type="bg-red-600"
+						/>
+						<Badge
+							faIcon={faStar}
+							title={$_("statistics.lifeFavs", {
+								values: { lifeFavs: steamUser.lifeFavs },
+							})}
+							type="bg-red-600"
+						/>
 					</div>
-					{moveView("user")}
-				{/if}
-			{:catch error}
-				<ErrorMessage message={error} />
-			{/await}
-		</div>
+					{#if steamUser.addons.length > 0}
+						<div class="container mx-auto my-10 hidden md:block">
+							<Line data={prepareGraphData(steamUser)} />
+						</div>
+					{/if}
+					<h2 class="text-center my-10">
+						{$_("statistics.addons", {
+							values: { username: steamUser.username },
+						})}
+					</h2>
+					{#if steamUser.addons.length > 0}
+						<div
+							class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+						>
+							{#each steamUser.addons as addon}
+								<Addon
+									title={addon.title}
+									image={addon.image}
+									url={addon.url}
+									viewers={addon.viewers}
+									subs={addon.subs}
+									lifeSubs={addon.lifeSubs}
+									favs={addon.favs}
+									lifeFavs={addon.lifeFavs}
+									likes={addon.likes}
+									dislikes={addon.dislikes}
+								/>
+							{/each}
+						</div>
+					{:else}
+						<h3 class="text-center mt-10">
+							{$_("statistics.noAddons")}
+						</h3>
+					{/if}
+				</div>
+				{moveView("user")}
+			{/if}
+		{:catch error}
+			<ErrorMessage message={error} />
+		{/await}
 	</section>
 {/if}

@@ -8,13 +8,7 @@
 	export let type: string;
 </script>
 
-<span class="badge bg-{type} mx-1 my-1 text-white">
+<span class="{type} text-white px-3 py-1 mx-2 text-center rounded-xl">
 	<Fa icon={faIcon} />
 	{title}
 </span>
-
-<style lang="scss">
-	.badge {
-		font-size: 20px;
-	}
-</style>

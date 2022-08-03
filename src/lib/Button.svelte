@@ -8,7 +8,11 @@
 	export let text: string;
 </script>
 
-<a class="btn btn-secondary mx-2" href={link} role="button">
+<a
+	class="bg-sky-400 hover:bg-sky-600 text-white px-4 py-2 mx-2 rounded-xl"
+	href={link}
+	role="button"
+>
 	<Fa icon={faIcon} />
 	{text}
 </a>
