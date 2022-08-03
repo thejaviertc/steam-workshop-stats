@@ -1,91 +1,41 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-// Variables
-$primary: #171a21;
-$secondary: #1b2838;
-$ternary: #54a5d4;
-$ternaryLight: #0dcaf0;
-
-// Global
 html {
 	scroll-behavior: smooth;
 }
 
 body {
 	font-family: "Basier Circle";
-}
-
-// Custom
-.fullpage {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-}
-
-// Bootstrap
-.bg-primary {
-	background-color: $primary !important;
-}
-
-.bg-secondary {
-	background-color: $secondary !important;
-}
-
-.btn-secondary {
-	background-color: $ternary !important;
-	border-color: $ternary !important;
-}
-
-.btn-secondary:hover {
-	background-color: $ternaryLight !important;
-	border-color: $ternaryLight !important;
-}
-
-.btn-secondary:focus {
-	border-color: $ternaryLight !important;
-	box-shadow: none !important;
-}
-
-.spinner-border {
-	color: white !important;
-}
-
-.img-fluid {
-	border-radius: 50%;
-}
-
-// Miscelaneous
-h1,
-h2,
-h3,
-h5,
-button,
-a {
-	color: white;
-}
-
-h1,
-h2,
-h3,
-h5,
-span,
-button,
-a {
-	font-weight: bold;
+	@apply font-extrabold;
 }
 
 h1 {
-	font-size: 70px;
+	@apply text-4xl md:text-8xl text-gray-100;
 }
 
 h2 {
-	font-size: 50px;
+	@apply text-xl md:text-5xl text-gray-100;
 }
 
 h3 {
-	font-size: 40px;
+	@apply text-3xl text-gray-100;
 }
 
-input {
-	font-weight: 700 !important;
+h4 {
+	@apply text-2xl text-gray-100;
+}
+
+h5,
+span {
+	@apply text-lg text-gray-100;
+}
+
+a {
+	@apply text-sm md:text-base text-gray-100;
+}
+
+svg {
+	display: inline;
 }

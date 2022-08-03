@@ -22,79 +22,69 @@
 	export let dislikes: number;
 </script>
 
-<div class="col-12 col-md-4 col-sm-6 pb-5">
-	<div class="card bg-primary rounded">
-		<img class="card-img-top p-3" src={image} alt="" />
-		<div class="card-body">
-			<h5 class="card-title text-center">
-				{title}
-			</h5>
-			<p class="text-center">
-				<Badge
-					faIcon={faStar}
-					title={$_("statistics.viewers", {
-						values: { viewers: viewers },
-					})}
-					type="success"
-				/>
-				<Badge
-					faIcon={faUserGroup}
-					title={$_("statistics.subs", {
-						values: { subs: subs },
-					})}
-					type="warning"
-				/>
-				<Badge
-					faIcon={faUserGroup}
-					title={$_("statistics.lifeSubs", {
-						values: { lifeSubs: lifeSubs },
-					})}
-					type="warning"
-				/>
-				<Badge
-					faIcon={faStar}
-					title={$_("statistics.favs", {
-						values: { favs: favs },
-					})}
-					type="danger"
-				/>
-				<Badge
-					faIcon={faStar}
-					title={$_("statistics.lifeFavs", {
-						values: { lifeFavs: lifeFavs },
-					})}
-					type="danger"
-				/>
-			</p>
-			<p class="text-center">
-				<Badge
-					faIcon={faThumbsUp}
-					title={$_("statistics.likes", {
-						values: { likes: likes },
-					})}
-					type="success"
-				/>
-				<Badge
-					faIcon={faThumbsDown}
-					title={$_("statistics.dislikes", {
-						values: { dislikes: dislikes },
-					})}
-					type="danger"
-				/>
-			</p>
-			<div class="d-flex justify-content-center">
-				<Button
-					faIcon={faMagnifyingGlass}
-					text={$_("statistics.seeOnSteam")}
-					link={url}
-				/>
-			</div>
-		</div>
+<div class="bg-slate-800 border-4 border-slate-700 p-6 rounded-xl">
+	<img class="w-60 mx-auto rounded-xl" src={image} alt="" />
+	<h4 class="text-center my-6">
+		{title}
+	</h4>
+	<div class="flex flex-col justify-center space-y-4">
+		<Badge
+			faIcon={faStar}
+			title={$_("statistics.viewers", {
+				values: { viewers: viewers },
+			})}
+			type="bg-green-500"
+		/>
+		<Badge
+			faIcon={faUserGroup}
+			title={$_("statistics.subs", {
+				values: { subs: subs },
+			})}
+			type="bg-yellow-400"
+		/>
+		<Badge
+			faIcon={faUserGroup}
+			title={$_("statistics.lifeSubs", {
+				values: { lifeSubs: lifeSubs },
+			})}
+			type="bg-yellow-400"
+		/>
+		<Badge
+			faIcon={faStar}
+			title={$_("statistics.favs", {
+				values: { favs: favs },
+			})}
+			type="bg-red-600"
+		/>
+		<Badge
+			faIcon={faStar}
+			title={$_("statistics.lifeFavs", {
+				values: { lifeFavs: lifeFavs },
+			})}
+			type="bg-red-600"
+		/>
+	</div>
+	<div class="my-6 flex justify-center">
+		<Badge
+			faIcon={faThumbsUp}
+			title={$_("statistics.likes", {
+				values: { likes: likes },
+			})}
+			type="bg-green-500"
+		/>
+		<Badge
+			faIcon={faThumbsDown}
+			title={$_("statistics.dislikes", {
+				values: { dislikes: dislikes },
+			})}
+			type="bg-red-600"
+		/>
+	</div>
+	<div class="flex justify-center">
+		<Button
+			faIcon={faMagnifyingGlass}
+			text={$_("statistics.seeOnSteam")}
+			link={url}
+		/>
 	</div>
 </div>
-
-<style lang="scss">
-	.rounded {
-		border-radius: 0.5rem !important;
-	}
-</style>
