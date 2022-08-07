@@ -155,7 +155,7 @@
 	</form>
 </section>
 {#if isSubmitted}
-	<section id="user" class="bg-gray-900 py-10 md:py-14">
+	<section id="user" class="bg-gray-900 pb-10 md:pb-14">
 		{#await fetchSteamUser()}
 			<div id="loading" class="container mx-auto px-6">
 				<div class="bg-yellow-400 px-2 py-6 text-center rounded-xl">
