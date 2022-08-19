@@ -8,7 +8,7 @@
 		"@fortawesome/free-brands-svg-icons": "^6.1.2",
 		"@fortawesome/free-solid-svg-icons": "^6.1.2",
 		"chart.js": "^3.9.1",
-		"svelte-chartjs": "^2.0.1",
+		"svelte-chartjs": "^2.1.0",
 		"svelte-fa": "^3.0.3",
 		"svelte-i18n": "^3.4.0"
 	},
