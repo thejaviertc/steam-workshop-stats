@@ -16,7 +16,7 @@
 		"@sveltejs/adapter-static": "^1.0.0-next.39",
 		"@sveltejs/kit": "^1.0.0-next.405",
 		"@typescript-eslint/eslint-plugin": "^5.32.0",
-		"@typescript-eslint/parser": "^5.32.0",
+		"@typescript-eslint/parser": "^5.36.1",
 		"autoprefixer": "^10.4.8",
 		"eslint": "^8.21.0",
 		"eslint-config-prettier": "^8.5.0",
