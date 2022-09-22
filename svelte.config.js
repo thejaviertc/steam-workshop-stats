@@ -10,9 +10,6 @@ const config = {
 	],
 	kit: {
 		appDir: "app",
-		prerender: {
-			default: true,
-		},
 		adapter: adapter({
 			pages: "build",
 			assets: "build",
