@@ -35,7 +35,7 @@
 		oldUrl = url;
 
 		const response = await fetch(
-			`https://javiertcs-api.herokuapp.com/steam-workshop-stats?url=${url}`
+			`https://javiertcs-api.onrender.com/steam-workshop-stats?url=${url}`
 		);
 
 		return await response.json();
