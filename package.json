@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.43",
-		"@sveltejs/kit": "^1.0.0-next.499",
+		"@sveltejs/kit": "^1.0.0-next.502",
 		"@typescript-eslint/eslint-plugin": "^5.38.0",
 		"@typescript-eslint/parser": "^5.38.0",
 		"autoprefixer": "^10.4.12",
@@ -40,8 +40,5 @@
 		"preview": "vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
-	},
-	"engines": {
-		"node": "16.16.x"
 	}
 }
