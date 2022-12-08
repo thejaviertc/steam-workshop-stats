@@ -10,7 +10,7 @@
 		"chart.js": "^3.9.1",
 		"svelte-chartjs": "^3.0.1",
 		"svelte-fa": "^3.0.3",
-		"svelte-i18n": "^3.4.0"
+		"svelte-i18n": "^3.6.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.44",
