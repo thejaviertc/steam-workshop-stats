@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type IAddon from "../interfaces/IAddon";
-	import type ISteamUser from "../interfaces/ISteamUser";
+	import type IAddon from "$lib/interfaces/IAddon";
+	import type ISteamUser from "$lib/interfaces/ISteamUser";
 
 	import Addon from "$lib/Addon.svelte";
 	import Badge from "$lib/Badge.svelte";

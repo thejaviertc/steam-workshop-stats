@@ -1,15 +1,17 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import type { UserConfig } from "vite";
 
-const config: UserConfig = {
+/** @type {import('vite').UserConfig} */
+const config = {
 	plugins: [sveltekit()],
-	ssr: {
-		noExternal: [
-			"chart.js/**",
-			"@fortawesome/free-solid-svg-icons",
-			"@fortawesome/free-brands-svg-icons",
-		],
-	},
+	test: {
+		include: ["tests/**"],
+		environment: "jsdom",
+		reporter: "verbose",
+		coverage: {
+			all: true,
+			include: ["src/**/*.{js,ts,svelte}"],
+		}
+	}
 };
 
 export default config;
