@@ -1,7 +1,7 @@
 import Addon from "$lib/Addon.svelte";
 import { render } from "@testing-library/svelte";
 import { describe, it } from "vitest";
-import "../src/i18n";
+import "../i18n";
 
 describe("Addon Component", () => {
 	it("Renders", () => {
