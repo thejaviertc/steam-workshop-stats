@@ -19,7 +19,7 @@
 	import { Chart, registerables } from "chart.js";
 	import { Line } from "svelte-chartjs";
 	import Fa from "svelte-fa";
-	import { _ } from "svelte-i18n";
+	import { locale, _ } from "svelte-i18n";
 
 	// Registers all the elements of the chart automatically
 	Chart.register(...registerables);
@@ -27,6 +27,15 @@
 	let oldUrl: string = "";
 	let url: string = "";
 	let isSubmitted: boolean = false;
+
+	/**
+	 * Changes the website language to the selected
+	 * @param e
+	 */
+	function changeLanguage(e: any) {
+		e.preventDefault();
+		locale.set(e.target.value);
+	}
 
 	/**
 	 * Fetches the API and gets all the info of the Steam URL
@@ -110,6 +119,16 @@
 	<title>Steam Workshop Stats</title>
 </svelte:head>
 
+<div
+	class="bg-sky-400 hover:bg-sky-600 p-3 text-white rounded-full flex items-center top-4 right-4 fixed"
+>
+	<Fa icon={faLanguage} />
+	<select class="bg-sky-400 hover:bg-sky-600 ml-2" on:change={changeLanguage}>
+		<option value="en">English</option>
+		<option value="es">Spanish</option>
+		<option value="th">Thai</option>
+	</select>
+</div>
 <section
 	id="home"
 	class="bg-slate-800 min-h-screen flex justify-center items-center px-4"
