@@ -6,7 +6,7 @@
     <img src="https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats" />
     <img src="https://img.shields.io/github/license/thejaviertc/steam-workshop-stats" />
     <img src="https://img.shields.io/github/commit-activity/m/thejaviertc/steam-workshop-stats" />
-    <img src="https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/cd.yml/badge.svg" />
+    <img src="https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/cicd.yml/badge.svg" />
 </div>
 
 ## Contributing:
@@ -19,3 +19,5 @@ More info [here](https://github.com/thejaviertc/steam-workshop-stats/blob/main/C
 ## Suggestions/Bugs:
 
 Do you have a suggestion or you discover a bug? Make an [issue](https://github.com/thejaviertc/steam-workshop-stats/issues/new).
+
+## Credits:
