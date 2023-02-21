@@ -129,10 +129,7 @@
 		<option value="th">Thai</option>
 	</select>
 </div>
-<section
-	id="home"
-	class="bg-slate-800 min-h-screen flex justify-center items-center px-4"
->
+<section id="home" class="bg-slate-800 min-h-screen flex justify-center items-center px-4">
 	<div class="text-center">
 		<h1>{$_("title")}</h1>
 		<h2 class="my-4">{$_("description")}</h2>

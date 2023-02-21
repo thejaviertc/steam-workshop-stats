@@ -5,6 +5,10 @@ import { describe, it } from "vitest";
 
 describe("Button Component", () => {
 	it("Renders", () => {
-		render(Button, { faIcon: faGithub, text: "Github", link: "https://github.com/thejaviertc/steam-workshop-stats" });
+		render(Button, {
+			faIcon: faGithub,
+			text: "Github",
+			link: "https://github.com/thejaviertc/steam-workshop-stats",
+		});
 	});
 });

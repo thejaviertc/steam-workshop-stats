@@ -10,8 +10,8 @@ const config = {
 		coverage: {
 			all: true,
 			include: ["src/**/*.{js,ts,svelte}"],
-		}
-	}
+		},
+	},
 };
 
 export default config;

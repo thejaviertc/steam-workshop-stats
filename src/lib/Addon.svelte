@@ -4,7 +4,7 @@
 		faStar,
 		faThumbsDown,
 		faThumbsUp,
-		faUserGroup
+		faUserGroup,
 	} from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
 	import Badge from "./Badge.svelte";
@@ -81,10 +81,6 @@
 		/>
 	</div>
 	<div class="flex justify-center">
-		<Button
-			faIcon={faMagnifyingGlass}
-			text={$_("statistics.seeOnSteam")}
-			link={url}
-		/>
+		<Button faIcon={faMagnifyingGlass} text={$_("statistics.seeOnSteam")} link={url} />
 	</div>
 </div>
