@@ -15,7 +15,7 @@
 
 <div class="dropdown dropdown-end">
 	<button tabindex="-1" class="btn btn-ghost normal-case text-sm md:text-base text-gray-100"
-		><Fa class="mr-2" icon={faLanguage} />Language</button
+		><Fa class="mr-2" icon={faLanguage} />Change Language</button
 	>
 	<ul
 		tabindex="-1"
