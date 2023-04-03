@@ -31,8 +31,7 @@
 				url(%sveltekit.assets%/fonts/basier_circle_bold.ttf) format("truetype");
 		}
 	</style>
-
-	<body>
-		<div>%sveltekit.body%</div>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
