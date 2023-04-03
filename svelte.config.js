@@ -6,17 +6,7 @@ const config = {
 	preprocess: vitePreprocess({ postcss: true }),
 	kit: {
 		appDir: "app",
-		adapter: adapter({
-			pages: "build",
-			assets: "build",
-			fallback: null,
-		}),
-		paths: {
-			base:
-				process.env.NODE_ENV === "development"
-					? ""
-					: "/steam-workshop-stats",
-		},
+		adapter: adapter(),
 	},
 };
 
