@@ -1,16 +1,10 @@
 <script lang="ts">
-	import { base } from "$app/paths";
 	import Button from "$lib/Button.svelte";
 	import LanguageSelector from "$lib/LanguageSelector.svelte";
-	import {
-		faBars,
-		faChartLine,
-		faLanguage,
-		faMagnifyingGlass,
-	} from "@fortawesome/free-solid-svg-icons";
+	import { faBars, faChartLine, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 	import { onMount } from "svelte";
 	import Fa from "svelte-fa";
-	import { locale, _ } from "svelte-i18n";
+	import { _ } from "svelte-i18n";
 
 	import "../app.scss";
 	import "../i18n";
