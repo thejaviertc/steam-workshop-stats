@@ -13,7 +13,7 @@
 	<h4 class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
 	<div class="my-6">
 		<Button class="btn-disabled" faIcon={faChartLine} link="/">Start tracking my stats</Button>
-		<!-- Add btn-outline -->
+		<!-- TODO: Add btn-outline -->
 		<Button class="btn-accent" faIcon={faMagnifyingGlass} link="/fetch-user"
 			>See someone's stats</Button
 		>

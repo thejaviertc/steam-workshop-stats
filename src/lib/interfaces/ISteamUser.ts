@@ -1,6 +1,7 @@
 import type IAddon from "./IAddon";
 
 interface ISteamUser {
+	message?: string;
 	steamId: string;
 	username: string;
 	profileImage: string;

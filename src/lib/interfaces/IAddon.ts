@@ -1,5 +1,5 @@
 interface IAddon {
-	id: number;
+	id: string;
 	title: string;
 	image: string;
 	url: string;
