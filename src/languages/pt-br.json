@@ -1,0 +1,29 @@
+{
+	"title": "Estatísticas de uma oficina da Steam",
+	"description": "Estatísticas de um usuário em suas Oficinas da Steam",
+	"enterProfileUrl": "Insira a URL do perfil da Steam",
+	"buttons": {
+		"go": "Confirmar",
+		"helpTranslating": "Nós ajude com a tradução",
+		"getStats": "Coletar Estatísticas"
+	},
+	"notifications": {
+		"disclaimer": "Atenção! se demorar por um tempo, é porque a API estava hibernando e demora um pouco a responder, se realmente demorar bastante é porque deve ter tido um erro."
+	},
+	"viewers": "Acessos",
+	"subs": "Inscritos",
+	"favs": "Favoritados",
+	"statistics": {
+		"title": "Estatística de {username}",
+		"viewers": "Total de Acessos: {viewers}",
+		"subs": "Total de Subs: {subs}",
+		"lifeSubs": "Total de Subs desde o início: {lifeSubs}",
+		"favs": "Total Favoritos: {favs}",
+		"lifeFavs": "Total Favoritos desde o início: {lifeFavs}",
+		"addons": "Extensões de {username}",
+		"noAddons": "Não há extensões disponíveis!",
+		"likes": "Likes: {likes}",
+		"dislikes": "Dislikes: {dislikes}",
+		"seeOnSteam": "Ver na Steam"
+	}
+}
