@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa";
-	import { locale, _ } from "svelte-i18n";
+	import { _, locale } from "svelte-i18n";
 
 	/**
 	 * Changes the website language to the selected
@@ -37,7 +37,11 @@
 			>
 		</li>
 		<li>
-			<button class="text-lg">{$_("buttons.helpTranslating")}</button>
+			<a
+				class="text-lg"
+				href="https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md"
+				>{$_("buttons.helpTranslating")}</a
+			>
 		</li>
 	</ul>
 </div>
