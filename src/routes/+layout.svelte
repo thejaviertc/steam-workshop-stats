@@ -30,7 +30,7 @@
 				class="menu menu-compact dropdown-content mt-6 p-2 shadow bg-secondary rounded-box w-72"
 			>
 				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="/fetch-user"
-					>Fetch User</Button
+					>{$_("actions.fetchUser")}</Button
 				>
 				<LanguageSelector />
 			</ul>
@@ -40,7 +40,7 @@
 	<div class="navbar-end hidden md:flex">
 		<ul class="menu menu-horizontal px-1">
 			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="/fetch-user"
-				>Fetch User</Button
+				>{$_("actions.fetchUser")}</Button
 			>
 			<LanguageSelector />
 		</ul>
@@ -51,26 +51,25 @@
 	<div class="footer p-10 bg-secondary text-neutral-content">
 		<div />
 		<div>
-			<span class="footer-title">Links</span>
-			<p>Start Traking my Stats (Coming Soon)</p>
-			<a class="link link-hover" href="/fetch-user">Fetch User</a>
+			<span class="footer-title">{$_("misc.links")}</span>
+			<p>{$_("actions.trackMyStats")}</p>
+			<a class="link link-hover" href="/fetch-user">{$_("actions.fetchUser")}</a>
 		</div>
 		<div>
-			<span class="footer-title">More Info</span>
+			<span class="footer-title">{$_("misc.moreInfo")}</span>
 			<a class="link link-hover" href="https://github.com/thejaviertc/steam-workshop-stats"
-				>Github</a
+				>{$_("misc.githubRepository")}</a
 			>
 			<a
 				class="link link-hover"
 				href="https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md"
-				>Help Translating</a
+				>{$_("actions.helpTranslating")}</a
 			>
 		</div>
 	</div>
 	<div class="footer footer-center px-10 pb-10 bg-secondary text-base-content">
 		<p class="text-white">
-			Steam Workshop Stats is a hobby project and is not affiliated with Steam or Valve. Steam
-			and the Steam logo are trademarks of Valve Corporation.
+			{$_("disclaimer")}
 		</p>
 	</div>
 </footer>
