@@ -32,6 +32,7 @@
 	let oldUrl: string = "";
 	let url: string = "";
 	let isSubmitted: boolean = false;
+	let tab: string = "addon";
 	const apiUrl =
 		process.env.NODE_ENV === "development"
 			? "http://localhost:3000"
@@ -598,6 +599,15 @@
 			],
 		};
 	}
+
+	/**
+	 * Changes the website language to the selected
+	 * @param e
+	 */
+	function changeTab(e: any) {
+		e.preventDefault();
+		tab = e.target.value;
+	}
 </script>
 
 <svelte:head>
@@ -685,31 +695,50 @@
 						<div class="stat">
 							<div class="stat-title text-gray-100">Dislikes</div>
 							<div class="stat-value">
-								<Fa icon={faThumbsDown	} />
+								<Fa icon={faThumbsDown} />
 								{steamUser.lifeFavs.toLocaleString()}
 							</div>
 						</div>
 					</div>
-					<!-- TODO: Add buttons to change into sections (Addon List, Graphs) -->
-					<h2 class="my-10">
-						{$_("statistics.addons", {
-							values: { username: steamUser.username },
-						})}
-					</h2>
-					<div class="grid grid-cols-5 gap-8 mx-8">
-						{#each steamUser.addons as addon}
-							<Addon
-								title={addon.title}
-								image={addon.image}
-								url={addon.url}
-								viewers={addon.viewers}
-								subs={addon.subs}
-								favs={addon.favs}
-								likes={addon.likes}
-								dislikes={addon.dislikes}
-							/>
-						{/each}
+					<div class="flex gap-4 my-8">
+						<button
+							on:click={changeTab}
+							value="addon"
+							class="btn {tab === 'addon' ? 'btn-accent' : 'btn-ghost'}"
+							>Addons</button
+						>
+						<button
+							on:click={changeTab}
+							value="graph"
+							class="btn {tab === 'graph' ? 'btn-accent' : 'btn-ghost'}">Graph</button
+						>
 					</div>
+					{#if tab === "addon"}
+						<h2 class="mb-8">
+							{$_("statistics.addons", {
+								values: { username: steamUser.username },
+							})}
+						</h2>
+						<div class="grid grid-cols-5 gap-8 mx-8">
+							{#each steamUser.addons as addon}
+								<Addon
+									title={addon.title}
+									image={addon.image}
+									url={addon.url}
+									viewers={addon.viewers}
+									subs={addon.subs}
+									favs={addon.favs}
+									likes={addon.likes}
+									dislikes={addon.dislikes}
+								/>
+							{/each}
+						</div>
+					{:else}
+						<h2>Graph of {steamUser.username}</h2>
+						<div class="container mx-auto my-10 hidden md:block bg-secondary px-10 py-6 rounded-xl">
+							<Line data={prepareGraphData(steamUser)} />
+						</div>
+					{/if}
 				{:else}
 					<h3 class="text-center mt-10">
 						{$_("statistics.noAddons")}
