@@ -40,7 +40,7 @@
 			<a
 				class="text-lg"
 				href="https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md"
-				>{$_("buttons.helpTranslating")}</a
+				>{$_("actions.helpTranslating")}</a
 			>
 		</li>
 	</ul>
