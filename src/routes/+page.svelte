@@ -10,9 +10,11 @@
 
 <section class="min-h-screen flex flex-col justify-center items-center text-center">
 	<h1>{$_("title")}</h1>
-	<h4 class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+	<h4 class="my-4">See the views, subs, favs and more of your Steam Workshop addons!</h4>
 	<div class="my-6">
-		<Button class="btn-disabled" faIcon={faChartLine} link="/">Start tracking my stats</Button>
+		<Button class="btn-disabled" faIcon={faChartLine} link="/"
+			>Start tracking my stats (Coming Soon)</Button
+		>
 		<!-- TODO: Add btn-outline -->
 		<Button class="btn-accent" faIcon={faMagnifyingGlass} link="/fetch-user"
 			>See someone's stats</Button
