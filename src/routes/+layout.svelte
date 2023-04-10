@@ -1,4 +1,7 @@
 <script lang="ts">
+	import "../app.scss";
+	import "../i18n";
+
 	import Button from "$lib/Button.svelte";
 	import LanguageSelector from "$lib/LanguageSelector.svelte";
 	import { faBars, faChartLine, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -6,13 +9,10 @@
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
 
-	import "../app.scss";
-	import "../i18n";
-
 	let navbarColor: string = "secondary";
 
 	onMount(() => {
-		window.onscroll = function () {
+		window.onscroll = () => {
 			navbarColor =
 				document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100
 					? "primary"
@@ -32,9 +32,6 @@
 				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="/fetch-user"
 					>Fetch User</Button
 				>
-				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="/fetch-user"
-					>Item 2</Button
-				>
 				<LanguageSelector />
 			</ul>
 		</div>
@@ -45,7 +42,6 @@
 			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="/fetch-user"
 				>Fetch User</Button
 			>
-			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="/fetch-user">Item 2</Button>
 			<LanguageSelector />
 		</ul>
 	</div>
@@ -56,8 +52,8 @@
 		<div />
 		<div>
 			<span class="footer-title">Links</span>
-			<a class="link link-hover" href="/">Item 1</a>
-			<a class="link link-hover" href="/">Item 2</a>
+			<p>Start Traking my Stats (Coming Soon)</p>
+			<a class="link link-hover" href="/fetch-user">Fetch User</a>
 		</div>
 		<div>
 			<span class="footer-title">More Info</span>
