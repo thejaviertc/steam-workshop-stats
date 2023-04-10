@@ -630,7 +630,7 @@
 		{:then steamUser}
 			<div class="flex flex-col items-center py-8">
 				<h2>
-					{$_("statistics.title", {
+					{$_("stats.statsOf", {
 						values: { username: steamUser.username },
 					})}
 				</h2>
@@ -695,7 +695,7 @@
 					</div>
 					{#if tab === "addon"}
 						<h2 class="mb-8">
-							{$_("statistics.addons", {
+							{$_("stats.addonsOf", {
 								values: { username: steamUser.username },
 							})}
 						</h2>
@@ -727,7 +727,7 @@
 					{/if}
 				{:else}
 					<h3 class="text-center mt-10">
-						{$_("statistics.noAddons")}
+						{$_("stats.noAddons")}
 					</h3>
 				{/if}
 			</div>
