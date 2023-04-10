@@ -54,6 +54,10 @@ svg {
 	@apply text-gray-100 text-lg;
 }
 
+.btn-outline:hover {
+	color: white !important;
+}
+
 .navbar {
 	transition: all 0.5s ease;
 }

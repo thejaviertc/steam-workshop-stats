@@ -3,28 +3,21 @@
 	import type ISteamUser from "$lib/interfaces/ISteamUser";
 
 	import Addon from "$lib/Addon.svelte";
-	import Badge from "$lib/Badge.svelte";
-	import ErrorMessage from "$lib/Notification.svelte";
+	import Notification from "$lib/Notification.svelte";
 	import {
 		faCircleInfo,
-		faExclamation,
 		faExclamationCircle,
 		faEye,
-		faIcons,
 		faMagnifyingGlass,
 		faStar,
 		faThumbsDown,
 		faThumbsUp,
 		faUser,
-		faUserGroup,
 	} from "@fortawesome/free-solid-svg-icons";
 	import { Chart, registerables } from "chart.js";
 	import { Line } from "svelte-chartjs";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
-	import Button from "$lib/Button.svelte";
-	import Notification from "$lib/Notification.svelte";
-	import { text } from "svelte/internal";
 
 	// Registers all the elements of the chart automatically
 	Chart.register(...registerables);
@@ -573,7 +566,7 @@
 			}),
 			datasets: [
 				{
-					label: $_("viewers"),
+					label: $_("stats.views"),
 					data: steamUser.addons.map(function (addon: IAddon) {
 						return addon["viewers"];
 					}),
@@ -581,7 +574,7 @@
 					backgroundColor: "rgba(25, 135, 84, 0.5)",
 				},
 				{
-					label: $_("subs"),
+					label: $_("stats.subscribers"),
 					data: steamUser.addons.map(function (addon: IAddon) {
 						return addon["subs"];
 					}),
@@ -589,7 +582,7 @@
 					backgroundColor: "rgba(255, 193, 7, 0.5)",
 				},
 				{
-					label: $_("favs"),
+					label: $_("stats.favorites"),
 					data: steamUser.addons.map(function (addon: IAddon) {
 						return addon["favs"];
 					}),
@@ -616,17 +609,17 @@
 
 <section class="min-h-screen mt-28">
 	<form on:submit|preventDefault={submitSteamUser} class="flex flex-col items-center">
-		<h2>{$_("enterProfileUrl")}</h2>
+		<h2>{$_("actions.enterProfileUrl")}</h2>
 		<input
 			type="text"
 			class="input input-bordered input-accent text-center w-3/4 my-6"
-			placeholder="Example: https://steamcommunity.com/id/javiertc/"
+			placeholder="{$_('misc.example')} https://steamcommunity.com/id/javiertc/"
 			bind:value={url}
 			required
 		/>
 		<button type="submit" class="btn btn-accent">
 			<Fa class="mr-2 " icon={faMagnifyingGlass} />
-			{$_("buttons.getStats")}
+			{$_("actions.getStats")}
 		</button>
 	</form>
 	{#if isSubmitted}
@@ -651,49 +644,35 @@
 						class="stats stats-vertical lg:stats-horizontal shadow bg-secondary text-gray-100"
 					>
 						<div class="stat">
-							<div class="stat-title text-gray-100">Viewers</div>
+							<div class="stat-title text-gray-100">{$_("stats.views")}</div>
 							<div class="stat-value">
 								<Fa icon={faEye} />
 								{steamUser.viewers.toLocaleString()}
 							</div>
 						</div>
 						<div class="stat">
-							<div class="stat-title text-gray-100">Subscribers</div>
+							<div class="stat-title text-gray-100">{$_("stats.subscribers")}</div>
 							<div class="stat-value">
 								<Fa icon={faUser} />
 								{steamUser.subs.toLocaleString()}
 							</div>
 						</div>
 						<div class="stat">
-							<div class="stat-title text-gray-100">Lifetime Subscribers</div>
-							<div class="stat-value">
-								<Fa icon={faUser} />
-								{steamUser.lifeSubs.toLocaleString()}
-							</div>
-						</div>
-						<div class="stat">
-							<div class="stat-title text-gray-100">Favorites</div>
+							<div class="stat-title text-gray-100">{$_("stats.favorites")}</div>
 							<div class="stat-value">
 								<Fa icon={faStar} />
 								{steamUser.favs.toLocaleString()}
 							</div>
 						</div>
 						<div class="stat">
-							<div class="stat-title text-gray-100">Lifetime Favorites</div>
-							<div class="stat-value">
-								<Fa icon={faStar} />
-								{steamUser.lifeFavs.toLocaleString()}
-							</div>
-						</div>
-						<div class="stat">
-							<div class="stat-title text-gray-100">Likes</div>
+							<div class="stat-title text-gray-100">{$_("stats.likes")}</div>
 							<div class="stat-value">
 								<Fa icon={faThumbsUp} />
 								{steamUser.lifeFavs.toLocaleString()}
 							</div>
 						</div>
 						<div class="stat">
-							<div class="stat-title text-gray-100">Dislikes</div>
+							<div class="stat-title text-gray-100">{$_("stats.dislikes")}</div>
 							<div class="stat-value">
 								<Fa icon={faThumbsDown} />
 								{steamUser.lifeFavs.toLocaleString()}
@@ -704,13 +683,14 @@
 						<button
 							on:click={changeTab}
 							value="addon"
-							class="btn {tab === 'addon' ? 'btn-accent' : 'btn-ghost'}"
-							>Addons</button
+							class="btn btn-accent {tab === 'addon' ? '' : 'btn-outline'}"
+							>{$_("stats.addons")}</button
 						>
 						<button
 							on:click={changeTab}
 							value="graph"
-							class="btn {tab === 'graph' ? 'btn-accent' : 'btn-ghost'}">Graph</button
+							class="btn btn-accent {tab === 'graph' ? '' : 'btn-outline'}"
+							>{$_("stats.graph")}</button
 						>
 					</div>
 					{#if tab === "addon"}
@@ -734,8 +714,14 @@
 							{/each}
 						</div>
 					{:else}
-						<h2>Graph of {steamUser.username}</h2>
-						<div class="container mx-auto my-10 hidden md:block bg-secondary px-10 py-6 rounded-xl">
+						<h2>
+							{$_("stats.graphOf", {
+								values: { username: steamUser.username },
+							})}
+						</h2>
+						<div
+							class="container mx-auto my-10 hidden md:block bg-secondary px-10 py-6 rounded-xl"
+						>
 							<Line data={prepareGraphData(steamUser)} />
 						</div>
 					{/if}

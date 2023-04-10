@@ -8,6 +8,7 @@
 		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa";
+	import { _ } from "svelte-i18n";
 	import Button from "./Button.svelte";
 
 	export let title: string;
@@ -51,7 +52,9 @@
 			</div>
 		</div>
 		<div class="card-actions justify-center">
-			<Button class="btn-accent" faIcon={faMagnifyingGlass} link={url}>View in Steam</Button>
+			<Button class="btn-accent" faIcon={faMagnifyingGlass} link={url}
+				>{$_("actions.seeInSteam")}</Button
+			>
 		</div>
 	</div>
 </div>
