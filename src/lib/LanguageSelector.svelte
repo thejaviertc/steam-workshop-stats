@@ -32,6 +32,11 @@
 			>
 		</li>
 		<li>
+			<button on:click={changeLanguage} value="pt-BR" class="text-lg"
+				>🇧🇷 {$_("language", { locale: "pt-BR" })}</button
+			>
+		</li>
+		<li>
 			<button on:click={changeLanguage} value="th" class="text-lg"
 				>🇹🇭 {$_("language", { locale: "th" })}</button
 			>
