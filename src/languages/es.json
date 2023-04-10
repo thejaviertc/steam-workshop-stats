@@ -1,30 +1,39 @@
 {
 	"language": "Español",
 	"title": "Estadísticas de Steam Workshop",
-	"description": "Estadísticas de los usuarios en Steam Workshop",
-	"enterProfileUrl": "Introduce la URL de un Perfil de Steam",
-	"buttons": {
-		"go": "Vamos",
+	"description": "Observe el número de visitas, subs, likes y más de tus addons!",
+	"disclaimer": "Estadísticas de Steam Workshop es un hobby y no está afiliado con Steam o Valve. Steam y el logo de Steam son marcas registradas de Valve Corporation",
+	"misc": {
+		"httpError": "Ha ocurrido un error",
+		"links": "Enlaces",
+		"moreInfo": "Más Información",
+		"githubRepository": "Repositorio de Github",
+		"example": "Ejemplo:"
+	},
+	"actions": {
+		"changeLanguage": "Cambia el Idioma",
+		"fetchUser": "Buscar un Usuario",
+		"trackMyStats": "Trackea mis Stats (Próximamente)",
 		"helpTranslating": "Ayuda a Traducir",
-		"getStats": "Obtener Estadísticas"
+		"enterProfileUrl": "Introduce la URL de un Perfil de Steam",
+		"returnHome": "Volver al Inicio",
+		"getStats": "Obtener Estadísticas",
+		"seeInSteam": "Ver en Steam"
+	},
+	"stats": {
+		"statsOf": "Estadísticas de {username}",
+		"noAddons": "¡Este usuario no tiene ningún addon!",
+		"views": "Visitas",
+		"subscribers": "Suscriptores",
+		"favorites": "Favoritos",
+		"likes": "Likes",
+		"dislikes": "Dislikes",
+		"addons": "Addons",
+		"addonsOf": "Addons de {username}",
+		"graph": "Gráfico",
+		"graphOf": "Gráfico de {username}"
 	},
 	"notifications": {
-		"disclaimer": "¡Atención! Si tarda un poco, es debido a que la API se está despertando. Si tarda mucho, puede ser debido a un error."
-	},
-	"viewers": "Visitas",
-	"subs": "Suscriptores",
-	"favs": "Favoritos",
-	"statistics": {
-		"title": "Estadísticas de {username}",
-		"viewers": "Visitas Totales: {viewers}",
-		"subs": "Suscriptores Totales: {subs}",
-		"lifeSubs": "Suscriptores Totales (Vida): {lifeSubs}",
-		"favs": "Favoritos Totales: {favs}",
-		"lifeFavs": "Favoritos Totales (Vida): {lifeFavs}",
-		"addons": "Addons de {username}",
-		"noAddons": "¡No hay ningún addon disponible!",
-		"likes": "Likes: {likes}",
-		"dislikes": "Dislikes: {dislikes}",
-		"seeOnSteam": "Ver en Steam"
+		"disclaimer": "¡Atención! Si tarda un poco, es debido a que la API se está despertando. Si tarda más de 30 segundos, puede ser debido a un error."
 	}
 }
