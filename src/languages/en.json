@@ -1,4 +1,5 @@
 {
+	"language": "English",
 	"title": "Steam Workshop Stats",
 	"description": "Stats of an user in Steam Workshop",
 	"enterProfileUrl": "Enter a Steam Profile URL",
@@ -8,7 +9,7 @@
 		"getStats": "Get Stats"
 	},
 	"notifications": {
-		"disclaimer": "Disclaimer! If it takes a while, it's because the API is waking up. If it takes too long, it may be an error."
+		"disclaimer": "Disclaimer! This can take up to 30 seconds because the API is on a free hosting, so it has to wake up!"
 	},
 	"viewers": "Viewers",
 	"subs": "Subscribers",
