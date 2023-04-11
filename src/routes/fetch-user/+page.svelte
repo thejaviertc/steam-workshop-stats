@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type IAddon from "$lib/interfaces/IAddon";
 	import type ISteamUser from "$lib/interfaces/ISteamUser";
 
 	import Addon from "$lib/Addon.svelte";
@@ -14,18 +13,17 @@
 		faThumbsUp,
 		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
-	import { Chart, registerables } from "chart.js";
-	import { Line } from "svelte-chartjs";
+
+	import Graph from "$lib/Graph.svelte";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
-
-	// Registers all the elements of the chart automatically
-	Chart.register(...registerables);
+	import Stat from "$lib/Stat.svelte";
 
 	let oldUrl: string = "";
 	let url: string = "";
 	let isSubmitted: boolean = false;
 	let tab: string = "addon";
+
 	const apiUrl =
 		process.env.NODE_ENV === "development"
 			? "http://localhost:3000"
@@ -545,7 +543,7 @@
 	 * Handles the form
 	 */
 	function submitSteamUser() {
-		if (oldUrl != url) {
+		if (oldUrl !== url) {
 			isSubmitted = false;
 
 			// Delay of 100ms for Svelte noticing the variable updated
@@ -553,44 +551,6 @@
 				isSubmitted = true;
 			}, 100);
 		}
-	}
-
-	/**
-	 * Prepares the data for the graph from the ISteamUser
-	 * @param steamUser ISteamUser
-	 */
-	function prepareGraphData(steamUser: ISteamUser) {
-		return {
-			labels: steamUser.addons.map(function (addon: IAddon) {
-				return addon["title"];
-			}),
-			datasets: [
-				{
-					label: $_("stats.views"),
-					data: steamUser.addons.map(function (addon: IAddon) {
-						return addon["viewers"];
-					}),
-					borderColor: "rgb(25, 135, 84)",
-					backgroundColor: "rgba(25, 135, 84, 0.5)",
-				},
-				{
-					label: $_("stats.subscribers"),
-					data: steamUser.addons.map(function (addon: IAddon) {
-						return addon["subs"];
-					}),
-					borderColor: "rgb(255, 193, 7)",
-					backgroundColor: "rgba(255, 193, 7, 0.5)",
-				},
-				{
-					label: $_("stats.favorites"),
-					data: steamUser.addons.map(function (addon: IAddon) {
-						return addon["favs"];
-					}),
-					borderColor: "rgb(220, 53, 69)",
-					backgroundColor: "rgba(220, 53, 69, 0.5)",
-				},
-			],
-		};
 	}
 
 	/**
@@ -628,7 +588,7 @@
 				{$_("notifications.disclaimer")}
 			</Notification>
 		{:then steamUser}
-			<div class="flex flex-col items-center py-8">
+			<div class="flex flex-col items-center my-8">
 				<h2>
 					{$_("stats.statsOf", {
 						values: { username: steamUser.username },
@@ -640,56 +600,41 @@
 					alt="Steam Profile"
 				/>
 				{#if steamUser.addons.length > 0}
-					<div
-						class="stats stats-vertical lg:stats-horizontal shadow bg-secondary text-gray-100"
-					>
-						<div class="stat">
-							<div class="stat-title text-gray-100">{$_("stats.views")}</div>
-							<div class="stat-value">
-								<Fa icon={faEye} />
-								{steamUser.viewers.toLocaleString()}
-							</div>
-						</div>
-						<div class="stat">
-							<div class="stat-title text-gray-100">{$_("stats.subscribers")}</div>
-							<div class="stat-value">
-								<Fa icon={faUser} />
-								{steamUser.subs.toLocaleString()}
-							</div>
-						</div>
-						<div class="stat">
-							<div class="stat-title text-gray-100">{$_("stats.favorites")}</div>
-							<div class="stat-value">
-								<Fa icon={faStar} />
-								{steamUser.favs.toLocaleString()}
-							</div>
-						</div>
-						<div class="stat">
-							<div class="stat-title text-gray-100">{$_("stats.likes")}</div>
-							<div class="stat-value">
-								<Fa icon={faThumbsUp} />
-								{steamUser.lifeFavs.toLocaleString()}
-							</div>
-						</div>
-						<div class="stat">
-							<div class="stat-title text-gray-100">{$_("stats.dislikes")}</div>
-							<div class="stat-value">
-								<Fa icon={faThumbsDown} />
-								{steamUser.lifeFavs.toLocaleString()}
-							</div>
-						</div>
+					<div class="stats stats-horizontal shadow bg-secondary">
+						<Stat title={$_("stats.views")} faIcon={faEye} value={steamUser.viewers} />
+						<Stat
+							title={$_("stats.subscribers")}
+							faIcon={faUser}
+							value={steamUser.subs}
+						/>
+						<Stat
+							title={$_("stats.favorites")}
+							faIcon={faStar}
+							value={steamUser.favs}
+						/>
+						<!-- TODO: Implement from API -->
+						<Stat
+							title={$_("stats.likes")}
+							faIcon={faThumbsUp}
+							value={steamUser.favs}
+						/>
+						<Stat
+							title={$_("stats.dislikes")}
+							faIcon={faThumbsDown}
+							value={steamUser.favs}
+						/>
 					</div>
-					<div class="flex gap-4 my-8">
+					<div class="my-8">
 						<button
 							on:click={changeTab}
 							value="addon"
-							class="btn btn-accent {tab === 'addon' ? '' : 'btn-outline'}"
+							class="mx-2 btn btn-accent {tab === 'addon' ? '' : 'btn-outline'}"
 							>{$_("stats.addons")}</button
 						>
 						<button
 							on:click={changeTab}
 							value="graph"
-							class="btn btn-accent {tab === 'graph' ? '' : 'btn-outline'}"
+							class="mx-2 btn btn-accent {tab === 'graph' ? '' : 'btn-outline'}"
 							>{$_("stats.graph")}</button
 						>
 					</div>
@@ -705,9 +650,9 @@
 									title={addon.title}
 									image={addon.image}
 									url={addon.url}
-									viewers={addon.viewers}
-									subs={addon.subs}
-									favs={addon.favs}
+									views={addon.viewers}
+									subscribers={addon.subs}
+									favorites={addon.favs}
 									likes={addon.likes}
 									dislikes={addon.dislikes}
 								/>
@@ -719,14 +664,10 @@
 								values: { username: steamUser.username },
 							})}
 						</h2>
-						<div
-							class="container mx-auto my-10 hidden md:block bg-secondary px-10 py-6 rounded-xl"
-						>
-							<Line data={prepareGraphData(steamUser)} />
-						</div>
+						<Graph {steamUser} />
 					{/if}
 				{:else}
-					<h3 class="text-center mt-10">
+					<h3 class="text-center">
 						{$_("stats.noAddons")}
 					</h3>
 				{/if}
