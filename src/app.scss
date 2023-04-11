@@ -26,11 +26,7 @@ h1 {
 }
 
 h2 {
-	@apply text-xl md:text-5xl;
-}
-
-h3 {
-	@apply text-3xl;
+	@apply text-3xl md:text-5xl;
 }
 
 h4 {

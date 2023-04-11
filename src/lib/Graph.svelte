@@ -50,6 +50,6 @@
 	}
 </script>
 
-<div class="container mx-auto my-10 block bg-secondary px-10 py-6 rounded-xl">
+<div class="container bg-secondary mx-auto mt-8 px-10 py-6 rounded-xl">
 	<Line data={prepareGraphData(steamUser)} />
 </div>

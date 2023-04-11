@@ -568,7 +568,7 @@
 </svelte:head>
 
 <section class="min-h-screen mt-28">
-	<form on:submit|preventDefault={submitSteamUser} class="flex flex-col items-center">
+	<form on:submit|preventDefault={submitSteamUser} class="flex flex-col items-center text-center">
 		<h2>{$_("actions.enterProfileUrl")}</h2>
 		<input
 			type="text"
@@ -600,7 +600,9 @@
 					alt="Steam Profile"
 				/>
 				{#if steamUser.addons.length > 0}
-					<div class="stats stats-horizontal shadow bg-secondary">
+					<div
+						class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow"
+					>
 						<Stat title={$_("stats.views")} faIcon={faEye} value={steamUser.viewers} />
 						<Stat
 							title={$_("stats.subscribers")}
@@ -624,7 +626,7 @@
 							value={steamUser.favs}
 						/>
 					</div>
-					<div class="my-8">
+					<div class="invisible lg:visible my-8">
 						<button
 							on:click={changeTab}
 							value="addon"
@@ -644,7 +646,9 @@
 								values: { username: steamUser.username },
 							})}
 						</h2>
-						<div class="grid grid-cols-5 gap-8 mx-8">
+						<div
+							class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mx-8"
+						>
 							{#each steamUser.addons as addon}
 								<Addon
 									title={addon.title}
@@ -667,9 +671,9 @@
 						<Graph {steamUser} />
 					{/if}
 				{:else}
-					<h3 class="text-center">
+					<h2 class="text-center">
 						{$_("stats.noAddons")}
-					</h3>
+					</h2>
 				{/if}
 			</div>
 		{:catch error}
