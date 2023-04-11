@@ -4,11 +4,10 @@
 	import Fa from "svelte-fa";
 
 	export let faIcon: IconDefinition;
-	export let title: string;
-	export let type: string;
+	export let value: number;
 </script>
 
-<span class="{type} text-white px-3 py-1 mx-2 text-center rounded-xl">
+<h5 class="mx-2">
 	<Fa icon={faIcon} />
-	{title}
-</span>
+	{value.toLocaleString()}
+</h5>

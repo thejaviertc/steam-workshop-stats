@@ -10,13 +10,14 @@
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
 	import Button from "./Button.svelte";
+	import Badge from "./Badge.svelte";
 
 	export let title: string;
 	export let image: string;
 	export let url: string;
-	export let viewers: number;
-	export let subs: number;
-	export let favs: number;
+	export let views: number;
+	export let subscribers: number;
+	export let favorites: number;
 	export let likes: number;
 	export let dislikes: number;
 </script>
@@ -26,29 +27,14 @@
 	<div class="card-body">
 		<h2 class="card-title">{title}</h2>
 		<div class="my-2">
-			<div class="flex justify-center gap-6">
-				<h5>
-					<Fa icon={faEye} />
-					{viewers.toLocaleString()}
-				</h5>
-				<h5>
-					<Fa icon={faUser} />
-					{subs.toLocaleString()}
-				</h5>
-				<h5>
-					<Fa icon={faStar} />
-					{favs.toLocaleString()}
-				</h5>
+			<div class="flex justify-center">
+				<Badge faIcon={faEye} value={views} />
+				<Badge faIcon={faUser} value={subscribers} />
+				<Badge faIcon={faStar} value={favorites} />
 			</div>
-			<div class="flex justify-center gap-6 mt-2">
-				<h5>
-					<Fa icon={faThumbsUp} />
-					{likes.toLocaleString()}
-				</h5>
-				<h5>
-					<Fa icon={faThumbsDown} />
-					{dislikes.toLocaleString()}
-				</h5>
+			<div class="flex justify-center mt-2">
+				<Badge faIcon={faThumbsUp} value={likes} />
+				<Badge faIcon={faThumbsDown} value={dislikes} />
 			</div>
 		</div>
 		<div class="card-actions justify-center">
