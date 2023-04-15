@@ -25,12 +25,13 @@
 		<meta http-equiv="content-security-policy" content="">
 		<link href="./app/immutable/assets/_layout.e3366ec0.css" rel="stylesheet">
 		<link href="./app/immutable/assets/index.95b16411.css" rel="stylesheet">
-		<link rel="modulepreload" href="./app/immutable/entry/start.3f1c2d2e.js">
+		<link rel="modulepreload" href="./app/immutable/entry/start.b8959f27.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/index.38250676.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/singletons.3102f2dc.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/singletons.7e49da3a.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/index.a5da0919.js">
-		<link rel="modulepreload" href="./app/immutable/entry/app.17d697bd.js">
-		<link rel="modulepreload" href="./app/immutable/entry/_layout.svelte.c826623b.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/paths.038fa07f.js">
+		<link rel="modulepreload" href="./app/immutable/entry/app.8d02c9fd.js">
+		<link rel="modulepreload" href="./app/immutable/entry/_layout.svelte.64b17266.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/index.20aeb106.js">
 		<link rel="modulepreload" href="./app/immutable/entry/_layout.ts.984db11e.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/_layout.da46b06b.js">
@@ -56,7 +57,7 @@
 		<li><button value="pt-BR" class="text-lg">🇧🇷 Brasileiro</button></li>
 		<li><button value="th" class="text-lg">🇹🇭 แบบไทยๆ</button></li>
 		<li><a class="text-lg" href="https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md">Help Translating</a></li></ul></div></ul></div>
-		<a class="btn btn-ghost mx-2" href="/" role="button"><svg class="svelte-fa mr-2 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
+		<a class="btn btn-ghost mx-2" href="" role="button"><svg class="svelte-fa mr-2 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
 	Steam Workshop Stats</a></div>
 	<div class="navbar-end hidden md:flex"><ul class="menu menu-horizontal px-1"><a class="btn btn-ghost mx-2" href="/fetch-user" role="button"><svg class="svelte-fa mr-2 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
 	Fetch User</a>
@@ -86,7 +87,7 @@
 			
 			<script>
 				{
-					__sveltekit_nisipr = {
+					__sveltekit_8zau51 = {
 						env: {},
 						base: new URL(".", location).pathname.slice(0, -1),
 						element: document.currentScript.parentElement
@@ -95,10 +96,10 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./app/immutable/entry/start.3f1c2d2e.js"),
-						import("./app/immutable/entry/app.17d697bd.js")
+						import("./app/immutable/entry/start.b8959f27.js"),
+						import("./app/immutable/entry/app.8d02c9fd.js")
 					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_nisipr.element, {
+						kit.start(app, __sveltekit_8zau51.element, {
 							node_ids: [0, 3],
 							data,
 							form: null,
