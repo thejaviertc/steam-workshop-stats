@@ -2,19 +2,16 @@
 	import { page } from "$app/stores";
 	import Button from "$lib/Button.svelte";
 	import { faBackward } from "@fortawesome/free-solid-svg-icons";
+	import { _ } from "svelte-i18n";
 </script>
 
 <svelte:head>
 	<title>{$page.status}</title>
 </svelte:head>
 
-<div
-	class="bg-slate-800 min-h-screen flex justify-center items-center"
->
-	<div>
-		<h2>Something Happened - {$page.status}</h2>
-		<div class="flex justify-center my-6">
-			<Button faIcon={faBackward} link="/" text="Return Back" />
-		</div>
-	</div>
-</div>
+<section class="min-h-screen flex flex-col justify-center items-center text-center">
+	<h2 class="mb-6">
+		{$_("misc.httpError")} - {$page.status}
+	</h2>
+	<Button class="btn-accent" faIcon={faBackward} link="/">{$_("actions.returnHome")}</Button>
+</section>

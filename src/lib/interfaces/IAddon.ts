@@ -2,14 +2,12 @@ interface IAddon {
 	id: number;
 	title: string;
 	image: string;
-	url: string;
-	subs: number;
-	lifeSubs: number;
-	favs: number;
-	lifeFavs: number;
-	viewers: number;
+	views: number;
+	subscribers: number;
+	favorites: number;
 	likes: number;
 	dislikes: number;
+	stars: number;
 }
 
 export default IAddon;

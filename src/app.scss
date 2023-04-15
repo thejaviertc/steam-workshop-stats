@@ -4,6 +4,7 @@
 
 html {
 	scroll-behavior: smooth;
+	background-color: #1b2838 !important;
 }
 
 body {
@@ -11,31 +12,52 @@ body {
 	@apply font-extrabold;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+li {
+	@apply text-gray-100;
+}
+
 h1 {
-	@apply text-4xl md:text-8xl text-gray-100;
+	@apply text-4xl md:text-8xl;
 }
 
 h2 {
-	@apply text-xl md:text-5xl text-gray-100;
-}
-
-h3 {
-	@apply text-3xl text-gray-100;
+	@apply text-3xl md:text-5xl;
 }
 
 h4 {
-	@apply text-2xl text-gray-100;
+	@apply text-2xl;
 }
 
-h5,
-span {
-	@apply text-lg text-gray-100;
+h5 {
+	@apply text-lg;
 }
 
 a {
-	@apply text-sm md:text-base text-gray-100;
+	@apply text-sm md:text-base;
 }
 
 svg {
 	display: inline;
+}
+
+.btn {
+	text-transform: none !important;
+	@apply text-gray-100 text-lg;
+}
+
+.btn-outline:hover {
+	color: white !important;
+}
+
+.navbar {
+	transition: all 0.5s ease;
+}
+
+.stat, .stat-title {
+	@apply text-gray-100;
 }

@@ -1,7 +1,7 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
-		"target": "ES2022",
+		"target": "ESNext",
 		"allowJs": true,
 		"checkJs": true,
 		"esModuleInterop": true,
@@ -9,6 +9,7 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
+		"noImplicitAny": true,
 		"strict": true
 	}
 }

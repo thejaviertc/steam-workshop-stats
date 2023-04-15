@@ -1,29 +1,39 @@
 {
+	"language": "แบบไทยๆ",
 	"title": "สถิติ Steam Workshop",
 	"description": "สถิติผลงานของผู้ใช้ใน Steam Workshop",
-	"enterProfileUrl": "ป้อน URL ของโปรไฟล์ Steam",
-	"buttons": {
-		"go": "มาดูกันเลย",
+	"disclaimer": "Steam Workshop Stats is a hobby project and is not affiliated with Steam or Valve. Steam and the Steam logo are trademarks of Valve Corporation.",
+	"misc": {
+		"httpError": "An error has occurred",
+		"links": "Links",
+		"moreInfo": "More Info",
+		"githubRepository": "Github Repository",
+		"example": "Example:"
+	},
+	"actions": {
+		"changeLanguage": "Change Language",
+		"fetchUser": "Fetch User",
+		"trackMyStats": "Track my Stats (Coming Soon)",
 		"helpTranslating": "ช่วยแปลภาษา",
-		"getStats": "ดูสถิติ"
+		"enterProfileUrl": "ป้อน URL ของโปรไฟล์ Steam",
+		"returnHome": "Return Home",
+		"getStats": "ดูสถิติ",
+		"seeOnSteam": "ดูม็อดนี้บน Steam"
+	},
+	"stats": {
+		"statsOf": "สถิติของ {username}",
+		"noAddons": "ไม่มีรายการม็อดให้แสดง!",
+		"views": "ผู้เยี่ยมชม",
+		"subscribers": "ผู้สมัครสมาชิก",
+		"favorites": "ผู้ที่ชื่นชอบ",
+		"likes": "คะแนนเชิงบวก",
+		"dislikes": "คะแนนเชิงลบ",
+		"addons": "ม็อดของ",
+		"addonsOf": "ม็อดของ {username}",
+		"graphs": "Graphs",
+		"graphsOf": "Graphs of {username}"
 	},
 	"notifications": {
 		"disclaimer": "คำชี้แจง! อาจใช้เวลาในการโหลดครู่หนึ่งเพื่อปลุก API หากใช้เวลานานเกินไปอาจมีข้อผิดพลาด"
-	},
-	"viewers": "ผู้เยี่ยมชม",
-	"subs": "ผู้สมัครสมาชิก",
-	"favs": "ผู้ที่ชื่นชอบ",
-	"statistics": {
-		"title": "สถิติของ {username}",
-		"viewers": "จำนวนเยี่ยมชมทั้งหมด: {viewers}",
-		"subs": "จำนวนสมัครสมาชิก: {subs}",
-		"lifeSubs": "จำนวนสมัครสมาชิกตลอดกาล: {lifeSubs}",
-		"favs": "จำนวนชื่นชอบ: {favs}",
-		"lifeFavs": "จำนวนชื่นชอบตลอดกาล: {lifeFavs}",
-		"addons": "ม็อดของ {username}",
-		"noAddons": "ไม่มีรายการม็อดให้แสดง!",
-		"likes": "คะแนนเชิงบวก: {likes}",
-		"dislikes": "คะแนนเชิงลบ: {dislikes}",
-		"seeOnSteam": "ดูม็อดนี้บน Steam"
 	}
 }

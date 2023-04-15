@@ -1,90 +1,59 @@
 <script lang="ts">
 	import {
+		faEye,
 		faMagnifyingGlass,
 		faStar,
 		faThumbsDown,
 		faThumbsUp,
-		faUserGroup
+		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
 	import Badge from "./Badge.svelte";
 	import Button from "./Button.svelte";
 
+	export let id: number;
 	export let title: string;
 	export let image: string;
-	export let url: string;
-	export let viewers: number;
-	export let subs: number;
-	export let lifeSubs: number;
-	export let favs: number;
-	export let lifeFavs: number;
+	export let views: number;
+	export let subscribers: number;
+	export let favorites: number;
 	export let likes: number;
 	export let dislikes: number;
+	export let stars: number;
 </script>
 
-<div class="bg-slate-800 border-4 border-slate-700 p-6 rounded-xl">
-	<img class="w-60 mx-auto rounded-xl" src={image} alt="" />
-	<h4 class="text-center my-6">
-		{title}
-	</h4>
-	<div class="flex flex-col justify-center space-y-4">
-		<Badge
-			faIcon={faStar}
-			title={$_("statistics.viewers", {
-				values: { viewers: viewers },
-			})}
-			type="bg-green-500"
-		/>
-		<Badge
-			faIcon={faUserGroup}
-			title={$_("statistics.subs", {
-				values: { subs: subs },
-			})}
-			type="bg-yellow-400"
-		/>
-		<Badge
-			faIcon={faUserGroup}
-			title={$_("statistics.lifeSubs", {
-				values: { lifeSubs: lifeSubs },
-			})}
-			type="bg-yellow-400"
-		/>
-		<Badge
-			faIcon={faStar}
-			title={$_("statistics.favs", {
-				values: { favs: favs },
-			})}
-			type="bg-red-600"
-		/>
-		<Badge
-			faIcon={faStar}
-			title={$_("statistics.lifeFavs", {
-				values: { lifeFavs: lifeFavs },
-			})}
-			type="bg-red-600"
-		/>
-	</div>
-	<div class="my-6 flex justify-center">
-		<Badge
-			faIcon={faThumbsUp}
-			title={$_("statistics.likes", {
-				values: { likes: likes },
-			})}
-			type="bg-green-500"
-		/>
-		<Badge
-			faIcon={faThumbsDown}
-			title={$_("statistics.dislikes", {
-				values: { dislikes: dislikes },
-			})}
-			type="bg-red-600"
-		/>
-	</div>
-	<div class="flex justify-center">
-		<Button
-			faIcon={faMagnifyingGlass}
-			text={$_("statistics.seeOnSteam")}
-			link={url}
-		/>
+<div class="card bg-secondary shadow-xl text-center">
+	<figure><img src={image} alt="Addon Logo" /></figure>
+	<div class="card-body">
+		<div class="rating justify-center mb-4">
+			{#each { length: 5 } as _, i}
+				{#if i < stars}
+					<input class="mask mask-star bg-lime-400 mx-1" />
+				{:else}
+					<input class="mask mask-star bg-primary-content mx-1" />
+				{/if}
+			{/each}
+		</div>
+		<h2 class="card-title">{title}</h2>
+		<div class="my-2">
+			<div class="flex justify-center">
+				<Badge faIcon={faEye} value={views} />
+				<Badge faIcon={faUser} value={subscribers} />
+				<Badge faIcon={faStar} value={favorites} />
+			</div>
+			<div class="flex justify-center mt-2">
+				<Badge faIcon={faThumbsUp} value={likes} />
+				<Badge faIcon={faThumbsDown} value={dislikes} />
+			</div>
+		</div>
+		<div class="card-actions justify-center">
+			<Button
+				class="btn-accent"
+				faIcon={faMagnifyingGlass}
+				link="https://steamcommunity.com/sharedfiles/filedetails/?id={id}"
+			>
+				{$_("actions.seeInSteam")}
+			</Button>
+		</div>
 	</div>
 </div>
