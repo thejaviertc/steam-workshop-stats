@@ -5,6 +5,6 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 describe("Badge Component", () => {
 	it("Renders", () => {
-		render(Badge, { faIcon: faEye, title: "Title", type: "bg-green-500" });
+		render(Badge, { faIcon: faEye, value: 4 });
 	});
 });
