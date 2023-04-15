@@ -15,7 +15,7 @@
 	 * Prepares the data for the graph from the ISteamUser
 	 * @param steamUser ISteamUser
 	 */
-	function prepareGraphData(steamUser: ISteamUser) {
+	function prepareBasicData(steamUser: ISteamUser) {
 		return {
 			labels: steamUser.addons.map(function (addon: IAddon) {
 				return addon["title"];
@@ -48,8 +48,39 @@
 			],
 		};
 	}
+
+	/**
+	 * Prepares the data for the graph from the ISteamUser
+	 * @param steamUser ISteamUser
+	 */
+	function prepareScoreData(steamUser: ISteamUser) {
+		return {
+			labels: steamUser.addons.map(function (addon: IAddon) {
+				return addon["title"];
+			}),
+			datasets: [
+				{
+					label: $_("stats.likes"),
+					data: steamUser.addons.map(function (addon: IAddon) {
+						return addon["likes"];
+					}),
+					borderColor: "rgb(25, 135, 84)",
+					backgroundColor: "rgba(25, 135, 84, 0.5)",
+				},
+				{
+					label: $_("stats.dislikes"),
+					data: steamUser.addons.map(function (addon: IAddon) {
+						return addon["dislikes"];
+					}),
+					borderColor: "rgb(220, 53, 69)",
+					backgroundColor: "rgba(220, 53, 69, 0.5)",
+				},
+			],
+		};
+	}
 </script>
 
 <div class="container bg-secondary mx-auto mt-8 px-10 py-6 rounded-xl">
-	<Line data={prepareGraphData(steamUser)} />
+	<Line data={prepareBasicData(steamUser)} />
+	<Line data={prepareScoreData(steamUser)} />
 </div>
