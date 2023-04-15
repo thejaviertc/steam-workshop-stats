@@ -34,7 +34,7 @@
 		<link rel="modulepreload" href="./app/immutable/chunks/index.20aeb106.js">
 		<link rel="modulepreload" href="./app/immutable/entry/_layout.ts.984db11e.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/_layout.da46b06b.js">
-		<link rel="modulepreload" href="./app/immutable/entry/_page.svelte.d495896a.js"><title>Steam Workshop Stats</title><!-- HEAD_svelte-8f3nte_START --><!-- HEAD_svelte-8f3nte_END -->
+		<link rel="modulepreload" href="./app/immutable/entry/fetch-user-page.svelte.e8099665.js"><title>Steam Workshop Stats</title><!-- HEAD_svelte-8f3nte_START --><!-- HEAD_svelte-8f3nte_END -->
 	</head>
 	<style>
 		@font-face {
@@ -68,13 +68,11 @@
 		<li><a class="text-lg" href="https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md">Help Translating</a></li></ul></div></ul></div></nav>
 
 
-<section class="min-h-screen flex flex-col justify-center items-center text-center"><h1>Steam Workshop Stats</h1>
-	<h4 class="my-4">See the number of views, subs, likes and more of your addons!</h4>
-	<div class="my-6"><a class="btn btn-disabled mb-4 sm:mb-0 mx-2" href="/" role="button"><svg class="svelte-fa mr-2 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
-	Track my Stats (Coming Soon)</a>
-		
-		<a class="btn btn-accent mx-2" href="/fetch-user" role="button"><svg class="svelte-fa mr-2 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
-	Fetch User</a></div></section>
+<section class="min-h-screen mt-28"><form class="flex flex-col items-center text-center"><h2>Enter a Steam Profile URL</h2>
+		<input type="text" class="input input-bordered input-accent text-center w-3/4 my-6" placeholder="Example: https://steamcommunity.com/id/javiertc/" required value="">
+		<button type="submit" class="btn btn-accent"><svg class="svelte-fa mr-2  svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
+			Get Stats</button></form>
+	</section>
 <footer class="relative inset-x-0 bottom-0"><div class="footer p-10 bg-secondary text-neutral-content"><div></div>
 		<div><span class="footer-title">Links</span>
 			<p>Track my Stats (Coming Soon)</p>
@@ -101,7 +99,7 @@
 						import("./app/immutable/entry/app.17d697bd.js")
 					]).then(([kit, app]) => {
 						kit.start(app, __sveltekit_nisipr.element, {
-							node_ids: [0, 2],
+							node_ids: [0, 3],
 							data,
 							form: null,
 							error: null
