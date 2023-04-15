@@ -12,7 +12,7 @@
 	export let steamUser: ISteamUser;
 
 	/**
-	 * Prepares the data for the graph from the ISteamUser
+	 * Prepares the data for the graph of Basic Data
 	 * @param steamUser ISteamUser
 	 */
 	function prepareBasicData(steamUser: ISteamUser) {
@@ -50,7 +50,7 @@
 	}
 
 	/**
-	 * Prepares the data for the graph from the ISteamUser
+	 * Prepares the data for the graph of Score
 	 * @param steamUser ISteamUser
 	 */
 	function prepareScoreData(steamUser: ISteamUser) {

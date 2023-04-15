@@ -30,8 +30,8 @@
 		"dislikes": "Dislikes",
 		"addons": "Extensões",
 		"addonsOf": "Extensões de {username}",
-		"graph": "Graph",
-		"graphOf": "Graph of {username}"
+		"graphs": "Graphs",
+		"graphsOf": "Graphs of {username}"
 	},
 	"notifications": {
 		"disclaimer": "Atenção! se demorar por um tempo, é porque a API estava hibernando e demora um pouco a responder, se realmente demorar bastante é porque deve ter tido um erro."

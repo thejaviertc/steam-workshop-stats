@@ -30,8 +30,8 @@
 		"dislikes": "คะแนนเชิงลบ",
 		"addons": "ม็อดของ",
 		"addonsOf": "ม็อดของ {username}",
-		"graph": "Graph",
-		"graphOf": "Graph of {username}"
+		"graphs": "Graphs",
+		"graphsOf": "Graphs of {username}"
 	},
 	"notifications": {
 		"disclaimer": "คำชี้แจง! อาจใช้เวลาในการโหลดครู่หนึ่งเพื่อปลุก API หากใช้เวลานานเกินไปอาจมีข้อผิดพลาด"

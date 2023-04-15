@@ -14,7 +14,7 @@
 		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
 
-	import Graph from "$lib/Graph.svelte";
+	import Graphs from "$lib/Graphs.svelte";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
 	import Stat from "$lib/Stat.svelte";
@@ -139,9 +139,9 @@
 						>
 						<button
 							on:click={changeTab}
-							value="graph"
-							class="mx-2 btn btn-accent {tab === 'graph' ? '' : 'btn-outline'}"
-							>{$_("stats.graph")}</button
+							value="graphs"
+							class="mx-2 btn btn-accent {tab === 'graphs' ? '' : 'btn-outline'}"
+							>{$_("stats.graphs")}</button
 						>
 					</div>
 					{#if tab === "addon"}
@@ -169,11 +169,11 @@
 						</div>
 					{:else}
 						<h2>
-							{$_("stats.graphOf", {
+							{$_("stats.graphsOf", {
 								values: { username: steamUser.username },
 							})}
 						</h2>
-						<Graph {steamUser} />
+						<Graphs {steamUser} />
 					{/if}
 				{:else}
 					<h2 class="text-center">

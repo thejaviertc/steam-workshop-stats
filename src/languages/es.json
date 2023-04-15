@@ -30,8 +30,8 @@
 		"dislikes": "Dislikes",
 		"addons": "Addons",
 		"addonsOf": "Addons de {username}",
-		"graph": "Gráfico",
-		"graphOf": "Gráfico de {username}"
+		"graphs": "Gráficos",
+		"graphsOf": "Gráficos de {username}"
 	},
 	"notifications": {
 		"disclaimer": "¡Atención! Si tarda un poco, es debido a que la API se está despertando. Si tarda más de 30 segundos, puede ser debido a un error."
