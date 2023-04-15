@@ -1,4 +1,5 @@
 <script>
+	import { base } from "$app/paths";
 	import { page } from "$app/stores";
 	import Button from "$lib/Button.svelte";
 	import { faBackward } from "@fortawesome/free-solid-svg-icons";
@@ -13,5 +14,5 @@
 	<h2 class="mb-6">
 		{$_("misc.httpError")} - {$page.status}
 	</h2>
-	<Button class="btn-accent" faIcon={faBackward} link="/">{$_("actions.returnHome")}</Button>
+	<Button class="btn-accent" faIcon={faBackward} link={base}>{$_("actions.returnHome")}</Button>
 </section>
