@@ -82,5 +82,8 @@
 
 <div class="container bg-secondary mx-auto mt-8 px-10 py-6 rounded-xl">
 	<Line data={prepareBasicData(steamUser)} />
+</div>
+
+<div class="container bg-secondary mx-auto mt-8 px-10 py-6 rounded-xl">
 	<Line data={prepareScoreData(steamUser)} />
 </div>
