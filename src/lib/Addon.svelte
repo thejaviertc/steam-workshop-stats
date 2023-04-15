@@ -19,11 +19,21 @@
 	export let favorites: number;
 	export let likes: number;
 	export let dislikes: number;
+	export let stars: number;
 </script>
 
 <div class="card bg-secondary shadow-xl text-center">
 	<figure><img src={image} alt="Addon Logo" /></figure>
 	<div class="card-body">
+		<div class="rating justify-center mb-4">
+			{#each { length: 5 } as _, i}
+				{#if i < stars}
+					<input class="mask mask-star bg-lime-400 mx-1" />
+				{:else}
+					<input class="mask mask-star bg-primary-content mx-1" />
+				{/if}
+			{/each}
+		</div>
 		<h2 class="card-title">{title}</h2>
 		<div class="my-2">
 			<div class="flex justify-center">

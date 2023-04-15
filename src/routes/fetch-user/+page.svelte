@@ -163,6 +163,7 @@
 									favorites={addon.favorites}
 									likes={addon.likes}
 									dislikes={addon.dislikes}
+									stars={addon.stars}
 								/>
 							{/each}
 						</div>

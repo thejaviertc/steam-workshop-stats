@@ -7,6 +7,7 @@ interface IAddon {
 	favorites: number;
 	likes: number;
 	dislikes: number;
+	stars: number;
 }
 
 export default IAddon;
