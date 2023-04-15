@@ -7,14 +7,13 @@
 		faThumbsUp,
 		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
-	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
-	import Button from "./Button.svelte";
 	import Badge from "./Badge.svelte";
+	import Button from "./Button.svelte";
 
+	export let id: number;
 	export let title: string;
 	export let image: string;
-	export let url: string;
 	export let views: number;
 	export let subscribers: number;
 	export let favorites: number;
@@ -38,9 +37,13 @@
 			</div>
 		</div>
 		<div class="card-actions justify-center">
-			<Button class="btn-accent" faIcon={faMagnifyingGlass} link={url}
-				>{$_("actions.seeInSteam")}</Button
+			<Button
+				class="btn-accent"
+				faIcon={faMagnifyingGlass}
+				link="https://steamcommunity.com/sharedfiles/filedetails/?id={id}"
 			>
+				{$_("actions.seeInSteam")}
+			</Button>
 		</div>
 	</div>
 </div>

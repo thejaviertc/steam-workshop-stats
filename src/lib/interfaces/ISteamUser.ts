@@ -1,15 +1,15 @@
 import type IAddon from "./IAddon";
 
 interface ISteamUser {
-	message?: string;
+	errorMessage?: string;
 	steamId: string;
 	username: string;
 	profileImage: string;
-	subs: number;
-	lifeSubs: number;
-	favs: number;
-	lifeFavs: number;
-	viewers: number;
+	views: number;
+	subscribers: number;
+	favorites: number;
+	likes: number;
+	dislikes: number;
 	addons: IAddon[];
 }
 

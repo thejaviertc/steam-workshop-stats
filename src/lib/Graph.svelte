@@ -24,7 +24,7 @@
 				{
 					label: $_("stats.views"),
 					data: steamUser.addons.map(function (addon: IAddon) {
-						return addon["viewers"];
+						return addon["views"];
 					}),
 					borderColor: "rgb(25, 135, 84)",
 					backgroundColor: "rgba(25, 135, 84, 0.5)",
@@ -32,7 +32,7 @@
 				{
 					label: $_("stats.subscribers"),
 					data: steamUser.addons.map(function (addon: IAddon) {
-						return addon["subs"];
+						return addon["subscribers"];
 					}),
 					borderColor: "rgb(255, 193, 7)",
 					backgroundColor: "rgba(255, 193, 7, 0.5)",
@@ -40,7 +40,7 @@
 				{
 					label: $_("stats.favorites"),
 					data: steamUser.addons.map(function (addon: IAddon) {
-						return addon["favs"];
+						return addon["favorites"];
 					}),
 					borderColor: "rgb(220, 53, 69)",
 					backgroundColor: "rgba(220, 53, 69, 0.5)",
