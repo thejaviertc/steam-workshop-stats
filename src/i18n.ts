@@ -12,5 +12,5 @@ addMessages("th", th);
 
 init({
 	fallbackLocale: "en",
-	// initialLocale: getLocaleFromNavigator(),
+	initialLocale: getLocaleFromNavigator(),
 });
