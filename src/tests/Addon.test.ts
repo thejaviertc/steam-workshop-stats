@@ -6,16 +6,15 @@ import "../i18n";
 describe("Addon Component", () => {
 	it("Renders", () => {
 		render(Addon, {
+			id: 1,
 			title: "Addon",
 			image: "image",
-			url: "https://addon.com",
-			viewers: 50,
-			subs: 5,
-			lifeSubs: 7,
-			favs: 2,
-			lifeFavs: 3,
+			views: 50,
+			subscribers: 5,
+			favorites: 2,
 			likes: 5,
 			dislikes: 2,
+			stars: 0,
 		});
 	});
 });
