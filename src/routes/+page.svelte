@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from "$app/paths";
 	import Button from "$lib/Button.svelte";
 	import { faChartLine, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
@@ -12,11 +13,11 @@
 	<h1>{$_("title")}</h1>
 	<h4 class="my-4">{$_("description")}</h4>
 	<div class="my-6">
-		<Button class="btn-disabled mb-4 sm:mb-0" faIcon={faChartLine} link="/"
+		<Button class="btn-disabled mb-4 sm:mb-0" faIcon={faChartLine} link={base}
 			>{$_("actions.trackMyStats")}</Button
 		>
 		<!-- TODO: Add btn-outline -->
-		<Button class="btn-accent" faIcon={faMagnifyingGlass} link="/fetch-user"
+		<Button class="btn-accent" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
 			>{$_("actions.fetchUser")}</Button
 		>
 	</div>

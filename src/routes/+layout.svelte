@@ -2,6 +2,7 @@
 	import "../app.scss";
 	import "../i18n";
 
+	import { base } from "$app/paths";
 	import Button from "$lib/Button.svelte";
 	import LanguageSelector from "$lib/LanguageSelector.svelte";
 	import { faBars, faChartLine, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -29,17 +30,17 @@
 				tabindex="-1"
 				class="menu menu-compact dropdown-content mt-6 p-2 shadow bg-secondary rounded-box w-72"
 			>
-				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="/fetch-user"
+				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
 					>{$_("actions.fetchUser")}</Button
 				>
 				<LanguageSelector />
 			</ul>
 		</div>
-		<Button class="btn-ghost" faIcon={faChartLine} link="/">{$_("title")}</Button>
+		<Button class="btn-ghost" faIcon={faChartLine} link={base}>{$_("title")}</Button>
 	</div>
 	<div class="navbar-end hidden md:flex">
 		<ul class="menu menu-horizontal px-1">
-			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="/fetch-user"
+			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
 				>{$_("actions.fetchUser")}</Button
 			>
 			<LanguageSelector />
@@ -53,7 +54,7 @@
 		<div>
 			<span class="footer-title">{$_("misc.links")}</span>
 			<p>{$_("actions.trackMyStats")}</p>
-			<a class="link link-hover" href="/fetch-user">{$_("actions.fetchUser")}</a>
+			<a class="link link-hover" href="{base}/fetch-user">{$_("actions.fetchUser")}</a>
 		</div>
 		<div>
 			<span class="footer-title">{$_("misc.moreInfo")}</span>
