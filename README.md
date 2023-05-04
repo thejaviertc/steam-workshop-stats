@@ -25,3 +25,4 @@ Do you have a suggestion or you discover a bug? Make an [issue](https://github.c
 ## Contributors:
 
 -   @rikoprushka: Thai translator.
+-   @rslgp: Brasilian translator.
