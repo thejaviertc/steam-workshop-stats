@@ -7,7 +7,8 @@
     <img src="https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats" />
     <img src="https://img.shields.io/github/license/thejaviertc/steam-workshop-stats" />
     <img src="https://img.shields.io/github/commit-activity/m/thejaviertc/steam-workshop-stats" />
-    <img src="https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/cicd.yml/badge.svg" />
+    <img src="https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ci.yml/badge.svg" />
+    <img src="https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/cd.yml/badge.svg" />
 </div>
 
 ## Contributing:
