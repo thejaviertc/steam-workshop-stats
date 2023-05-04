@@ -1,4 +1,5 @@
 /.svelte-kit
+/.vscode
 /build
 /coverage
 /node_modules
