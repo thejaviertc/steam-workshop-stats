@@ -10,7 +10,7 @@
 		"chart.js": "^4.3.0",
 		"daisyui": "^2.51.6",
 		"svelte-chartjs": "^3.1.2",
-		"svelte-fa": "^3.0.3",
+		"svelte-fa": "^3.0.4",
 		"svelte-i18n": "^3.6.0"
 	},
 	"devDependencies": {
