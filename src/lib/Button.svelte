@@ -8,7 +8,7 @@
 
 <a class="btn {$$props.class} mx-2" href={link} role="button">
 	{#if faIcon}
-		<Fa class="mr-2" icon={faIcon} />
+		<Fa icon={faIcon} />
 	{/if}
 	<slot />
 </a>
