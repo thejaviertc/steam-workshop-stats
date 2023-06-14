@@ -8,7 +8,7 @@ html {
 }
 
 body {
-	font-family: "Basier Circle";
+	font-family: "Basier Circle", sans-serif;
 	@apply font-extrabold;
 }
 
@@ -58,6 +58,7 @@ svg {
 	transition: all 0.5s ease;
 }
 
-.stat, .stat-title {
+.stat,
+.stat-title {
 	@apply text-gray-100;
 }
