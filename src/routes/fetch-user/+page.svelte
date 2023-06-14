@@ -27,7 +27,7 @@
 	const apiUrl =
 		process.env.NODE_ENV === "development"
 			? "http://localhost:3000"
-			: "https://steam-workshop-stats-api.onrender.com/";
+			: "https://steam-workshop-stats-api.onrender.com";
 
 	/**
 	 * Fetches the API and gets all the info of the Steam URL
