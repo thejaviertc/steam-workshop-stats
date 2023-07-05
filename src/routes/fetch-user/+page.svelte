@@ -35,13 +35,35 @@
 	async function fetchSteamUser(): Promise<ISteamUser> {
 		oldUrl = url;
 
-		const response = await fetch(`${apiUrl}/steam-workshop-stats?url=${url}`);
+		if (isUrlValid(url)) {
+			let type;
 
-		const steamUser: ISteamUser = await response.json();
+			if (url.includes("/id/")) {
+				type = "id";
+			} else {
+				type = "profiles";
+			}
 
-		if (steamUser.errorMessage) throw steamUser.errorMessage;
+			const value = url.split(`/${type}/`)[1];
+			const response = await fetch(`${apiUrl}/steam-user/${type}/${value}`);
+			const steamUser: ISteamUser = await response.json();
 
-		return steamUser;
+			if (steamUser.errorMessage) {
+				throw steamUser.errorMessage;
+			}
+
+			return steamUser;
+		} else {
+			throw "This URL is not valid!";
+		}
+	}
+
+	/**
+	 * Checks if the URL is a Steam Profile URL
+	 */
+	function isUrlValid(url: string) {
+		const urlPattern = /https:\/\/steamcommunity.com\/(id|profiles)\/*/;
+		return urlPattern.test(url);
 	}
 
 	/**
@@ -60,7 +82,6 @@
 
 	/**
 	 * Changes the website language to the selected
-	 * @param e
 	 */
 	function changeTab(e: any) {
 		e.preventDefault();

@@ -5,7 +5,6 @@
 
 	/**
 	 * Changes the website language to the selected
-	 * @param e
 	 */
 	function changeLanguage(e: any) {
 		e.preventDefault();
