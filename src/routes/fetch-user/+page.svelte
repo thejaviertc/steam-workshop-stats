@@ -24,10 +24,7 @@
 	let isSubmitted: boolean = false;
 	let tab: string = "addon";
 
-	const apiUrl =
-		process.env.NODE_ENV === "development"
-			? "http://localhost:3000"
-			: "https://steam-workshop-stats-api.onrender.com";
+	const apiUrl = "https://steam-workshop-stats-api.onrender.com";
 
 	/**
 	 * Fetches the API and gets all the info of the Steam URL
@@ -36,16 +33,18 @@
 		oldUrl = url;
 
 		if (isUrlValid(url)) {
-			let type;
+			// let type;
 
-			if (url.includes("/id/")) {
-				type = "id";
-			} else {
-				type = "profiles";
-			}
+			// if (url.includes("/id/")) {
+			// 	type = "id";
+			// } else {
+			// 	type = "profiles";
+			// }
 
-			const value = url.split(`/${type}/`)[1];
-			const response = await fetch(`${apiUrl}/steam-user/${type}/${value}`);
+			// const value = url.split(`/${type}/`)[1];
+			// const response = await fetch(`${apiUrl}/steam-user/${type}/${value}`);
+
+			const response = await fetch(`${apiUrl}/steam-workshop-stats?url=${url}`);
 			const steamUser: ISteamUser = await response.json();
 
 			if (steamUser.errorMessage) {
@@ -99,7 +98,7 @@
 		<input
 			type="text"
 			class="input input-bordered input-accent text-center w-3/4 my-6"
-			placeholder="{$_('misc.example')} https://steamcommunity.com/id/javiertc/"
+			placeholder="{$_("misc.example")} https://steamcommunity.com/id/javiertc/"
 			bind:value={url}
 			required
 		/>
@@ -155,13 +154,13 @@
 						<button
 							on:click={changeTab}
 							value="addon"
-							class="mx-2 btn btn-accent {tab === 'addon' ? '' : 'btn-outline'}"
+							class="mx-2 btn btn-accent {tab === "addon" ? "" : "btn-outline"}"
 							>{$_("stats.addons")}</button
 						>
 						<button
 							on:click={changeTab}
 							value="graphs"
-							class="mx-2 btn btn-accent {tab === 'graphs' ? '' : 'btn-outline'}"
+							class="mx-2 btn btn-accent {tab === "graphs" ? "" : "btn-outline"}"
 							>{$_("stats.graphs")}</button
 						>
 					</div>
