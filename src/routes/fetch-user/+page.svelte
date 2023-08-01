@@ -35,13 +35,37 @@
 	async function fetchSteamUser(): Promise<ISteamUser> {
 		oldUrl = url;
 
-		const response = await fetch(`${apiUrl}/steam-workshop-stats?url=${url}`);
+		if (isUrlValid(url)) {
+			// let type;
 
-		const steamUser: ISteamUser = await response.json();
+			// if (url.includes("/id/")) {
+			// 	type = "id";
+			// } else {
+			// 	type = "profiles";
+			// }
 
-		if (steamUser.errorMessage) throw steamUser.errorMessage;
+			// const value = url.split(`/${type}/`)[1];
+			// const response = await fetch(`${apiUrl}/steam-user/${type}/${value}`);
 
-		return steamUser;
+			const response = await fetch(`${apiUrl}/steam-workshop-stats?url=${url}`);
+			const steamUser: ISteamUser = await response.json();
+
+			if (steamUser.errorMessage) {
+				throw steamUser.errorMessage;
+			}
+
+			return steamUser;
+		} else {
+			throw "This URL is not valid!";
+		}
+	}
+
+	/**
+	 * Checks if the URL is a Steam Profile URL
+	 */
+	function isUrlValid(url: string) {
+		const urlPattern = /https:\/\/steamcommunity.com\/(id|profiles)\/*/;
+		return urlPattern.test(url);
 	}
 
 	/**
@@ -60,7 +84,6 @@
 
 	/**
 	 * Changes the website language to the selected
-	 * @param e
 	 */
 	function changeTab(e: any) {
 		e.preventDefault();
@@ -78,7 +101,7 @@
 		<input
 			type="text"
 			class="input input-bordered input-accent text-center w-3/4 my-6"
-			placeholder="{$_('misc.example')} https://steamcommunity.com/id/javiertc/"
+			placeholder="{$_("misc.example")} https://steamcommunity.com/id/javiertc/"
 			bind:value={url}
 			required
 		/>
@@ -134,13 +157,13 @@
 						<button
 							on:click={changeTab}
 							value="addon"
-							class="mx-2 btn btn-accent {tab === 'addon' ? '' : 'btn-outline'}"
+							class="mx-2 btn btn-accent {tab === "addon" ? "" : "btn-outline"}"
 							>{$_("stats.addons")}</button
 						>
 						<button
 							on:click={changeTab}
 							value="graphs"
-							class="mx-2 btn btn-accent {tab === 'graphs' ? '' : 'btn-outline'}"
+							class="mx-2 btn btn-accent {tab === "graphs" ? "" : "btn-outline"}"
 							>{$_("stats.graphs")}</button
 						>
 					</div>
