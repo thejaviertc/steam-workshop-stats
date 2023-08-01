@@ -2,14 +2,40 @@
 	import type IAddon from "$lib/interfaces/IAddon";
 	import type ISteamUser from "$lib/interfaces/ISteamUser";
 
-	import { Chart, registerables } from "chart.js";
-	import { Line } from "svelte-chartjs";
 	import { _ } from "svelte-i18n";
-
-	// Registers all the elements of the chart automatically
-	Chart.register(...registerables);
+	import Chart from "chart.js/auto";
+	import { onMount } from "svelte";
 
 	export let steamUser: ISteamUser;
+
+	let basicDataGraph: any;
+	let scoreGraph: any;
+
+	let graphConfig = {
+		type: "bar",
+		data: {},
+		options: {
+			indexAxis: "y",
+			responsive: true,
+			plugins: {
+				legend: {
+					position: "top",
+				},
+			},
+		},
+	};
+
+	onMount(() => {
+		let basicDataGraphConfig = { ...graphConfig };
+		basicDataGraphConfig.data = prepareBasicData(steamUser);
+
+		new Chart(basicDataGraph.getContext("2d"), basicDataGraphConfig);
+
+		let scoreGraphConfig = { ...graphConfig };
+		scoreGraphConfig.data = prepareScoreData(steamUser);
+
+		new Chart(scoreGraph.getContext("2d"), scoreGraphConfig);
+	});
 
 	/**
 	 * Prepares the data for the graph of Basic Data
@@ -27,6 +53,7 @@
 					}),
 					borderColor: "rgb(25, 135, 84)",
 					backgroundColor: "rgba(25, 135, 84, 0.5)",
+					minBarLength: 10,
 				},
 				{
 					label: $_("stats.subscribers"),
@@ -35,6 +62,7 @@
 					}),
 					borderColor: "rgb(255, 193, 7)",
 					backgroundColor: "rgba(255, 193, 7, 0.5)",
+					minBarLength: 10,
 				},
 				{
 					label: $_("stats.favorites"),
@@ -43,6 +71,7 @@
 					}),
 					borderColor: "rgb(220, 53, 69)",
 					backgroundColor: "rgba(220, 53, 69, 0.5)",
+					minBarLength: 10,
 				},
 			],
 		};
@@ -64,6 +93,7 @@
 					}),
 					borderColor: "rgb(25, 135, 84)",
 					backgroundColor: "rgba(25, 135, 84, 0.5)",
+					minBarLength: 10,
 				},
 				{
 					label: $_("stats.dislikes"),
@@ -72,6 +102,7 @@
 					}),
 					borderColor: "rgb(220, 53, 69)",
 					backgroundColor: "rgba(220, 53, 69, 0.5)",
+					minBarLength: 10,
 				},
 			],
 		};
@@ -79,9 +110,9 @@
 </script>
 
 <div class="container bg-secondary mx-auto mt-8 px-10 py-6 rounded-xl">
-	<Line data={prepareBasicData(steamUser)} />
+	<canvas bind:this={basicDataGraph} />
 </div>
 
 <div class="container bg-secondary mx-auto mt-8 px-10 py-6 rounded-xl">
-	<Line data={prepareScoreData(steamUser)} />
+	<canvas bind:this={scoreGraph} />
 </div>
