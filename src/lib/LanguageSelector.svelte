@@ -8,7 +8,10 @@
 	 */
 	function changeLanguage(e: any) {
 		e.preventDefault();
-		locale.set(e.target.value);
+
+		const language = e.target.value;
+		locale.set(language);
+		localStorage.setItem("lang", language);
 	}
 </script>
 

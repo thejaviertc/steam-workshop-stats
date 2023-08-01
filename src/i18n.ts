@@ -1,3 +1,4 @@
+import { browser } from "$app/environment";
 import { addMessages, getLocaleFromNavigator, init } from "svelte-i18n";
 
 import en from "./languages/en.json";
@@ -10,7 +11,19 @@ addMessages("es", es);
 addMessages("pt-BR", ptBR);
 addMessages("th", th);
 
+let defaultLanguage: string = getLocaleFromNavigator() as string;
+
+if (browser) {
+	const lang = localStorage.getItem("lang");
+
+	if (lang) {
+		defaultLanguage = lang;
+	} else {
+		localStorage.setItem("lang", defaultLanguage);
+	}
+}
+
 init({
 	fallbackLocale: "en",
-	initialLocale: getLocaleFromNavigator(),
+	initialLocale: defaultLanguage,
 });
