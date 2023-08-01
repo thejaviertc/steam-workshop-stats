@@ -24,7 +24,10 @@
 	let isSubmitted: boolean = false;
 	let tab: string = "addon";
 
-	const apiUrl = "https://steam-workshop-stats-api.onrender.com";
+	const apiUrl =
+		process.env.NODE_ENV === "development"
+			? "http://localhost:3000"
+			: "https://steam-workshop-stats-api.onrender.com";
 
 	/**
 	 * Fetches the API and gets all the info of the Steam URL
