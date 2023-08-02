@@ -14,15 +14,15 @@
 		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
 
-	import Graphs from "$lib/Graphs.svelte";
+	import Graph from "$lib/Graph.svelte";
+	import Stat from "$lib/Stat.svelte";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
-	import Stat from "$lib/Stat.svelte";
 
 	let oldUrl: string = "";
 	let url: string = "";
 	let isSubmitted: boolean = false;
-	let tab: string = "addon";
+	let tab: string = "addons";
 
 	const apiUrl =
 		process.env.NODE_ENV === "development"
@@ -101,7 +101,7 @@
 		<input
 			type="text"
 			class="input input-bordered input-accent text-center w-3/4 my-6"
-			placeholder="{$_("misc.example")} https://steamcommunity.com/id/javiertc/"
+			placeholder="{$_('misc.example')} https://steamcommunity.com/id/javiertc/"
 			bind:value={url}
 			required
 		/>
@@ -156,18 +156,18 @@
 					<div class="invisible lg:visible my-8">
 						<button
 							on:click={changeTab}
-							value="addon"
-							class="mx-2 btn btn-accent {tab === "addon" ? "" : "btn-outline"}"
+							value="addons"
+							class="mx-2 btn btn-accent {tab === 'addons' ? '' : 'btn-outline'}"
 							>{$_("stats.addons")}</button
 						>
 						<button
 							on:click={changeTab}
-							value="graphs"
-							class="mx-2 btn btn-accent {tab === "graphs" ? "" : "btn-outline"}"
-							>{$_("stats.graphs")}</button
+							value="graph"
+							class="mx-2 btn btn-accent {tab === 'graph' ? '' : 'btn-outline'}"
+							>{$_("stats.graph")}</button
 						>
 					</div>
-					{#if tab === "addon"}
+					{#if tab === "addons"}
 						<h2 class="mb-8">
 							{$_("stats.addonsOf", {
 								values: { username: steamUser.username },
@@ -190,13 +190,13 @@
 								/>
 							{/each}
 						</div>
-					{:else}
+					{:else if tab === "graph"}
 						<h2>
-							{$_("stats.graphsOf", {
+							{$_("stats.graphOf", {
 								values: { username: steamUser.username },
 							})}
 						</h2>
-						<Graphs {steamUser} />
+						<Graph {steamUser} />
 					{/if}
 				{:else}
 					<h2 class="text-center">
