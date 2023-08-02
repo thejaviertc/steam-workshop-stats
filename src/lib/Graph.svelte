@@ -51,7 +51,7 @@
 			labels: steamUser.addons.map(function (addon: IAddon) {
 				let title = addon["title"];
 
-				if (title.length > 27) {
+				if (title.length >= 30) {
 					title = title.substring(0, 27) + "...";
 				}
 
