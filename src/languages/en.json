@@ -30,8 +30,8 @@
 		"dislikes": "Dislikes",
 		"addons": "Addons",
 		"addonsOf": "Addons of {username}",
-		"graphs": "Graphs",
-		"graphsOf": "Graphs of {username}"
+		"graph": "Graph",
+		"graphOf": "Graph of {username}"
 	},
 	"notifications": {
 		"disclaimer": "Disclaimer! This can take up to 30 seconds because the API is on a free hosting, so it has to wake up!"
