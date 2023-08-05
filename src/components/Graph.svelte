@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type IAddon from "$lib/interfaces/IAddon";
-	import type ISteamUser from "$lib/interfaces/ISteamUser";
+	import type IAddon from "$lib/IAddon";
+	import type ISteamUser from "$lib/ISteamUser";
 
 	import Chart from "chart.js/auto";
 	import { onMount } from "svelte";

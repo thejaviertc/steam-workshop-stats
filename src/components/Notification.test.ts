@@ -1,6 +1,6 @@
-import Notification from "$lib/Notification.svelte";
 import { render } from "@testing-library/svelte";
 import { describe, it } from "vitest";
+import Notification from "./Notification.svelte";
 
 describe("Notification Component", () => {
 	it("Renders", () => {

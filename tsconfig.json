@@ -10,6 +10,12 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"noImplicitAny": true,
-		"strict": true
+		"strict": true,
+		"paths": {
+			"$components": ["./src/components"],
+			"$components/*": ["./src/components/*"],
+			"$lib": ["./src/lib"],
+			"$lib/*": ["./src/lib/*"]
+		}
 	}
 }

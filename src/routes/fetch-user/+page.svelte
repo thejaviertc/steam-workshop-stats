@@ -1,8 +1,10 @@
 <script lang="ts">
-	import type ISteamUser from "$lib/interfaces/ISteamUser";
+	import type ISteamUser from "$lib/ISteamUser";
 
-	import Addon from "$lib/Addon.svelte";
-	import Notification from "$lib/Notification.svelte";
+	import Addon from "$components/Addon.svelte";
+	import Graph from "$components/Graph.svelte";
+	import Notification from "$components/Notification.svelte";
+	import Stat from "$components/Stat.svelte";
 	import {
 		faCircleInfo,
 		faExclamationCircle,
@@ -13,9 +15,6 @@
 		faThumbsUp,
 		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
-
-	import Graph from "$lib/Graph.svelte";
-	import Stat from "$lib/Stat.svelte";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
 

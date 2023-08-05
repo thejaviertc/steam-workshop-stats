@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from "$app/paths";
-	import Button from "$lib/Button.svelte";
+	import Button from "$components/Button.svelte";
 	import { faChartLine, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
 </script>

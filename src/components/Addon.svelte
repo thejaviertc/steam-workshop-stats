@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Badge from "$components/Badge.svelte";
+	import Button from "$components/Button.svelte";
 	import {
 		faEye,
 		faMagnifyingGlass,
@@ -8,8 +10,6 @@
 		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
-	import Badge from "./Badge.svelte";
-	import Button from "./Button.svelte";
 
 	export let id: number;
 	export let title: string;
