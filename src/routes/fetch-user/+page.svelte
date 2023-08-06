@@ -24,6 +24,7 @@
 	let tab: string = "addons";
 
 	const apiUrl =
+		// eslint-disable-next-line no-undef
 		process.env.NODE_ENV === "development"
 			? "http://localhost:3000"
 			: "https://steam-workshop-stats-api.onrender.com";
@@ -84,9 +85,9 @@
 	/**
 	 * Changes the website language to the selected
 	 */
-	function changeTab(e: any) {
+	function changeTab(e: Event) {
 		e.preventDefault();
-		tab = e.target.value;
+		tab = (e.target as HTMLButtonElement).value;
 	}
 </script>
 
