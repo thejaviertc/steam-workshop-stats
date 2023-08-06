@@ -21,4 +21,11 @@
 			>{$_("actions.fetchUser")}</Button
 		>
 	</div>
+	<a href="https://github.com/thejaviertc/steam-workshop-stats">
+		<img
+			class="w-40"
+			src="https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats"
+			alt="version"
+		/>
+	</a>
 </section>
