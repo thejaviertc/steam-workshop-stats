@@ -1,0 +1,102 @@
+<script lang="ts">
+	import type ISteamUser from "$lib/ISteamUser";
+
+	import Addon from "$components/Addon.svelte";
+	import Graph from "$components/Graph.svelte";
+	import StatTitle from "$components/StatTitle.svelte";
+	import {
+		faEye,
+		faStar,
+		faThumbsDown,
+		faThumbsUp,
+		faUser,
+	} from "@fortawesome/free-solid-svg-icons";
+	import { _ } from "svelte-i18n";
+
+	export let steamUser: ISteamUser;
+
+	let tab: string = "addons";
+
+	/**
+	 * Changes the website language to the selected
+	 */
+	function changeTab(e: Event) {
+		e.preventDefault();
+		tab = (e.target as HTMLButtonElement).value;
+	}
+</script>
+
+<div class="flex flex-col items-center mt-28 mb-8">
+	<h2>
+		{$_("stats.statsOf", {
+			values: { username: steamUser.username },
+		})}
+	</h2>
+	<img src={steamUser.profileImage} class="h-44 my-8 rounded-full" alt="Steam Profile" />
+	{#if steamUser.addons.length > 0}
+		<div class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow">
+			<StatTitle title={$_("stats.views")} faIcon={faEye} value={steamUser.views} />
+			<StatTitle
+				title={$_("stats.subscribers")}
+				faIcon={faUser}
+				value={steamUser.subscribers}
+			/>
+			<StatTitle title={$_("stats.favorites")} faIcon={faStar} value={steamUser.favorites} />
+			<StatTitle title={$_("stats.likes")} faIcon={faThumbsUp} value={steamUser.likes} />
+			<StatTitle
+				title={$_("stats.dislikes")}
+				faIcon={faThumbsDown}
+				value={steamUser.dislikes}
+			/>
+		</div>
+		<div class="invisible lg:visible my-8">
+			<button
+				on:click={changeTab}
+				value="addons"
+				class="mx-2 btn btn-accent {tab === 'addons' ? '' : 'btn-outline'}"
+				>{$_("stats.addons")}</button
+			>
+			<button
+				on:click={changeTab}
+				value="graph"
+				class="mx-2 btn btn-accent {tab === 'graph' ? '' : 'btn-outline'}"
+				>{$_("stats.graph")}</button
+			>
+		</div>
+		{#if tab === "addons"}
+			<h2 class="mb-8">
+				{$_("stats.addonsOf", {
+					values: { username: steamUser.username },
+				})}
+			</h2>
+			<div
+				class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mx-8"
+			>
+				{#each steamUser.addons as addon}
+					<Addon
+						id={addon.id}
+						title={addon.title}
+						image={addon.image}
+						views={addon.views}
+						subscribers={addon.subscribers}
+						favorites={addon.favorites}
+						likes={addon.likes}
+						dislikes={addon.dislikes}
+						stars={addon.stars}
+					/>
+				{/each}
+			</div>
+		{:else if tab === "graph"}
+			<h2>
+				{$_("stats.graphOf", {
+					values: { username: steamUser.username },
+				})}
+			</h2>
+			<Graph {steamUser} />
+		{/if}
+	{:else}
+		<h2 class="text-center">
+			{$_("stats.noAddons")}
+		</h2>
+	{/if}
+</div>

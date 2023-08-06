@@ -30,7 +30,7 @@
 				tabindex="-1"
 				class="menu menu-sm dropdown-content mt-4 ml-2 p-2 shadow bg-secondary rounded-box w-64"
 			>
-				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
+				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/user"
 					>{$_("actions.fetchUser")}</Button
 				>
 				<LanguageSelector />
@@ -46,7 +46,7 @@
 	</div>
 	<div class="navbar-end hidden lg:flex">
 		<ul class="menu menu-horizontal px-1">
-			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
+			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/user"
 				>{$_("actions.fetchUser")}</Button
 			>
 			<LanguageSelector />
@@ -60,7 +60,7 @@
 		<div>
 			<span class="footer-title">{$_("misc.links")}</span>
 			<p>{$_("actions.trackMyStats")}</p>
-			<a class="link link-hover" href="{base}/fetch-user">{$_("actions.fetchUser")}</a>
+			<a class="link link-hover" href="{base}/user">{$_("actions.fetchUser")}</a>
 		</div>
 		<div>
 			<span class="footer-title">{$_("misc.moreInfo")}</span>
