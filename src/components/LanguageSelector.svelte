@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+	import { faLanguage, faPersonDigging } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa";
 	import { _, locale } from "svelte-i18n";
 
@@ -25,23 +25,25 @@
 	>
 		<li>
 			<button on:click={changeLanguage} value="en" class="text-lg"
-				>🇬🇧 {$_("language", { locale: "en" })}</button
-			>
+				>🇬🇧 {$_("language", { locale: "en" })}
+			</button>
 		</li>
 		<li>
 			<button on:click={changeLanguage} value="es" class="text-lg"
-				>🇪🇸 {$_("language", { locale: "es" })}</button
-			>
+				>🇪🇸 {$_("language", { locale: "es" })}
+			</button>
 		</li>
 		<li>
 			<button on:click={changeLanguage} value="pt-BR" class="text-lg"
-				>🇧🇷 {$_("language", { locale: "pt-BR" })}</button
-			>
+				>🇧🇷 {$_("language", { locale: "pt-BR" })}
+				<Fa icon={faPersonDigging} />
+			</button>
 		</li>
 		<li>
 			<button on:click={changeLanguage} value="th" class="text-lg"
-				>🇹🇭 {$_("language", { locale: "th" })}</button
-			>
+				>🇹🇭 {$_("language", { locale: "th" })}
+				<Fa icon={faPersonDigging} />
+			</button>
 		</li>
 		<li>
 			<a
