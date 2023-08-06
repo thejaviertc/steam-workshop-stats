@@ -22,10 +22,10 @@
 	});
 </script>
 
-<nav class="navbar bg-{navbarColor} fixed">
+<nav class="navbar bg-{navbarColor} top-0 z-50 fixed">
 	<div class="navbar-start">
 		<div class="dropdown">
-			<button tabindex="-1" class="btn btn-ghost md:hidden pr-0"><Fa icon={faBars} /></button>
+			<button tabindex="-1" class="btn btn-ghost lg:hidden pr-0"><Fa icon={faBars} /></button>
 			<ul
 				tabindex="-1"
 				class="menu menu-sm dropdown-content mt-4 ml-2 p-2 shadow bg-secondary rounded-box w-64"
@@ -44,7 +44,7 @@
 			/>
 		</a>
 	</div>
-	<div class="navbar-end hidden md:flex">
+	<div class="navbar-end hidden lg:flex">
 		<ul class="menu menu-horizontal px-1">
 			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
 				>{$_("actions.fetchUser")}</Button
