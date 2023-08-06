@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Badge from "$components/Badge.svelte";
+	import StatBadge from "$components/StatBadge.svelte";
 	import Button from "$components/Button.svelte";
 	import {
 		faEye,
@@ -37,13 +37,13 @@
 		<h2 class="card-title">{title}</h2>
 		<div class="my-2">
 			<div class="flex justify-center">
-				<Badge faIcon={faEye} value={views} />
-				<Badge faIcon={faUser} value={subscribers} />
-				<Badge faIcon={faStar} value={favorites} />
+				<StatBadge faIcon={faEye} value={views} />
+				<StatBadge faIcon={faUser} value={subscribers} />
+				<StatBadge faIcon={faStar} value={favorites} />
 			</div>
 			<div class="flex justify-center mt-2">
-				<Badge faIcon={faThumbsUp} value={likes} />
-				<Badge faIcon={faThumbsDown} value={dislikes} />
+				<StatBadge faIcon={faThumbsUp} value={likes} />
+				<StatBadge faIcon={faThumbsDown} value={dislikes} />
 			</div>
 		</div>
 		<div class="card-actions justify-center">
