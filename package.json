@@ -34,7 +34,7 @@
 		"tslib": "^2.6.1",
 		"typescript": "^5.1.6",
 		"vite": "^4.4.8",
-		"vitest": "^0.34.1"
+		"vitest": "^0.34.5"
 	},
 	"scripts": {
 		"dev": "vite dev --open",
