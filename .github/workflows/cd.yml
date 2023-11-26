@@ -16,7 +16,7 @@ jobs:
             - name: 📗 Setup NodeJS
               uses: actions/setup-node@v4
               with:
-                  node-version: "lts/hydrogen"
+                  node-version: "lts/iron"
 
             - name: 🔨 Build Project
               run: |
