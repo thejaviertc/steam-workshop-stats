@@ -20,7 +20,7 @@
 		"@vitest/coverage-v8": "^0.34.6",
 		"autoprefixer": "^10.4.16",
 		"daisyui": "^4.4.9",
-		"eslint": "^8.54.0",
+		"eslint": "^8.55.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte": "^2.35.1",
 		"jsdom": "^23.0.0",
