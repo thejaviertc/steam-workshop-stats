@@ -1,7 +1,7 @@
 {
 	"name": "steam-workshop-stats",
 	"author": "javiertc",
-	"version": "1.9.1",
+	"version": "1.9.2",
 	"type": "module",
 	"homepage": "https://thejaviertc.github.io/steam-workshop-stats/",
 	"dependencies": {
