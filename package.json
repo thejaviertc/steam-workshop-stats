@@ -14,7 +14,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.22.4",
-		"@testing-library/svelte": "^4.0.3",
+		"@testing-library/svelte": "^4.0.5",
 		"@typescript-eslint/eslint-plugin": "^6.2.1",
 		"@typescript-eslint/parser": "^6.2.1",
 		"@vitest/coverage-c8": "^0.33.0",
