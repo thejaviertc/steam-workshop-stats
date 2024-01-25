@@ -15,7 +15,7 @@
 		"@sveltejs/adapter-static": "^3.0.1",
 		"@sveltejs/kit": "^2.0.6",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"@testing-library/svelte": "^4.0.5",
+		"@testing-library/svelte": "^4.0.6",
 		"@typescript-eslint/eslint-plugin": "^6.15.0",
 		"@typescript-eslint/parser": "^6.15.0",
 		"@vitest/coverage-v8": "^1.1.0",
