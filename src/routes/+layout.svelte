@@ -37,6 +37,12 @@
 			</ul>
 		</div>
 		<Button class="btn-ghost" faIcon={faChartLine} link={base}>{$_("title")}</Button>
+		<a href="https://github.com/thejaviertc/steam-workshop-stats">
+			<img
+				src="https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats"
+				alt="version"
+			/>
+		</a>
 	</div>
 	<div class="navbar-end hidden md:flex">
 		<ul class="menu menu-horizontal px-1">
