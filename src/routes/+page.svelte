@@ -13,12 +13,12 @@
 	<h1>{$_("title")}</h1>
 	<h4 class="my-4">{$_("description")}</h4>
 	<div class="my-6">
-		<Button class="btn btn-neutral mb-4 sm:mb-0" faIcon={faChartLine} link={base}
-			>{$_("actions.trackMyStats")}</Button
-		>
+		<Button class="btn btn-neutral mb-4 sm:mb-0" faIcon={faChartLine} link={base}>
+			{$_("actions.trackMyStats")}
+		</Button>
 		<!-- TODO: Add btn-outline -->
-		<Button class="btn-accent" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
-			>{$_("actions.fetchUser")}</Button
-		>
+		<Button class="btn-accent" faIcon={faMagnifyingGlass} link="{base}/fetch-user">
+			{$_("actions.fetchUser")}
+		</Button>
 	</div>
 </section>

@@ -158,14 +158,16 @@
 							on:click={changeTab}
 							value="addons"
 							class="mx-2 btn btn-accent {tab === 'addons' ? '' : 'btn-outline'}"
-							>{$_("stats.addons")}</button
 						>
+							{$_("stats.addons")}
+						</button>
 						<button
 							on:click={changeTab}
 							value="graph"
 							class="mx-2 btn btn-accent {tab === 'graph' ? '' : 'btn-outline'}"
-							>{$_("stats.graph")}</button
 						>
+							{$_("stats.graph")}
+						</button>
 					</div>
 					{#if tab === "addons"}
 						<h2 class="mb-8">

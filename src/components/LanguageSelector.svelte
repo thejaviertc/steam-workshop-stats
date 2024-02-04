@@ -16,39 +16,40 @@
 </script>
 
 <div class="dropdown dropdown-end">
-	<button tabindex="-1" class="btn btn-ghost normal-case text-sm md:text-base text-gray-100"
-		><Fa class="mr-2" icon={faLanguage} />{$_("actions.changeLanguage")}</button
-	>
+	<button tabindex="-1" class="btn btn-ghost normal-case text-sm md:text-base text-gray-100">
+		<Fa class="mr-2" icon={faLanguage} />{$_("actions.changeLanguage")}
+	</button>
 	<ul
 		tabindex="-1"
 		class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52"
 	>
 		<li>
-			<button on:click={changeLanguage} value="en" class="text-lg"
-				>🇬🇧 {$_("language", { locale: "en" })}</button
-			>
+			<button on:click={changeLanguage} value="en" class="text-lg">
+				🇬🇧 {$_("language", { locale: "en" })}
+			</button>
 		</li>
 		<li>
-			<button on:click={changeLanguage} value="es" class="text-lg"
-				>🇪🇸 {$_("language", { locale: "es" })}</button
-			>
+			<button on:click={changeLanguage} value="es" class="text-lg">
+				🇪🇸 {$_("language", { locale: "es" })}
+			</button>
 		</li>
 		<li>
-			<button on:click={changeLanguage} value="pt-BR" class="text-lg"
-				>🇧🇷 {$_("language", { locale: "pt-BR" })}</button
-			>
+			<button on:click={changeLanguage} value="pt-BR" class="text-lg">
+				🇧🇷 {$_("language", { locale: "pt-BR" })}
+			</button>
 		</li>
 		<li>
-			<button on:click={changeLanguage} value="th" class="text-lg"
-				>🇹🇭 {$_("language", { locale: "th" })}</button
-			>
+			<button on:click={changeLanguage} value="th" class="text-lg">
+				🇹🇭 {$_("language", { locale: "th" })}
+			</button>
 		</li>
 		<li>
 			<a
 				class="text-lg"
 				href="https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md"
-				>{$_("actions.helpTranslating")}</a
 			>
+				{$_("actions.helpTranslating")}
+			</a>
 		</li>
 	</ul>
 </div>

@@ -30,9 +30,9 @@
 				tabindex="-1"
 				class="menu menu-compact dropdown-content mt-6 p-2 shadow bg-secondary rounded-box w-72"
 			>
-				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
-					>{$_("actions.fetchUser")}</Button
-				>
+				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user">
+					{$_("actions.fetchUser")}
+				</Button>
 				<LanguageSelector />
 			</ul>
 		</div>
@@ -40,9 +40,9 @@
 	</div>
 	<div class="navbar-end hidden md:flex">
 		<ul class="menu menu-horizontal px-1">
-			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
-				>{$_("actions.fetchUser")}</Button
-			>
+			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user">
+				{$_("actions.fetchUser")}
+			</Button>
 			<LanguageSelector />
 		</ul>
 	</div>
@@ -58,14 +58,15 @@
 		</div>
 		<div>
 			<span class="footer-title">{$_("misc.moreInfo")}</span>
-			<a class="link link-hover" href="https://github.com/thejaviertc/steam-workshop-stats"
-				>{$_("misc.githubRepository")}</a
-			>
+			<a class="link link-hover" href="https://github.com/thejaviertc/steam-workshop-stats">
+				{$_("misc.githubRepository")}
+			</a>
 			<a
 				class="link link-hover"
 				href="https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md"
-				>{$_("actions.helpTranslating")}</a
 			>
+				{$_("actions.helpTranslating")}
+			</a>
 		</div>
 	</div>
 	<div class="footer footer-center px-10 pb-10 bg-secondary text-base-content">
