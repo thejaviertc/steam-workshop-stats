@@ -2,10 +2,10 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { render } from "@testing-library/svelte";
 import { describe, it } from "vitest";
 
-import Badge from "$components/Badge.svelte";
+import StatBadge from "$components/StatBadge.svelte";
 
-describe("Badge Component", () => {
+describe("StatBadge Component", () => {
 	it("Renders", () => {
-		render(Badge, { faIcon: faEye, value: 4 });
+		render(StatBadge, { faIcon: faEye, value: 4 });
 	});
 });
