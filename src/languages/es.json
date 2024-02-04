@@ -1,7 +1,7 @@
 {
 	"language": "Español",
 	"title": "Estadísticas de Steam Workshop",
-	"description": "Observe el número de visitas, subs, likes y más de tus addons!",
+	"description": "Analiza tus Estadísticas de tus Addons de Steam Workshop en un único lugar!",
 	"disclaimer": "Estadísticas de Steam Workshop es un hobby y no está afiliado con Steam o Valve. Steam y el logo de Steam son marcas registradas de Valve Corporation",
 	"misc": {
 		"httpError": "Ha ocurrido un error",
