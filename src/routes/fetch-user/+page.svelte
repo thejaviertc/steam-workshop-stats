@@ -85,9 +85,9 @@
 	/**
 	 * Changes the website language to the selected
 	 */
-	function changeTab(e: any) {
+	function changeTab(e: Event) {
 		e.preventDefault();
-		tab = e.target.value;
+		tab = (e.target as HTMLButtonElement).value;
 	}
 </script>
 
@@ -131,7 +131,11 @@
 					<div
 						class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow"
 					>
-						<StatTitle title={$_("stats.views")} faIcon={faEye} value={steamUser.views} />
+						<StatTitle
+							title={$_("stats.views")}
+							faIcon={faEye}
+							value={steamUser.views}
+						/>
 						<StatTitle
 							title={$_("stats.subscribers")}
 							faIcon={faUser}
