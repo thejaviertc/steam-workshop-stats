@@ -15,7 +15,7 @@
 	} from "@fortawesome/free-solid-svg-icons";
 
 	import Graph from "$components/Graph.svelte";
-	import Stat from "$components/Stat.svelte";
+	import StatTitle from "$components/StatTitle.svelte";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
 
@@ -131,23 +131,23 @@
 					<div
 						class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow"
 					>
-						<Stat title={$_("stats.views")} faIcon={faEye} value={steamUser.views} />
-						<Stat
+						<StatTitle title={$_("stats.views")} faIcon={faEye} value={steamUser.views} />
+						<StatTitle
 							title={$_("stats.subscribers")}
 							faIcon={faUser}
 							value={steamUser.subscribers}
 						/>
-						<Stat
+						<StatTitle
 							title={$_("stats.favorites")}
 							faIcon={faStar}
 							value={steamUser.favorites}
 						/>
-						<Stat
+						<StatTitle
 							title={$_("stats.likes")}
 							faIcon={faThumbsUp}
 							value={steamUser.likes}
 						/>
-						<Stat
+						<StatTitle
 							title={$_("stats.dislikes")}
 							faIcon={faThumbsDown}
 							value={steamUser.dislikes}

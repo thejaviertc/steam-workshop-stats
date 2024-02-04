@@ -2,10 +2,10 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { render } from "@testing-library/svelte";
 import { describe, it } from "vitest";
 
-import Stat from "./Stat.svelte";
+import StatTitle from "./StatTitle.svelte";
 
-describe("Stat Component", () => {
+describe("StatTitle Component", () => {
 	it("Renders", () => {
-		render(Stat, { title: "Views", faIcon: faEye, value: 100 });
+		render(StatTitle, { title: "Views", faIcon: faEye, value: 100 });
 	});
 });
