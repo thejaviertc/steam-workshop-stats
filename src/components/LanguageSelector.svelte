@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+	import { faLanguage, faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa";
 	import { _, locale } from "svelte-i18n";
 
@@ -36,11 +36,13 @@
 		<li>
 			<button on:click={changeLanguage} value="pt-BR" class="text-lg">
 				🇧🇷 {$_("language", { locale: "pt-BR" })}
+				<Fa icon={faScrewdriverWrench} />
 			</button>
 		</li>
 		<li>
 			<button on:click={changeLanguage} value="th" class="text-lg">
 				🇹🇭 {$_("language", { locale: "th" })}
+				<Fa icon={faScrewdriverWrench} />
 			</button>
 		</li>
 		<li>
