@@ -10,4 +10,4 @@ interface IAddon {
 	stars: number;
 }
 
-export default IAddon;
+export type { IAddon };

@@ -1,4 +1,4 @@
-import type IAddon from "./IAddon";
+import type { IAddon } from "./IAddon";
 
 interface ISteamUser {
 	errorMessage?: string;
@@ -13,4 +13,4 @@ interface ISteamUser {
 	addons: IAddon[];
 }
 
-export default ISteamUser;
+export type { ISteamUser };

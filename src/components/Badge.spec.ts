@@ -1,7 +1,8 @@
-import Badge from "$lib/Badge.svelte";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { render } from "@testing-library/svelte";
 import { describe, it } from "vitest";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+
+import Badge from "$components/Badge.svelte";
 
 describe("Badge Component", () => {
 	it("Renders", () => {

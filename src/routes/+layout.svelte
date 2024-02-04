@@ -3,8 +3,8 @@
 	import "../i18n";
 
 	import { base } from "$app/paths";
-	import Button from "$lib/Button.svelte";
-	import LanguageSelector from "$lib/LanguageSelector.svelte";
+	import Button from "$components/Button.svelte";
+	import LanguageSelector from "$components/LanguageSelector.svelte";
 	import { faBars, faChartLine, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 	import { onMount } from "svelte";
 	import Fa from "svelte-fa";

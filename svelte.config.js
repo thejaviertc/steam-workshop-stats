@@ -7,6 +7,10 @@ const config = {
 	kit: {
 		appDir: "app",
 		adapter: adapter(),
+		alias: {
+			$components: "src/components",
+			$lib: "src/lib",
+		},
 	},
 };
 
