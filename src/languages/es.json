@@ -13,7 +13,7 @@
 	"actions": {
 		"changeLanguage": "Cambia el Idioma",
 		"fetchUser": "Buscar un Usuario",
-		"trackMyStats": "Trackea mis Stats (Próximamente)",
+		"trackMyStats": "Trackea mis Stats",
 		"helpTranslating": "Ayuda a Traducir",
 		"enterProfileUrl": "Introduce la URL de un Perfil de Steam",
 		"returnHome": "Volver al Inicio",

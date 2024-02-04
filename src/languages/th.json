@@ -13,7 +13,7 @@
 	"actions": {
 		"changeLanguage": "Change Language",
 		"fetchUser": "Fetch User",
-		"trackMyStats": "Track my Stats (Coming Soon)",
+		"trackMyStats": "Track my Stats",
 		"helpTranslating": "ช่วยแปลภาษา",
 		"enterProfileUrl": "ป้อน URL ของโปรไฟล์ Steam",
 		"returnHome": "Return Home",
