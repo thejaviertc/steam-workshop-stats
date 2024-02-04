@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { IAddon } from "$lib/IAddon";
 	import type { ISteamUser } from "$lib/ISteamUser";
+	import type { ChartConfiguration } from "chart.js/auto";
 
 	import { onMount } from "svelte";
 	import { _ } from "svelte-i18n";
@@ -9,9 +10,10 @@
 
 	export let steamUser: ISteamUser;
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let graph: any;
 	let graphsHeight: number = 300;
-	let graphConfig = {
+	let graphConfig: ChartConfiguration = {
 		type: "bar",
 		data: prepareGraphData(steamUser),
 		options: {

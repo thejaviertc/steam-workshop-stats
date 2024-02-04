@@ -6,10 +6,10 @@
 	/**
 	 * Changes the website language to the selected
 	 */
-	function changeLanguage(e: any) {
+	function changeLanguage(e: Event) {
 		e.preventDefault();
 
-		const language = e.target.value;
+		const language = (e.target as HTMLButtonElement).value;
 		locale.set(language);
 		localStorage.setItem("lang", language);
 	}
