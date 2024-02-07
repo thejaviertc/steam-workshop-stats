@@ -6,7 +6,9 @@ const config = {
 	preprocess: vitePreprocess({ postcss: true }),
 	kit: {
 		appDir: "app",
-		adapter: adapter(),
+		adapter: adapter({
+			strict: false,
+		}),
 		alias: {
 			$components: "src/components",
 			$lib: "src/lib",

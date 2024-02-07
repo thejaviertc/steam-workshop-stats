@@ -1,64 +1,17 @@
 <script lang="ts">
-	import type { ISteamUser } from "$lib/ISteamUser";
-
-	import Addon from "$components/Addon.svelte";
-	import Notification from "$components/Notification.svelte";
 	import {
 		faCircleInfo,
 		faExclamationCircle,
-		faEye,
 		faMagnifyingGlass,
-		faStar,
-		faThumbsDown,
-		faThumbsUp,
-		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
-
-	import Graph from "$components/Graph.svelte";
-	import StatTitle from "$components/StatTitle.svelte";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
 
-	let oldUrl: string = "";
+	import { base } from "$app/paths";
+	import Notification from "$components/Notification.svelte";
+
 	let url: string = "";
-	let isSubmitted: boolean = false;
-	let tab: string = "addons";
-
-	const apiUrl =
-		process.env.NODE_ENV === "development"
-			? "http://localhost:3000"
-			: "https://steam-workshop-stats-api.onrender.com";
-
-	/**
-	 * Fetches the API and gets all the info of the Steam URL
-	 */
-	async function fetchSteamUser(): Promise<ISteamUser> {
-		oldUrl = url;
-
-		if (isUrlValid(url)) {
-			// let type;
-
-			// if (url.includes("/id/")) {
-			// 	type = "id";
-			// } else {
-			// 	type = "profiles";
-			// }
-
-			// const value = url.split(`/${type}/`)[1];
-			// const response = await fetch(`${apiUrl}/steam-user/${type}/${value}`);
-
-			const response = await fetch(`${apiUrl}/steam-workshop-stats?url=${url}`);
-			const steamUser: ISteamUser = await response.json();
-
-			if (steamUser.errorMessage) {
-				throw steamUser.errorMessage;
-			}
-
-			return steamUser;
-		} else {
-			throw "This URL is not valid!";
-		}
-	}
+	let isUrlInvalid: boolean = false;
 
 	/**
 	 * Checks if the URL is a Steam Profile URL
@@ -72,22 +25,23 @@
 	 * Handles the form
 	 */
 	function submitSteamUser() {
-		if (oldUrl !== url) {
-			isSubmitted = false;
+		isUrlInvalid = false;
 
-			// Delay of 100ms for Svelte noticing the variable updated
-			setTimeout(() => {
-				isSubmitted = true;
-			}, 100);
+		if (isUrlValid(url)) {
+			let type;
+
+			if (url.includes("/id/")) {
+				type = "id";
+			} else {
+				type = "profiles";
+			}
+
+			const value = url.split(`/${type}/`)[1].split("/")[0];
+
+			window.location.href = `${base}/fetch-user/${type}/${value}`;
+		} else {
+			isUrlInvalid = true;
 		}
-	}
-
-	/**
-	 * Changes the website language to the selected
-	 */
-	function changeTab(e: Event) {
-		e.preventDefault();
-		tab = (e.target as HTMLButtonElement).value;
 	}
 </script>
 
@@ -96,6 +50,9 @@
 </svelte:head>
 
 <section class="min-h-screen mt-28">
+	<Notification class="bg-warning" faIcon={faCircleInfo}>
+		{$_("notifications.disclaimer")}
+	</Notification>
 	<form on:submit|preventDefault={submitSteamUser} class="flex flex-col items-center text-center">
 		<h2>{$_("actions.enterProfileUrl")}</h2>
 		<input
@@ -106,112 +63,13 @@
 			required
 		/>
 		<button type="submit" class="btn btn-accent">
-			<Fa class="mr-2 " icon={faMagnifyingGlass} />
+			<Fa class="mr-2" icon={faMagnifyingGlass} />
 			{$_("actions.getStats")}
 		</button>
 	</form>
-	{#if isSubmitted}
-		{#await fetchSteamUser()}
-			<Notification class="bg-warning" faIcon={faCircleInfo}>
-				{$_("notifications.disclaimer")}
-			</Notification>
-		{:then steamUser}
-			<div class="flex flex-col items-center my-8">
-				<h2>
-					{$_("stats.statsOf", {
-						values: { username: steamUser.username },
-					})}
-				</h2>
-				<img
-					src={steamUser.profileImage}
-					class="h-44 my-8 rounded-full"
-					alt="Steam Profile"
-				/>
-				{#if steamUser.addons.length > 0}
-					<div
-						class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow"
-					>
-						<StatTitle
-							title={$_("stats.views")}
-							faIcon={faEye}
-							value={steamUser.views}
-						/>
-						<StatTitle
-							title={$_("stats.subscribers")}
-							faIcon={faUser}
-							value={steamUser.subscribers}
-						/>
-						<StatTitle
-							title={$_("stats.favorites")}
-							faIcon={faStar}
-							value={steamUser.favorites}
-						/>
-						<StatTitle
-							title={$_("stats.likes")}
-							faIcon={faThumbsUp}
-							value={steamUser.likes}
-						/>
-						<StatTitle
-							title={$_("stats.dislikes")}
-							faIcon={faThumbsDown}
-							value={steamUser.dislikes}
-						/>
-					</div>
-					<div class="invisible lg:visible my-8">
-						<button
-							on:click={changeTab}
-							value="addons"
-							class="mx-2 btn btn-accent {tab === 'addons' ? '' : 'btn-outline'}"
-						>
-							{$_("stats.addons")}
-						</button>
-						<button
-							on:click={changeTab}
-							value="graph"
-							class="mx-2 btn btn-accent {tab === 'graph' ? '' : 'btn-outline'}"
-						>
-							{$_("stats.graph")}
-						</button>
-					</div>
-					{#if tab === "addons"}
-						<h2 class="mb-8">
-							{$_("stats.addonsOf", {
-								values: { username: steamUser.username },
-							})}
-						</h2>
-						<div
-							class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mx-8"
-						>
-							{#each steamUser.addons as addon}
-								<Addon
-									id={addon.id}
-									title={addon.title}
-									image={addon.image}
-									views={addon.views}
-									subscribers={addon.subscribers}
-									favorites={addon.favorites}
-									likes={addon.likes}
-									dislikes={addon.dislikes}
-									stars={addon.stars}
-								/>
-							{/each}
-						</div>
-					{:else if tab === "graph"}
-						<h2>
-							{$_("stats.graphOf", {
-								values: { username: steamUser.username },
-							})}
-						</h2>
-						<Graph {steamUser} />
-					{/if}
-				{:else}
-					<h2 class="text-center">
-						{$_("stats.noAddons")}
-					</h2>
-				{/if}
-			</div>
-		{:catch error}
-			<Notification class="bg-error" faIcon={faExclamationCircle}>{error}</Notification>
-		{/await}
+	{#if isUrlInvalid}
+		<Notification class="bg-error" faIcon={faExclamationCircle}>
+			{$_("stats.invalidUrl")}
+		</Notification>
 	{/if}
 </section>

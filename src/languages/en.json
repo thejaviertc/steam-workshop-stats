@@ -21,6 +21,7 @@
 		"seeInSteam": "See it on Steam"
 	},
 	"stats": {
+		"invalidUrl": "This URL is not valid!",
 		"statsOf": "Stats of {username}",
 		"noAddons": "This user doesn't have any addons!",
 		"views": "Views",
