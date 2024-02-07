@@ -21,6 +21,7 @@
 		"seeOnSteam": "Ver na Steam"
 	},
 	"stats": {
+		"invalidUrl": "This URL is not valid!",
 		"statsOf": "Estatística de {username}",
 		"noAddons": "Não há extensões disponíveis!",
 		"views": "Acessos",

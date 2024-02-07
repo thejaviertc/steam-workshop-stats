@@ -21,6 +21,7 @@
 		"seeOnSteam": "ดูม็อดนี้บน Steam"
 	},
 	"stats": {
+		"invalidUrl": "This URL is not valid!",
 		"statsOf": "สถิติของ {username}",
 		"noAddons": "ไม่มีรายการม็อดให้แสดง!",
 		"views": "ผู้เยี่ยมชม",
