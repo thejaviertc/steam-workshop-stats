@@ -38,7 +38,7 @@
 
 			const value = url.split(`/${type}/`)[1].split("/")[0];
 
-			window.location.href = `${base}/fetch-user/${type}/${value}`;
+			window.location.href = `${base}/user/${type}/${value}`;
 		} else {
 			isUrlInvalid = true;
 		}

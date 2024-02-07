@@ -17,7 +17,7 @@
 			{$_("actions.trackMyStats")}
 		</Button>
 		<!-- TODO: Add btn-outline -->
-		<Button class="btn-accent" faIcon={faMagnifyingGlass} link="{base}/fetch-user">
+		<Button class="btn-accent" faIcon={faMagnifyingGlass} link="{base}/user">
 			{$_("actions.fetchUser")}
 		</Button>
 	</div>
