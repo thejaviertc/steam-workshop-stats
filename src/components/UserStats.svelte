@@ -1,9 +1,4 @@
 <script lang="ts">
-	import type ISteamUser from "$lib/ISteamUser";
-
-	import Addon from "$components/Addon.svelte";
-	import Graph from "$components/Graph.svelte";
-	import StatTitle from "$components/StatTitle.svelte";
 	import {
 		faEye,
 		faStar,
@@ -13,12 +8,17 @@
 	} from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
 
+	import Addon from "$components/Addon.svelte";
+	import Graph from "$components/Graph.svelte";
+	import StatTitle from "$components/StatTitle.svelte";
+	import type { ISteamUser } from "$lib/ISteamUser";
+
 	export let steamUser: ISteamUser;
 
 	let tab: string = "addons";
 
 	/**
-	 * Changes the website language to the selected
+	 * Changes the view into the selected tab
 	 */
 	function changeTab(e: Event) {
 		e.preventDefault();
@@ -26,13 +26,13 @@
 	}
 </script>
 
-<div class="flex flex-col items-center mt-28 mb-8">
+<div class="flex flex-col items-center mb-8">
 	<h2>
 		{$_("stats.statsOf", {
 			values: { username: steamUser.username },
 		})}
 	</h2>
-	<img src={steamUser.profileImage} class="h-44 my-8 rounded-full" alt="Steam Profile" />
+	<img src={steamUser.profileImageUrl} class="h-44 my-8 rounded-full" alt="Steam Profile" />
 	{#if steamUser.addons.length > 0}
 		<div class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow">
 			<StatTitle title={$_("stats.views")} faIcon={faEye} value={steamUser.views} />
@@ -54,14 +54,16 @@
 				on:click={changeTab}
 				value="addons"
 				class="mx-2 btn btn-accent {tab === 'addons' ? '' : 'btn-outline'}"
-				>{$_("stats.addons")}</button
 			>
+				{$_("stats.addons")}
+			</button>
 			<button
 				on:click={changeTab}
 				value="graph"
 				class="mx-2 btn btn-accent {tab === 'graph' ? '' : 'btn-outline'}"
-				>{$_("stats.graph")}</button
 			>
+				{$_("stats.graph")}
+			</button>
 		</div>
 		{#if tab === "addons"}
 			<h2 class="mb-8">
@@ -76,7 +78,7 @@
 					<Addon
 						id={addon.id}
 						title={addon.title}
-						image={addon.image}
+						image={addon.imageUrl}
 						views={addon.views}
 						subscribers={addon.subscribers}
 						favorites={addon.favorites}

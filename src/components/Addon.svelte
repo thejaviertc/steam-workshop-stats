@@ -11,6 +11,9 @@
 	} from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
 
+	import StatBadge from "./StatBadge.svelte";
+	import Button from "./Button.svelte";
+
 	export let id: number;
 	export let title: string;
 	export let image: string;

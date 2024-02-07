@@ -9,7 +9,7 @@ describe("Graph Component", () => {
 			steamUser: {
 				steamId: "STEAMID64",
 				username: "javiertc",
-				profileImage: "image",
+				profileImageUrl: "image",
 				views: 125,
 				subscribers: 121,
 				favorites: 15,
@@ -19,7 +19,7 @@ describe("Graph Component", () => {
 					{
 						id: 1,
 						title: "Addon",
-						image: "image",
+						imageUrl: "image",
 						views: 125,
 						subscribers: 121,
 						favorites: 15,

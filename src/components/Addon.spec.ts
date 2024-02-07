@@ -3,6 +3,8 @@ import { describe, it } from "vitest";
 import "../i18n";
 import Addon from "./Addon.svelte";
 
+import Addon from "$components/Addon.svelte";
+
 describe("Addon Component", () => {
 	it("Renders an addon with no stars", () => {
 		render(Addon, {

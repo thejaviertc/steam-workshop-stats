@@ -1,19 +1,17 @@
-import type ISteamUser from "./ISteamUser";
+import type { ISteamUser } from "./ISteamUser";
 
 const apiUrl =
-	// eslint-disable-next-line no-undef
 	process.env.NODE_ENV === "development"
-		? "http://localhost:3000"
+		? "http://localhost:5195"
 		: "https://steam-workshop-stats-api.onrender.com";
 
 class SteamApi {
+	/**
+	 * Fetches the API and gets all the info of the User
+	 */
 	public async getSteamUser(type: string, value: string): Promise<ISteamUser> {
-		const response = await fetch(`${apiUrl}/steam-user/${type}/${value}`);
+		const response = await fetch(`${apiUrl}/user/${type}/${value}`);
 		const steamUser: ISteamUser = await response.json();
-
-		if (steamUser.errorMessage) {
-			throw steamUser.errorMessage;
-		}
 
 		return steamUser;
 	}

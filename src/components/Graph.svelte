@@ -1,11 +1,12 @@
 <script lang="ts">
-	import type IAddon from "$lib/IAddon";
-	import type ISteamUser from "$lib/ISteamUser";
+	import type { IAddon } from "$lib/IAddon";
+	import type { ISteamUser } from "$lib/ISteamUser";
 	import type { ChartConfiguration } from "chart.js/auto";
 
-	import Chart from "chart.js/auto";
 	import { onMount } from "svelte";
 	import { _ } from "svelte-i18n";
+
+	import Chart from "chart.js/auto";
 
 	export let steamUser: ISteamUser;
 

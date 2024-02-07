@@ -13,7 +13,7 @@
 	"actions": {
 		"changeLanguage": "Change Language",
 		"fetchUser": "Fetch User",
-		"trackMyStats": "Track my Stats (Coming Soon)",
+		"trackMyStats": "Track my Stats",
 		"helpTranslating": "Nós ajude com a tradução",
 		"enterProfileUrl": "Insira a URL do perfil da Steam",
 		"returnHome": "Return Home",
@@ -21,6 +21,7 @@
 		"seeOnSteam": "Ver na Steam"
 	},
 	"stats": {
+		"invalidUrl": "This URL is not valid!",
 		"statsOf": "Estatística de {username}",
 		"noAddons": "Não há extensões disponíveis!",
 		"views": "Acessos",

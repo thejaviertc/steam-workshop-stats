@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { base } from "$app/paths";
-	import Notification from "$components/Notification.svelte";
 	import {
 		faCircleInfo,
 		faExclamationCircle,
@@ -9,8 +7,11 @@
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
 
+	import { base } from "$app/paths";
+	import Notification from "$components/Notification.svelte";
+
 	let url: string = "";
-	let showErrorMessage = false;
+	let isUrlInvalid: boolean = false;
 
 	/**
 	 * Checks if the URL is a Steam Profile URL
@@ -24,7 +25,7 @@
 	 * Handles the form
 	 */
 	function submitSteamUser() {
-		showErrorMessage = false;
+		isUrlInvalid = false;
 
 		if (isUrlValid(url)) {
 			let type;
@@ -39,7 +40,7 @@
 
 			window.location.href = `${base}/user/${type}/${value}`;
 		} else {
-			showErrorMessage = true;
+			isUrlInvalid = true;
 		}
 	}
 </script>
@@ -49,6 +50,9 @@
 </svelte:head>
 
 <section class="min-h-screen mt-28">
+	<Notification class="bg-warning" faIcon={faCircleInfo}>
+		{$_("notifications.disclaimer")}
+	</Notification>
 	<form on:submit|preventDefault={submitSteamUser} class="flex flex-col items-center text-center">
 		<h2>{$_("actions.enterProfileUrl")}</h2>
 		<input
@@ -59,14 +63,11 @@
 			required
 		/>
 		<button type="submit" class="btn btn-accent">
-			<Fa class="mr-2 " icon={faMagnifyingGlass} />
+			<Fa class="mr-2" icon={faMagnifyingGlass} />
 			{$_("actions.getStats")}
 		</button>
 	</form>
-	<Notification class="bg-warning" faIcon={faCircleInfo}>
-		{$_("notifications.disclaimer")}
-	</Notification>
-	{#if showErrorMessage}
+	{#if isUrlInvalid}
 		<Notification class="bg-error" faIcon={faExclamationCircle}>
 			{$_("stats.invalidUrl")}
 		</Notification>

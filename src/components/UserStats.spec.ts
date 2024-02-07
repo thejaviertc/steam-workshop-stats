@@ -9,7 +9,7 @@ describe("UserStats Component", () => {
 			steamUser: {
 				steamId: "STEAMID64",
 				username: "javiertc",
-				profileImage: "image",
+				profileImageUrl: "image",
 				views: 500,
 				subscribers: 150,
 				favorites: 20,
@@ -19,7 +19,7 @@ describe("UserStats Component", () => {
 					{
 						id: 1,
 						title: "Addon",
-						image: "image",
+						imageUrl: "image",
 						views: 250,
 						subscribers: 75,
 						favorites: 10,
@@ -30,7 +30,7 @@ describe("UserStats Component", () => {
 					{
 						id: 2,
 						title: "Addon 2",
-						image: "image",
+						imageUrl: "image",
 						views: 250,
 						subscribers: 75,
 						favorites: 10,

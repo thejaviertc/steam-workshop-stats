@@ -13,7 +13,7 @@
 	"actions": {
 		"changeLanguage": "Cambia el Idioma",
 		"fetchUser": "Buscar un Usuario",
-		"trackMyStats": "Trackea mis Stats (Próximamente)",
+		"trackMyStats": "Trackea mis Stats",
 		"helpTranslating": "Ayuda a Traducir",
 		"enterProfileUrl": "Introduce la URL de un Perfil de Steam",
 		"returnHome": "Volver al Inicio",
@@ -21,6 +21,7 @@
 		"seeInSteam": "Ver en Steam"
 	},
 	"stats": {
+		"invalidUrl": "Esta URL no es válida!",
 		"statsOf": "Estadísticas de {username}",
 		"noAddons": "¡Este usuario no tiene ningún addon!",
 		"views": "Visitas",
