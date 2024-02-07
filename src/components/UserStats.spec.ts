@@ -1,6 +1,7 @@
 import { render } from "@testing-library/svelte";
 import { describe, it } from "vitest";
 import "../i18n";
+
 import UserStats from "./UserStats.svelte";
 
 describe("UserStats Component", () => {

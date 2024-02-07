@@ -3,12 +3,13 @@
 	import "../i18n";
 
 	import { base } from "$app/paths";
-	import Button from "$components/Button.svelte";
-	import LanguageSelector from "$components/LanguageSelector.svelte";
 	import { faBars, faChartLine, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 	import { onMount } from "svelte";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
+
+	import Button from "$components/Button.svelte";
+	import LanguageSelector from "$components/LanguageSelector.svelte";
 
 	let navbarColor: string = "secondary";
 

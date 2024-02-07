@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { base } from "$app/paths";
-	import Button from "$components/Button.svelte";
 	import { faChartLine, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
+
+	import Button from "$components/Button.svelte";
 </script>
 
 <svelte:head>

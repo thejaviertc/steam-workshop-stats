@@ -1,9 +1,10 @@
 <script>
 	import { base } from "$app/paths";
 	import { page } from "$app/stores";
-	import Button from "$components/Button.svelte";
 	import { faBackward } from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
+
+	import Button from "$components/Button.svelte";
 </script>
 
 <svelte:head>

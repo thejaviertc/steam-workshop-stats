@@ -1,6 +1,4 @@
 <script lang="ts">
-	import StatBadge from "$components/StatBadge.svelte";
-	import Button from "$components/Button.svelte";
 	import {
 		faEye,
 		faMagnifyingGlass,
