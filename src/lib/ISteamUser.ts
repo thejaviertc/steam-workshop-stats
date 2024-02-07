@@ -1,10 +1,10 @@
 import type { IAddon } from "./IAddon";
 
 interface ISteamUser {
-	errorMessage?: string;
+	message?: string;
 	steamId: string;
 	username: string;
-	profileImage: string;
+	profileImageUrl: string;
 	views: number;
 	subscribers: number;
 	favorites: number;

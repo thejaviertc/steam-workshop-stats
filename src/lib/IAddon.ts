@@ -1,7 +1,7 @@
 interface IAddon {
 	id: number;
 	title: string;
-	image: string;
+	imageUrl: string;
 	views: number;
 	subscribers: number;
 	favorites: number;
