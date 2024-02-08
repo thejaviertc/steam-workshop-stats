@@ -1,7 +1,8 @@
 import SteamApi from "$lib/SteamApi";
+import type { PageLoad } from "./$types";
 
-export const load = async ({ params }) => {
+export const load: PageLoad = async ({ params }) => {
 	const id = params.slug;
 
-	return await SteamApi.getSteamUser("id", id);
+	return SteamApi.getSteamUser("id", id);
 };
