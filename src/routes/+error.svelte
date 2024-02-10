@@ -15,5 +15,7 @@
 	<h2 class="mb-6">
 		{$_("misc.httpError")} - {$page.status}
 	</h2>
-	<Button class="btn-accent" faIcon={faBackward} link={base}>{$_("actions.returnHome")}</Button>
+	<Button class="btn-accent" faIcon={faBackward} link="{base}/">
+		{$_("actions.returnHome")}
+	</Button>
 </section>

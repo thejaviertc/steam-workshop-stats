@@ -37,7 +37,7 @@
 				<LanguageSelector />
 			</ul>
 		</div>
-		<Button class="btn-ghost ml-0" faIcon={faChartLine} link={base}>{$_("title")}</Button>
+		<Button class="btn-ghost ml-0" faIcon={faChartLine} link="{base}/">{$_("title")}</Button>
 		<a href="https://github.com/thejaviertc/steam-workshop-stats">
 			<img
 				src="https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats"

@@ -14,7 +14,7 @@
 	<h1 class="px-6">{$_("title")}</h1>
 	<h4 class="my-4 px-6">{$_("description")}</h4>
 	<div class="my-6">
-		<Button class="btn btn-neutral mb-4 sm:mb-0" faIcon={faChartLine} link={base}>
+		<Button class="btn btn-neutral mb-4 sm:mb-0" faIcon={faChartLine} link="/">
 			{$_("actions.trackMyStats")}
 		</Button>
 		<!-- TODO: Add btn-outline -->
