@@ -6,13 +6,7 @@ const config = {
 	preprocess: vitePreprocess({ postcss: true }),
 	kit: {
 		appDir: "app",
-		adapter: adapter({
-			strict: false,
-		}),
-		alias: {
-			$components: "src/components",
-			$lib: "src/lib",
-		},
+		adapter: adapter(),
 	},
 };
 

@@ -1,10 +1,10 @@
-import type { IAddon } from "./IAddon";
+import type IAddon from "./IAddon";
 
 interface ISteamUser {
-	message?: string;
+	errorMessage?: string;
 	steamId: string;
 	username: string;
-	profileImageUrl: string;
+	profileImage: string;
 	views: number;
 	subscribers: number;
 	favorites: number;
@@ -13,4 +13,4 @@ interface ISteamUser {
 	addons: IAddon[];
 }
 
-export type { ISteamUser };
+export default ISteamUser;
