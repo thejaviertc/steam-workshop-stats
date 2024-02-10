@@ -1,5 +1,6 @@
 <script lang="ts">
 	import {
+		faCircleInfo,
 		faEye,
 		faStar,
 		faThumbsDown,
@@ -12,6 +13,7 @@
 	import Graph from "$components/Graph.svelte";
 	import StatTitle from "$components/StatTitle.svelte";
 	import type { ISteamUser } from "$lib/ISteamUser";
+	import Notification from "./Notification.svelte";
 
 	export let steamUser: ISteamUser;
 
@@ -97,8 +99,8 @@
 			<Graph {steamUser} />
 		{/if}
 	{:else}
-		<h2 class="text-center">
+		<Notification class="bg-warning" faIcon={faCircleInfo}>
 			{$_("stats.noAddons")}
-		</h2>
+		</Notification>
 	{/if}
 </div>
