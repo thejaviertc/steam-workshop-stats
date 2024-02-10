@@ -5,7 +5,7 @@
 	export let faIcon: IconDefinition;
 </script>
 
-<div class={`mx-auto my-8 max-w-4xl py-8 w-3/4 text-center rounded-xl ${$$props.class}`}>
+<div class={`mx-auto my-8 max-w-4xl p-6 w-3/4 text-center rounded-xl ${$$props.class}`}>
 	<Fa icon={faIcon} />
 	<slot />
 </div>
