@@ -1,3 +1,5 @@
+export const prerender = false;
+
 import SteamApi from "$lib/SteamApi";
 import type { PageLoad } from "./$types";
 
