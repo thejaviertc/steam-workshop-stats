@@ -35,6 +35,6 @@
 		"graphOf": "Gráfica de {username}"
 	},
 	"notifications": {
-		"disclaimer": "¡Atención! Si tarda un poco, es debido a que la API se está despertando. Si tarda más de 30 segundos, puede ser debido a un error."
+		"disclaimer": "Con la 2.0.0, se ha migrado la API de NodeJS a ASP.NET. Si encuentras algún error, por favor repórtalo! (También recuerda que la búsqueda puede tardar hasta 30 segundos debido a que la API está en un hosting gratis y tiene que despertarse)"
 	}
 }
