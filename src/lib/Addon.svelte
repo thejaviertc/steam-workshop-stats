@@ -8,8 +8,7 @@
 		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
-
-	import StatBadge from "./StatBadge.svelte";
+	import Badge from "./Badge.svelte";
 	import Button from "./Button.svelte";
 
 	export let id: number;
@@ -38,13 +37,13 @@
 		<h2 class="card-title">{title}</h2>
 		<div class="my-2">
 			<div class="flex justify-center">
-				<StatBadge faIcon={faEye} value={views} />
-				<StatBadge faIcon={faUser} value={subscribers} />
-				<StatBadge faIcon={faStar} value={favorites} />
+				<Badge faIcon={faEye} value={views} />
+				<Badge faIcon={faUser} value={subscribers} />
+				<Badge faIcon={faStar} value={favorites} />
 			</div>
 			<div class="flex justify-center mt-2">
-				<StatBadge faIcon={faThumbsUp} value={likes} />
-				<StatBadge faIcon={faThumbsDown} value={dislikes} />
+				<Badge faIcon={faThumbsUp} value={likes} />
+				<Badge faIcon={faThumbsDown} value={dislikes} />
 			</div>
 		</div>
 		<div class="card-actions justify-center">

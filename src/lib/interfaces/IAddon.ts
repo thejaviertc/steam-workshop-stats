@@ -1,7 +1,7 @@
 interface IAddon {
 	id: number;
 	title: string;
-	imageUrl: string;
+	image: string;
 	views: number;
 	subscribers: number;
 	favorites: number;
@@ -10,4 +10,4 @@ interface IAddon {
 	stars: number;
 }
 
-export type { IAddon };
+export default IAddon;
