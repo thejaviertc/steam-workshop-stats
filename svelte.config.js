@@ -8,6 +8,7 @@ const config = {
 		appDir: "app",
 		adapter: adapter({
 			strict: false,
+			fallback: "404.html",
 		}),
 		alias: {
 			$components: "src/components",
