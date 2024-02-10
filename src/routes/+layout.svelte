@@ -3,13 +3,12 @@
 	import "../i18n";
 
 	import { base } from "$app/paths";
+	import Button from "$lib/Button.svelte";
+	import LanguageSelector from "$lib/LanguageSelector.svelte";
 	import { faBars, faChartLine, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 	import { onMount } from "svelte";
 	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
-
-	import Button from "$components/Button.svelte";
-	import LanguageSelector from "$components/LanguageSelector.svelte";
 
 	let navbarColor: string = "secondary";
 
@@ -26,30 +25,24 @@
 <nav class="navbar bg-{navbarColor} top-0 z-50 fixed">
 	<div class="navbar-start">
 		<div class="dropdown">
-			<button tabindex="-1" class="btn btn-ghost lg:hidden pr-0"><Fa icon={faBars} /></button>
+			<button tabindex="-1" class="btn btn-ghost md:hidden"><Fa icon={faBars} /></button>
 			<ul
 				tabindex="-1"
-				class="menu menu-sm dropdown-content mt-4 ml-2 p-2 shadow bg-secondary rounded-box w-64"
+				class="menu menu-compact dropdown-content mt-6 p-2 shadow bg-secondary rounded-box w-72"
 			>
-				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/user">
-					{$_("actions.fetchUser")}
-				</Button>
+				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
+					>{$_("actions.fetchUser")}</Button
+				>
 				<LanguageSelector />
 			</ul>
 		</div>
-		<Button class="btn-ghost ml-0" faIcon={faChartLine} link="{base}/">{$_("title")}</Button>
-		<a href="https://github.com/thejaviertc/steam-workshop-stats">
-			<img
-				src="https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats"
-				alt="version"
-			/>
-		</a>
+		<Button class="btn-ghost" faIcon={faChartLine} link={base}>{$_("title")}</Button>
 	</div>
-	<div class="navbar-end hidden lg:flex">
+	<div class="navbar-end hidden md:flex">
 		<ul class="menu menu-horizontal px-1">
-			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/user">
-				{$_("actions.fetchUser")}
-			</Button>
+			<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/fetch-user"
+				>{$_("actions.fetchUser")}</Button
+			>
 			<LanguageSelector />
 		</ul>
 	</div>
@@ -61,19 +54,18 @@
 		<div>
 			<span class="footer-title">{$_("misc.links")}</span>
 			<p>{$_("actions.trackMyStats")}</p>
-			<a class="link link-hover" href="{base}/user">{$_("actions.fetchUser")}</a>
+			<a class="link link-hover" href="{base}/fetch-user">{$_("actions.fetchUser")}</a>
 		</div>
 		<div>
 			<span class="footer-title">{$_("misc.moreInfo")}</span>
-			<a class="link link-hover" href="https://github.com/thejaviertc/steam-workshop-stats">
-				{$_("misc.githubRepository")}
-			</a>
+			<a class="link link-hover" href="https://github.com/thejaviertc/steam-workshop-stats"
+				>{$_("misc.githubRepository")}</a
+			>
 			<a
 				class="link link-hover"
 				href="https://github.com/thejaviertc/steam-workshop-stats/blob/main/CONTRIBUTING.md"
+				>{$_("actions.helpTranslating")}</a
 			>
-				{$_("actions.helpTranslating")}
-			</a>
 		</div>
 	</div>
 	<div class="footer footer-center px-10 pb-10 bg-secondary text-base-content">

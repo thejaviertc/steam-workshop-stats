@@ -1,7 +1,7 @@
 {
 	"language": "Brasileiro",
 	"title": "Estatísticas de uma oficina da Steam",
-	"description": "Analyze your Steam Workshop Addon Stats in one place!",
+	"description": "Estatísticas de um usuário em suas Oficinas da Steam",
 	"disclaimer": "Steam Workshop Stats is a hobby project and is not affiliated with Steam or Valve. Steam and the Steam logo are trademarks of Valve Corporation.",
 	"misc": {
 		"httpError": "An error has occurred",
@@ -13,7 +13,7 @@
 	"actions": {
 		"changeLanguage": "Change Language",
 		"fetchUser": "Fetch User",
-		"trackMyStats": "Track my Stats",
+		"trackMyStats": "Track my Stats (Coming Soon)",
 		"helpTranslating": "Nós ajude com a tradução",
 		"enterProfileUrl": "Insira a URL do perfil da Steam",
 		"returnHome": "Return Home",
@@ -21,7 +21,6 @@
 		"seeOnSteam": "Ver na Steam"
 	},
 	"stats": {
-		"invalidUrl": "This URL is not valid!",
 		"statsOf": "Estatística de {username}",
 		"noAddons": "Não há extensões disponíveis!",
 		"views": "Acessos",
@@ -35,6 +34,6 @@
 		"graphOf": "Graph of {username}"
 	},
 	"notifications": {
-		"disclaimer": "With 2.0.0, the API was migrated from NodeJS to ASP.NET. If there is any error, please report it! (Also remember that this can take up to 30 seconds because the API is on a free hosting, so it has to wake up!)"
+		"disclaimer": "Atenção! se demorar por um tempo, é porque a API estava hibernando e demora um pouco a responder, se realmente demorar bastante é porque deve ter tido um erro."
 	}
 }
