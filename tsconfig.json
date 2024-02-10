@@ -9,7 +9,6 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"noImplicitAny": true,
-		"strict": true
-	}
+		"strict": true,
+	},
 }
