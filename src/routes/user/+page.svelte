@@ -57,7 +57,7 @@
 		<h2>{$_("actions.enterProfileUrl")}</h2>
 		<input
 			type="text"
-			class="input input-bordered input-accent text-center w-3/4 my-6"
+			class="input input-bordered input-accent text-center sm:w-1/2 my-6"
 			placeholder="{$_('misc.example')} https://steamcommunity.com/id/javiertc/"
 			bind:value={url}
 			required
