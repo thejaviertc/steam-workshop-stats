@@ -3,7 +3,7 @@ import type { ISteamUser } from "./ISteamUser";
 const apiUrl =
 	process.env.NODE_ENV === "development"
 		? "http://localhost:5195"
-		: "https://steam-workshop-stats-api.onrender.com";
+		: "https://sws-api-uxba.onrender.com";
 
 class SteamApi {
 	/**
