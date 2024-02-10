@@ -1,7 +1,7 @@
 {
 	"language": "Español",
 	"title": "Estadísticas de Steam Workshop",
-	"description": "Observe el número de visitas, subs, likes y más de tus addons!",
+	"description": "Analiza tus Estadísticas de tus Addons de Steam Workshop en un único lugar!",
 	"disclaimer": "Estadísticas de Steam Workshop es un hobby y no está afiliado con Steam o Valve. Steam y el logo de Steam son marcas registradas de Valve Corporation",
 	"misc": {
 		"httpError": "Ha ocurrido un error",
@@ -13,7 +13,7 @@
 	"actions": {
 		"changeLanguage": "Cambia el Idioma",
 		"fetchUser": "Buscar un Usuario",
-		"trackMyStats": "Trackea mis Stats (Próximamente)",
+		"trackMyStats": "Trackea mis Stats",
 		"helpTranslating": "Ayuda a Traducir",
 		"enterProfileUrl": "Introduce la URL de un Perfil de Steam",
 		"returnHome": "Volver al Inicio",
@@ -21,6 +21,7 @@
 		"seeInSteam": "Ver en Steam"
 	},
 	"stats": {
+		"invalidUrl": "Esta URL no es válida!",
 		"statsOf": "Estadísticas de {username}",
 		"noAddons": "¡Este usuario no tiene ningún addon!",
 		"views": "Visitas",
@@ -34,6 +35,6 @@
 		"graphOf": "Gráfica de {username}"
 	},
 	"notifications": {
-		"disclaimer": "¡Atención! Si tarda un poco, es debido a que la API se está despertando. Si tarda más de 30 segundos, puede ser debido a un error."
+		"disclaimer": "Con la 2.0.0, se ha migrado la API de NodeJS a ASP.NET. Si encuentras algún error, por favor repórtalo! (También recuerda que la búsqueda puede tardar hasta 30 segundos debido a que la API está en un hosting gratis y tiene que despertarse)"
 	}
 }
