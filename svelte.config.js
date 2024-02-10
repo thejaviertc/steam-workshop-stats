@@ -7,17 +7,11 @@ const config = {
 	kit: {
 		appDir: "app",
 		adapter: adapter({
-			pages: "build",
-			assets: "build",
 			strict: false,
-			fallback: "404.html",
 		}),
 		alias: {
 			$components: "src/components",
 			$lib: "src/lib",
-		},
-		paths: {
-			assets: "https://thejaviertc.github.io/steam-workshop-stats",
 		},
 	},
 };
