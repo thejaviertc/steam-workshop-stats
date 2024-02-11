@@ -1,19 +1,26 @@
 <script lang="ts">
+	import { page } from "$app/stores";
+	import type { ISteamUser } from "$lib/ISteamUser";
+	import SteamApi from "$lib/SteamApi";
 	import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
-	import type { PageData } from "./$types";
+	import { onMount } from "svelte";
 
 	import Notification from "$components/Notification.svelte";
 	import UserStats from "$components/UserStats.svelte";
 
-	export let data: PageData;
+	let user: ISteamUser = {};
+
+	onMount(async () => {
+		user = await SteamApi.getSteamUser("profiles", $page.params.slug);
+	});
 </script>
 
 <section class="min-h-screen mt-28">
-	{#if data.message}
+	{#if user.message}
 		<Notification class="bg-error" faIcon={faExclamationCircle}>
-			{data.message}
+			{user.message}
 		</Notification>
 	{:else}
-		<UserStats steamUser={data} />
+		<UserStats steamUser={user} />
 	{/if}
 </section>
