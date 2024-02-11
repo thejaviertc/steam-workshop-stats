@@ -8,7 +8,7 @@
 	import Notification from "$components/Notification.svelte";
 	import UserStats from "$components/UserStats.svelte";
 
-	let user: ISteamUser = {};
+	let user: ISteamUser = { addons: {} };
 
 	onMount(async () => {
 		user = await SteamApi.getSteamUser("id", $page.params.slug);
