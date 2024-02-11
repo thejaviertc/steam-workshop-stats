@@ -1,7 +1,7 @@
 {
 	"language": "English",
 	"title": "Steam Workshop Stats",
-	"description": "See the number of views, subs, likes and more of your addons!",
+	"description": "Analyze your Steam Workshop Addon Stats in one place!",
 	"disclaimer": "Steam Workshop Stats is a hobby project and is not affiliated with Steam or Valve. Steam and the Steam logo are trademarks of Valve Corporation.",
 	"misc": {
 		"httpError": "An error has occurred",
@@ -13,7 +13,7 @@
 	"actions": {
 		"changeLanguage": "Change Language",
 		"fetchUser": "Fetch User",
-		"trackMyStats": "Track my Stats (Coming Soon)",
+		"trackMyStats": "Track my Stats",
 		"helpTranslating": "Help Translating",
 		"enterProfileUrl": "Enter a Steam Profile URL",
 		"returnHome": "Return Home",
@@ -21,6 +21,7 @@
 		"seeInSteam": "See it on Steam"
 	},
 	"stats": {
+		"invalidUrl": "This URL is not valid!",
 		"statsOf": "Stats of {username}",
 		"noAddons": "This user doesn't have any addons!",
 		"views": "Views",
@@ -34,6 +35,6 @@
 		"graphOf": "Graph of {username}"
 	},
 	"notifications": {
-		"disclaimer": "Disclaimer! This can take up to 30 seconds because the API is on a free hosting, so it has to wake up!"
+		"disclaimer": "With 2.0.0, the API was migrated from NodeJS to ASP.NET. If there is any error, please report it! (Also remember that this can take up to 30 seconds because the API is on a free hosting, so it has to wake up!)"
 	}
 }
