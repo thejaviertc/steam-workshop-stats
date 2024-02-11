@@ -1,26 +1,31 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-	import type { ISteamUser } from "$lib/ISteamUser";
 	import SteamApi from "$lib/SteamApi";
-	import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
-	import { onMount } from "svelte";
+	import { faCircleInfo, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+	import { _ } from "svelte-i18n";
 
 	import Notification from "$components/Notification.svelte";
 	import UserStats from "$components/UserStats.svelte";
 
-	let user: ISteamUser = { addons: {} };
-
-	onMount(async () => {
-		user = await SteamApi.getSteamUser("id", $page.params.slug);
-	});
+	async function getUser() {
+		return await SteamApi.getSteamUser("id", $page.params.slug);
+	}
 </script>
 
 <section class="min-h-screen mt-28">
-	{#if user.message}
-		<Notification class="bg-error" faIcon={faExclamationCircle}>
-			{user.message}
+	{#await getUser()}
+		<Notification class="bg-warning" faIcon={faCircleInfo}>
+			{$_("notifications.disclaimer")}
 		</Notification>
-	{:else}
-		<UserStats steamUser={user} />
-	{/if}
+	{:then data}
+		{#if data.message}
+			<Notification class="bg-error" faIcon={faExclamationCircle}>
+				{data.message}
+			</Notification>
+		{:else}
+			<UserStats steamUser={data} />
+		{/if}
+	{:catch error}
+		<h2>{error}</h2>
+	{/await}
 </section>
