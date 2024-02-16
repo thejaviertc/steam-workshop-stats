@@ -17,6 +17,9 @@
 		<Notification class="bg-warning" faIcon={faCircleInfo}>
 			{$_("notifications.disclaimer")}
 		</Notification>
+		<div class="text-center">
+			<span class="loading loading-spinner loading-lg text-gray-100"></span>
+		</div>
 	{:then data}
 		{#if data.message}
 			<Notification class="bg-error" faIcon={faExclamationCircle}>
