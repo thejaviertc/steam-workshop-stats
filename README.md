@@ -1,13 +1,13 @@
 ![Steam Workshop Stats](https://raw.githubusercontent.com/thejaviertc/thejaviertc/master/images/steam-workshop-stats.png)
 
 <h1 align="center">Steam Workshop Stats</h1>
-<h3 align="center">See the views, subscriptions and favs of your Steam Workshop addons</h3>
+<h3 align="center">Analyze your Steam Workshop Addon Stats in one place!</h3>
 <div align="center" style="padding-top: 20px; padding-bottom: 20px">
     <img src="https://img.shields.io/github/stars/thejaviertc/steam-workshop-stats" />
     <img src="https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats" />
     <img src="https://img.shields.io/github/license/thejaviertc/steam-workshop-stats" />
     <img src="https://img.shields.io/github/commit-activity/m/thejaviertc/steam-workshop-stats" />
-    <img src="https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ci.yml/badge.svg" />
+    <img src="https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/ci.yml/badge.svg?branch=dev" />
     <img src="https://github.com/thejaviertc/steam-workshop-stats/actions/workflows/cd.yml/badge.svg" />
 </div>
 

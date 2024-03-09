@@ -26,7 +26,7 @@
 <nav class="navbar bg-{navbarColor} top-0 z-50 fixed">
 	<div class="navbar-start">
 		<div class="dropdown">
-			<button tabindex="-1" class="btn btn-ghost lg:hidden pr-0"><Fa icon={faBars} /></button>
+			<button tabindex="-1" class="btn btn-ghost lg:hidden"><Fa icon={faBars} /></button>
 			<ul
 				tabindex="-1"
 				class="menu menu-sm dropdown-content mt-4 ml-2 p-2 shadow bg-secondary rounded-box w-64"
@@ -38,7 +38,7 @@
 			</ul>
 		</div>
 		<Button class="btn-ghost ml-0" faIcon={faChartLine} link="{base}/">{$_("title")}</Button>
-		<a href="https://github.com/thejaviertc/steam-workshop-stats">
+		<a href="https://github.com/thejaviertc/steam-workshop-stats/releases/latest">
 			<img
 				src="https://img.shields.io/github/v/release/thejaviertc/steam-workshop-stats"
 				alt="version"
