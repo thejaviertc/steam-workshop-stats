@@ -12,7 +12,7 @@
 		"svelte-i18n": "^4.0.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^3.0.1",
+		"@sveltejs/adapter-static": "^3.0.2",
 		"@sveltejs/kit": "^2.5.5",
 		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"@testing-library/svelte": "^4.1.0",
