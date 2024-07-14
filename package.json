@@ -1,7 +1,7 @@
 {
 	"name": "steam-workshop-stats",
 	"author": "javiertc",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"type": "module",
 	"homepage": "https://thejaviertc.github.io/steam-workshop-stats/",
 	"dependencies": {
@@ -17,10 +17,10 @@
 		"@sveltejs/adapter-static": "^3.0.2",
 		"@sveltejs/kit": "^2.5.18",
 		"@sveltejs/vite-plugin-svelte": "^3.1.1",
-		"@testing-library/svelte": "^4.1.0",
+		"@testing-library/svelte": "^5.2.0",
 		"@typescript-eslint/eslint-plugin": "^8.0.0-alpha.41",
 		"@typescript-eslint/parser": "^8.0.0-alpha.41",
-		"@vitest/coverage-v8": "^1.4.0",
+		"@vitest/coverage-v8": "^2.0.2",
 		"autoprefixer": "^10.4.19",
 		"daisyui": "^4.12.10",
 		"eslint": "^9.7.0",
@@ -38,7 +38,7 @@
 		"tslib": "^2.6.3",
 		"typescript": "^5.5.3",
 		"vite": "^5.3.3",
-		"vitest": "^1.4.0"
+		"vitest": "^2.0.2"
 	},
 	"scripts": {
 		"dev": "vite dev --open",
