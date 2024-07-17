@@ -6,7 +6,7 @@
 	"homepage": "https://thejaviertc.github.io/steam-workshop-stats/",
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.5.2",
-		"@fortawesome/free-solid-svg-icons": "^6.5.2",
+		"@fortawesome/free-solid-svg-icons": "^6.6.0",
 		"chart.js": "^4.4.3",
 		"svelte-fa": "^4.0.2",
 		"svelte-i18n": "^4.0.0"
