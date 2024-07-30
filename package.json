@@ -19,7 +19,7 @@
 		"@sveltejs/vite-plugin-svelte": "^3.1.1",
 		"@testing-library/svelte": "^5.2.0",
 		"@typescript-eslint/eslint-plugin": "^8.0.0-alpha.41",
-		"@typescript-eslint/parser": "^8.0.0-alpha.41",
+		"@typescript-eslint/parser": "^8.0.0-alpha.58",
 		"@vitest/coverage-v8": "^2.0.2",
 		"autoprefixer": "^10.4.19",
 		"daisyui": "^4.12.10",
