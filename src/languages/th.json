@@ -29,7 +29,7 @@
 		"favorites": "ผู้ที่ชื่นชอบ",
 		"likes": "คะแนนเชิงบวก",
 		"dislikes": "คะแนนเชิงลบ",
-		"addons": "ม็อดของ",
+		"addons": "ม็อด",
 		"addonsOf": "ม็อดของ {username}",
 		"graph": "กราฟ",
 		"graphOf": "กราฟของ {username}"
