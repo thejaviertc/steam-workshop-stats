@@ -1,27 +1,27 @@
 {
-	"language": "แบบไทยๆ",
+	"language": "ไทย",
 	"title": "สถิติ Steam Workshop",
-	"description": "Analyze your Steam Workshop Addon Stats in one place",
-	"disclaimer": "Steam Workshop Stats is a hobby project and is not affiliated with Steam or Valve. Steam and the Steam logo are trademarks of Valve Corporation.",
+	"description": "วิเคราะห์สถิติม็อดใน Steam Workshop ของคุณในที่เดียว",
+	"disclaimer": "สถิติ Steam Workshop เป็นโปรเจกต์งานอดิเรกและไม่เกี่ยวข้องกับ Steam หรือ Valve โดยโลโก้ Steam เป็นเครื่องหมายการค้าของ Valve Corporation",
 	"misc": {
-		"httpError": "An error has occurred",
-		"links": "Links",
-		"moreInfo": "More Info",
-		"githubRepository": "Github Repository",
-		"example": "Example:"
+		"httpError": "เกิดข้อผิดพลาด",
+		"links": "ลิงก์",
+		"moreInfo": "ข้อมูลเพิ่มเติม",
+		"githubRepository": "พื้นที่เก็บข้อมูล GitHub",
+		"example": "ตัวอย่าง:"
 	},
 	"actions": {
-		"changeLanguage": "Change Language",
-		"fetchUser": "Fetch User",
-		"trackMyStats": "Track my Stats",
+		"changeLanguage": "เปลี่ยนภาษา",
+		"fetchUser": "ดึงข้อมูลผู้ใช้",
+		"trackMyStats": "ติดตามสถิติของฉัน",
 		"helpTranslating": "ช่วยแปลภาษา",
 		"enterProfileUrl": "ป้อน URL ของโปรไฟล์ Steam",
-		"returnHome": "Return Home",
+		"returnHome": "กลับสู่หน้าแรก",
 		"getStats": "ดูสถิติ",
 		"seeInSteam": "See it on Steam"
 	},
 	"stats": {
-		"invalidUrl": "This URL is not valid!",
+		"invalidUrl": "URL นี้ไม่ถูกต้อง!",
 		"statsOf": "สถิติของ {username}",
 		"noAddons": "ไม่มีรายการม็อดให้แสดง!",
 		"views": "ผู้เยี่ยมชม",
@@ -29,12 +29,12 @@
 		"favorites": "ผู้ที่ชื่นชอบ",
 		"likes": "คะแนนเชิงบวก",
 		"dislikes": "คะแนนเชิงลบ",
-		"addons": "ม็อดของ",
+		"addons": "ม็อด",
 		"addonsOf": "ม็อดของ {username}",
-		"graph": "Graph",
-		"graphOf": "Graph of {username}"
+		"graph": "กราฟ",
+		"graphOf": "กราฟของ {username}"
 	},
 	"notifications": {
-		"disclaimer": "With 2.0.0, the API was migrated from NodeJS to ASP.NET. If there is any error, please report it! (Also remember that this can take up to 30 seconds because the API is on a free hosting, so it has to wake up!)"
+		"disclaimer": "เนื่องจากในเวอร์ชัน 2.0.0 API ได้ถูกย้ายจาก NodeJS ไปใช้ ASP.NET โปรดรายงานหากพบข้อผิดพลาด! (อาจใช้เวลานานถึง 30 วินาที เนื่องจากใช้งาน API บนโฮสต์ฟรี ดังนั้นจึงต้องรอการเริ่มทำงาน!)"
 	}
 }
