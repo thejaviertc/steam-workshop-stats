@@ -18,7 +18,7 @@
 		"enterProfileUrl": "Introduce la URL de un Perfil de Steam",
 		"returnHome": "Volver al Inicio",
 		"getStats": "Obtener Estadísticas",
-		"seeOnSteam": "ดูม็อดนี้บน Steam"
+		"seeInSteam": "Ver en Steam"
 	},
 	"stats": {
 		"invalidUrl": "Esta URL no es válida!",
