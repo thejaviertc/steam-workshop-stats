@@ -1,40 +1,40 @@
 {
-	"language": "Español",
-	"title": "Estadísticas de Steam Workshop",
-	"description": "Analiza tus Estadísticas de tus Addons de Steam Workshop en un único lugar!",
-	"disclaimer": "Estadísticas de Steam Workshop es un hobby y no está afiliado con Steam o Valve. Steam y el logo de Steam son marcas registradas de Valve Corporation",
+	"language": "English",
+	"title": "Steam Workshop Stats",
+	"description": "Analyze your Steam Workshop Addon Stats in one place!",
+	"disclaimer": "Steam Workshop Stats is a hobby project and is not affiliated with Steam or Valve. Steam and the Steam logo are trademarks of Valve Corporation.",
 	"misc": {
-		"httpError": "Ha ocurrido un error",
-		"links": "Enlaces",
-		"moreInfo": "Más Información",
-		"githubRepository": "Repositorio de Github",
-		"example": "Ejemplo:"
+		"httpError": "An error has occurred",
+		"links": "Links",
+		"moreInfo": "More Info",
+		"githubRepository": "Github Repository",
+		"example": "Example:"
 	},
 	"actions": {
-		"changeLanguage": "Cambia el Idioma",
-		"fetchUser": "Buscar un Usuario",
-		"trackMyStats": "Trackea mis Stats",
-		"helpTranslating": "Ayuda a Traducir",
-		"enterProfileUrl": "Introduce la URL de un Perfil de Steam",
-		"returnHome": "Volver al Inicio",
-		"getStats": "Obtener Estadísticas",
-		"seeInSteam": "Ver en Steam"
+		"changeLanguage": "Change Language",
+		"fetchUser": "Fetch User",
+		"trackMyStats": "Track my Stats",
+		"helpTranslating": "Help Translating",
+		"enterProfileUrl": "Enter a Steam Profile URL",
+		"returnHome": "Return Home",
+		"getStats": "Get Stats",
+		"seeInSteam": "See it on Steam"
 	},
 	"stats": {
-		"invalidUrl": "Esta URL no es válida!",
-		"statsOf": "Estadísticas de {username}",
-		"noAddons": "¡Este usuario no tiene ningún addon!",
-		"views": "Visitas",
-		"subscribers": "Suscriptores",
-		"favorites": "Favoritos",
+		"invalidUrl": "This URL is not valid!",
+		"statsOf": "Stats of {username}",
+		"noAddons": "This user doesn't have any addons!",
+		"views": "Views",
+		"subscribers": "Subscribers",
+		"favorites": "Favorites",
 		"likes": "Likes",
 		"dislikes": "Dislikes",
 		"addons": "Addons",
-		"addonsOf": "Addons de {username}",
-		"graph": "Gráfica",
-		"graphOf": "Gráfica de {username}"
+		"addonsOf": "Addons of {username}",
+		"graph": "Graph",
+		"graphOf": "Graph of {username}"
 	},
 	"notifications": {
-		"disclaimer": "Con la 2.0.0, se ha migrado la API de NodeJS a ASP.NET. Si encuentras algún error, por favor repórtalo! (También recuerda que la búsqueda puede tardar hasta 30 segundos debido a que la API está en un hosting gratis y tiene que despertarse)"
+		"disclaimer": "With 2.0.0, the API was migrated from NodeJS to ASP.NET. If there is any error, please report it! (Also remember that this can take up to 30 seconds because the API is on a free hosting, so it has to wake up!)"
 	}
 }
