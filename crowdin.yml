@@ -1,3 +1,5 @@
 files:
   - source: /src/languages/en.json
     translation: /src/languages/%two_letters_code%.json
+    skip_untranslated_files: true
+    skip_untranslated_strings: true
