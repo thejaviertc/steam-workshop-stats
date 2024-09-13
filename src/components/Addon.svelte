@@ -24,7 +24,7 @@
 </script>
 
 <div class="card bg-secondary shadow-xl text-center">
-	<figure><img src={image} alt="Addon Logo" /></figure>
+	<figure><img src={image} class="w-full" alt="Addon Logo" /></figure>
 	<div class="card-body">
 		<div class="rating justify-center mb-4">
 			{#each { length: 5 } as _, i}
