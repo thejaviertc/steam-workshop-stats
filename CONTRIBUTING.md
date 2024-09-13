@@ -2,4 +2,4 @@
 
 ## Language:
 
-Inside src/languages folder, you can add more languages using en.json as a template. Name the file following the [code list](https://lingohub.com/developers/supported-locales/language-designators-with-regions).
+You can use Crowdin to help translating Steam Workshop Stats [here](https://crowdin.com/project/steam-workshop-stats)

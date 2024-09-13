@@ -42,7 +42,6 @@
 		<li>
 			<button on:click={changeLanguage} value="th" class="text-lg">
 				🇹🇭 {$_("language", { locale: "th" })}
-				<Fa icon={faScrewdriverWrench} />
 			</button>
 		</li>
 		<li>
