@@ -20,7 +20,7 @@
 		"@testing-library/svelte": "^5.2.1",
 		"@typescript-eslint/eslint-plugin": "^8.5.0",
 		"@typescript-eslint/parser": "^8.5.0",
-		"@vitest/coverage-v8": "^2.1.0",
+		"@vitest/coverage-v8": "^2.1.2",
 		"autoprefixer": "^10.4.20",
 		"daisyui": "^4.12.10",
 		"eslint": "^9.10.0",
