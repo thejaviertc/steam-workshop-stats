@@ -7,7 +7,7 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.6.0",
 		"@fortawesome/free-solid-svg-icons": "^6.6.0",
-		"chart.js": "^4.4.4",
+		"chart.js": "^4.4.6",
 		"svelte-fa": "^4.0.2",
 		"svelte-i18n": "^4.0.0"
 	},
