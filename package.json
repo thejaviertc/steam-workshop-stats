@@ -12,7 +12,7 @@
 		"svelte-i18n": "^4.0.0"
 	},
 	"devDependencies": {
-		"@eslint/eslintrc": "^3.1.0",
+		"@eslint/eslintrc": "^3.2.0",
 		"@eslint/js": "^9.10.0",
 		"@sveltejs/adapter-static": "^3.0.4",
 		"@sveltejs/kit": "^2.5.26",
