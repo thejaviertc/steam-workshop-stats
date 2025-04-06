@@ -27,9 +27,9 @@
 		"views": "Visitas",
 		"subscribers": "Suscriptores",
 		"favorites": "Favoritos",
-		"likes": "Likes",
-		"dislikes": "Dislikes",
-		"addons": "Addons",
+		"likes": "Me gustas",
+		"dislikes": "No me gustas",
+		"addons": "Modificaciones",
 		"addonsOf": "Addons de {username}",
 		"graph": "Gráfica",
 		"graphOf": "Gráfica de {username}"
