@@ -1,5 +1,5 @@
 <script lang="ts">
-	import "../app.scss";
+	import "../app.css";
 	import "../i18n";
 
 	import { base } from "$app/paths";
