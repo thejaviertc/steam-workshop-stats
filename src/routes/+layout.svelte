@@ -29,7 +29,7 @@
 			<button tabindex="-1" class="btn btn-ghost lg:hidden"><Fa icon={faBars} /></button>
 			<ul
 				tabindex="-1"
-				class="menu menu-sm dropdown-content mt-4 ml-2 p-2 shadow bg-secondary rounded-box w-64"
+				class="menu menu-sm dropdown-content mt-4 ml-2 p-2 shadow-sm bg-secondary rounded-box w-64"
 			>
 				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/user">
 					{$_("actions.fetchUser")}

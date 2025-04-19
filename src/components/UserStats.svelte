@@ -36,7 +36,7 @@
 	</h2>
 	<img src={steamUser.profileImageUrl} class="h-44 my-8 rounded-full" alt="Steam Profile" />
 	{#if steamUser.addons.length > 0}
-		<div class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow">
+		<div class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow-sm">
 			<StatTitle title={$_("stats.views")} faIcon={faEye} value={steamUser.views} />
 			<StatTitle
 				title={$_("stats.subscribers")}
