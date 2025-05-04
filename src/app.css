@@ -1,6 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+	name: "steam";
+	default: true;
+	prefersdark: true;
+	color-scheme: dark;
+
+	--color-primary: #1B2838;
+	--color-secondary: #171A21;
+	--color-accent: #38BDF8;
+	--color-neutral: #3D4451;
+	--color-base-100: #FFFFFF;
+}
+
+@config "../tailwind.config.js";
 
 html {
 	scroll-behavior: smooth;
@@ -47,6 +60,10 @@ svg {
 
 .btn {
 	@apply text-gray-100 text-lg;
+}
+
+.btn-ghost {
+	@apply bg-transparent shadow-none hover:bg-black/15 border-transparent;
 }
 
 .btn-outline:hover {

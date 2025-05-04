@@ -1,5 +1,5 @@
 <script lang="ts">
-	import "../app.scss";
+	import "../app.css";
 	import "../i18n";
 
 	import { base } from "$app/paths";
@@ -29,7 +29,7 @@
 			<button tabindex="-1" class="btn btn-ghost lg:hidden"><Fa icon={faBars} /></button>
 			<ul
 				tabindex="-1"
-				class="menu menu-sm dropdown-content mt-4 ml-2 p-2 shadow bg-secondary rounded-box w-64"
+				class="menu menu-sm dropdown-content mt-4 ml-2 p-2 shadow-sm bg-secondary rounded-box w-64"
 			>
 				<Button class="btn-ghost" faIcon={faMagnifyingGlass} link="{base}/user">
 					{$_("actions.fetchUser")}
@@ -56,8 +56,8 @@
 </nav>
 <slot />
 <footer class="relative inset-x-0 bottom-0">
-	<div class="footer p-10 bg-secondary text-neutral-content">
-		<div />
+	<div class="footer sm:footer-horizontal p-10 bg-secondary text-neutral-content">
+		<div></div>
 		<div>
 			<span class="footer-title">{$_("misc.links")}</span>
 			<p>{$_("actions.trackMyStats")}</p>

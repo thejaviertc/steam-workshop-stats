@@ -21,7 +21,7 @@
 	</button>
 	<ul
 		tabindex="-1"
-		class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52"
+		class="menu menu-compact dropdown-content mt-3 p-2 shadow-sm bg-secondary rounded-box w-52"
 	>
 		<li>
 			<button on:click={changeLanguage} value="en" class="text-lg">
