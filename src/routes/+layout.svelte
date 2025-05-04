@@ -56,8 +56,8 @@
 </nav>
 <slot />
 <footer class="relative inset-x-0 bottom-0">
-	<div class="footer p-10 bg-secondary text-neutral-content">
-		<div />
+	<div class="footer sm:footer-horizontal p-10 bg-secondary text-neutral-content">
+		<div></div>
 		<div>
 			<span class="footer-title">{$_("misc.links")}</span>
 			<p>{$_("actions.trackMyStats")}</p>

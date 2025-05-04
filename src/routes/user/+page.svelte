@@ -50,14 +50,14 @@
 </svelte:head>
 
 <section class="min-h-screen mt-28">
-	<Notification class="bg-warning" faIcon={faCircleInfo}>
+	<Notification class="bg-warning text-black" faIcon={faCircleInfo}>
 		{$_("notifications.disclaimer")}
 	</Notification>
 	<form on:submit|preventDefault={submitSteamUser} class="flex flex-col items-center text-center">
 		<h2>{$_("actions.enterProfileUrl")}</h2>
 		<input
 			type="text"
-			class="input input-bordered input-accent text-center sm:w-1/2 my-6"
+			class="input input-bordered input-accent input-lg text-center text-gray-700 sm:w-1/2 my-6"
 			placeholder="{$_('misc.example')} https://steamcommunity.com/id/javiertc/"
 			bind:value={url}
 			required

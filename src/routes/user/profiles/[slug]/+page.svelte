@@ -14,7 +14,7 @@
 
 <section class="min-h-screen mt-28">
 	{#await getUser()}
-		<Notification class="bg-warning" faIcon={faCircleInfo}>
+		<Notification class="bg-warning text-black" faIcon={faCircleInfo}>
 			{$_("notifications.disclaimer")}
 		</Notification>
 		<div class="text-center">

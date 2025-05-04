@@ -29,13 +29,13 @@
 		<div class="rating justify-center mb-4">
 			{#each { length: 5 } as _, i}
 				{#if i < stars}
-					<input class="mask mask-star bg-lime-400 mx-1" />
+					<div class="mask mask-star bg-lime-400 mx-1"></div>
 				{:else}
-					<input class="mask mask-star bg-primary-content mx-1" />
+					<div class="mask mask-star bg-primary-content mx-1" aria-current="true"></div>
 				{/if}
 			{/each}
 		</div>
-		<h2 class="card-title">{title}</h2>
+		<p class="card-title text-xl">{title}</p>
 		<div class="my-2">
 			<div class="flex justify-center">
 				<StatBadge faIcon={faEye} value={views} />

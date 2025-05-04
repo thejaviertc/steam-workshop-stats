@@ -99,7 +99,7 @@
 			<Graph {steamUser} />
 		{/if}
 	{:else}
-		<Notification class="bg-warning" faIcon={faCircleInfo}>
+		<Notification class="bg-warning text-black" faIcon={faCircleInfo}>
 			{$_("stats.noAddons")}
 		</Notification>
 	{/if}

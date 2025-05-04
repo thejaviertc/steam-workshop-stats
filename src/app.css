@@ -62,6 +62,10 @@ svg {
 	@apply text-gray-100 text-lg;
 }
 
+.btn-ghost {
+	@apply bg-transparent shadow-none hover:bg-black/15 border-transparent;
+}
+
 .btn-outline:hover {
 	color: white !important;
 }
