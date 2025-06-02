@@ -22,7 +22,7 @@
 		"@typescript-eslint/eslint-plugin": "^8.31.1",
 		"@typescript-eslint/parser": "^8.31.1",
 		"daisyui": "^5.0.35",
-		"eslint": "^9.26.0",
+		"eslint": "^9.28.0",
 		"eslint-config-prettier": "^10.1.2",
 		"eslint-plugin-svelte": "^3.5.1",
 		"globals": "^16.0.0",
