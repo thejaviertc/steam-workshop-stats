@@ -15,39 +15,25 @@
 	import type { ISteamUser } from "$lib/ISteamUser";
 	import Notification from "./Notification.svelte";
 
-	import { onMount } from "svelte";
-
 	export let steamUser: ISteamUser;
 	let tab: string = "addons";
 
-	// 🧩 Sorting state & enum
-	let sortType: "views" | "subscribers" | "favorites" = "subscribers";
-	const enum_type = { views: 1, subscribers: 2, favorites: 3 };
-	let gridEl: HTMLElement;
+	// 🔄 Sorting state
+	let sortType: "latest" | "views" | "subscribers" | "favorites" = "subscribers";
 
-	function reorderCards() {
-		const selector = `.card .my-2 .flex.justify-center h5:nth-child(${enum_type[sortType]})`;
-		const cards = Array.from(gridEl.children);
-		const cardsWithText = cards
-			.map((card) => {
-				const el = card.querySelector(selector);
-				const txt = el?.textContent.trim().replace(/,/g, "") || "0";
-				return { card, value: parseFloat(txt) };
-			})
-			.sort((a, b) => b.value - a.value);
-		gridEl.innerHTML = "";
-		cardsWithText.forEach((o) => gridEl.appendChild(o.card));
-	}
+	// 🔀 Computed visible addons based on sort type
+	$: visibleAddons = [...steamUser.addons].sort((a, b) => {
+		if (sortType === "latest") return 0;
+		if (sortType === "views") return b.views - a.views;
+		if (sortType === "subscribers") return b.subscribers - a.subscribers;
+		if (sortType === "favorites") return b.favorites - a.favorites;
+		return 0;
+	});
 
 	function changeTab(e: Event) {
 		e.preventDefault();
 		tab = (e.target as HTMLButtonElement).value;
-		if (tab === "addons") reorderCards();
 	}
-
-	onMount(() => {
-		if (tab === "addons") reorderCards();
-	});
 </script>
 
 <div class="flex flex-col items-center mb-8">
@@ -57,6 +43,7 @@
 		})}
 	</h2>
 	<img src={steamUser.profileImageUrl} class="h-44 my-8 rounded-full" alt="Steam Profile" />
+
 	{#if steamUser.addons.length > 0}
 		<!-- Stats summary -->
 		<div
@@ -99,7 +86,8 @@
 			<!-- Sort control -->
 			<div class="controls mb-4">
 				<label class="mr-2">Sort by:</label>
-				<select bind:value={sortType} on:change={reorderCards} class="btn btn-sm">
+				<select bind:value={sortType} class="btn btn-sm">
+					<option value="latest">Time</option>
 					<option value="views">{$_("stats.views")}</option>
 					<option value="subscribers">{$_("stats.subscribers")}</option>
 					<option value="favorites">{$_("stats.favorites")}</option>
@@ -112,10 +100,9 @@
 
 			<!-- Add-ons grid -->
 			<div
-				bind:this={gridEl}
 				class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mx-8"
 			>
-				{#each steamUser.addons as addon}
+				{#each visibleAddons as addon}
 					<Addon
 						id={addon.id}
 						title={addon.title}
