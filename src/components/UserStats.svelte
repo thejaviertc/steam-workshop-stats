@@ -19,8 +19,8 @@
 	let tab: string = "addons";
 
 	// Sorting state
-	export let sortType: "latest" | "views" | "subscribers" | "favorites" | "likes" | "dislikes" =
-		"subscribers";
+	import { type SortType, defaultSortType } from "$lib/SortTypesAddons";
+	export let sortType: SortType = defaultSortType;
 
 	// Computed visible addons based on sort type
 	$: visibleAddons = [...steamUser.addons].sort((a, b) => {
@@ -98,7 +98,6 @@
 			</select>
 		</div>
 		{#if tab === "addons"}
-
 			<h2 class="mb-8">
 				{$_("stats.addonsOf", { values: { username: steamUser.username } })}
 			</h2>
@@ -128,7 +127,6 @@
 				})}
 			</h2>
 			<Graph {steamUser} {sortType} />
-
 		{/if}
 	{:else}
 		<Notification class="bg-warning text-black" faIcon={faCircleInfo}>

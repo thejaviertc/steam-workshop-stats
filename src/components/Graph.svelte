@@ -7,7 +7,9 @@
 	import Chart from "chart.js/auto";
 
 	export let steamUser: ISteamUser;
-	export let sortType: "latest" | "views" | "subscribers" | "favorites" | "likes" | "dislikes" = "subscribers";
+
+	import { type SortType, defaultSortType } from "$lib/SortTypesAddons";
+	export let sortType: SortType = defaultSortType;
 
 	let graph: HTMLCanvasElement;
 	let chartInstance: Chart | null = null;
