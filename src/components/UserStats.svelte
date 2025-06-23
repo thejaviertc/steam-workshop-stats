@@ -18,15 +18,18 @@
 	export let steamUser: ISteamUser;
 	let tab: string = "addons";
 
-	// 🔄 Sorting state
-	let sortType: "latest" | "views" | "subscribers" | "favorites" = "subscribers";
+	// Sorting state
+	let sortType: "latest" | "views" | "subscribers" | "favorites" | "likes" | "dislikes" =
+		"subscribers";
 
-	// 🔀 Computed visible addons based on sort type
+	// Computed visible addons based on sort type
 	$: visibleAddons = [...steamUser.addons].sort((a, b) => {
 		if (sortType === "latest") return 0;
 		if (sortType === "views") return b.views - a.views;
 		if (sortType === "subscribers") return b.subscribers - a.subscribers;
 		if (sortType === "favorites") return b.favorites - a.favorites;
+		if (sortType === "likes") return b.likes - a.likes;
+		if (sortType === "dislikes") return b.dislikes - a.dislikes;
 		return 0;
 	});
 
@@ -91,6 +94,8 @@
 					<option value="views">{$_("stats.views")}</option>
 					<option value="subscribers">{$_("stats.subscribers")}</option>
 					<option value="favorites">{$_("stats.favorites")}</option>
+					<option value="likes">{$_("stats.likes")}</option>
+					<option value="dislikes">{$_("stats.dislikes")}</option>
 				</select>
 			</div>
 
