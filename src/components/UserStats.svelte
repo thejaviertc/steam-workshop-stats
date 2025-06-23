@@ -19,7 +19,7 @@
 	let tab: string = "addons";
 
 	// Sorting state
-	let sortType: "latest" | "views" | "subscribers" | "favorites" | "likes" | "dislikes" =
+	export let sortType: "latest" | "views" | "subscribers" | "favorites" | "likes" | "dislikes" =
 		"subscribers";
 
 	// Computed visible addons based on sort type
@@ -85,19 +85,19 @@
 			</button>
 		</div>
 
+		<!-- Sort control -->
+		<div class="controls mb-4">
+			<label class="mr-2">Sort by:</label>
+			<select bind:value={sortType} class="btn btn-sm">
+				<option value="latest">Time</option>
+				<option value="views">{$_("stats.views")}</option>
+				<option value="subscribers">{$_("stats.subscribers")}</option>
+				<option value="favorites">{$_("stats.favorites")}</option>
+				<option value="likes">{$_("stats.likes")}</option>
+				<option value="dislikes">{$_("stats.dislikes")}</option>
+			</select>
+		</div>
 		{#if tab === "addons"}
-			<!-- Sort control -->
-			<div class="controls mb-4">
-				<label class="mr-2">Sort by:</label>
-				<select bind:value={sortType} class="btn btn-sm">
-					<option value="latest">Time</option>
-					<option value="views">{$_("stats.views")}</option>
-					<option value="subscribers">{$_("stats.subscribers")}</option>
-					<option value="favorites">{$_("stats.favorites")}</option>
-					<option value="likes">{$_("stats.likes")}</option>
-					<option value="dislikes">{$_("stats.dislikes")}</option>
-				</select>
-			</div>
 
 			<h2 class="mb-8">
 				{$_("stats.addonsOf", { values: { username: steamUser.username } })}
@@ -127,7 +127,8 @@
 					values: { username: steamUser.username },
 				})}
 			</h2>
-			<Graph {steamUser} />
+			<Graph {steamUser} {sortType} />
+
 		{/if}
 	{:else}
 		<Notification class="bg-warning text-black" faIcon={faCircleInfo}>
