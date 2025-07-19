@@ -10,6 +10,7 @@ interface ISteamUser {
 	favorites: number;
 	likes: number;
 	dislikes: number;
+	awards: number;
 	addons: IAddon[];
 }
 
