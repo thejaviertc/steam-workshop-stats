@@ -6,6 +6,7 @@
 		faThumbsDown,
 		faThumbsUp,
 		faUser,
+		faTrophy,
 	} from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
 
@@ -50,6 +51,7 @@
 				faIcon={faThumbsDown}
 				value={steamUser.dislikes}
 			/>
+			<StatTitle title={$_("stats.awards")} faIcon={faTrophy} value={steamUser.awards} />
 		</div>
 		<div class="invisible lg:visible my-8">
 			<button
@@ -86,6 +88,7 @@
 						favorites={addon.favorites}
 						likes={addon.likes}
 						dislikes={addon.dislikes}
+						awards={addon.awards}
 						stars={addon.stars}
 					/>
 				{/each}
