@@ -21,6 +21,7 @@
 	export let favorites: number;
 	export let likes: number;
 	export let dislikes: number;
+	export let awards: number;
 	export let stars: number;
 </script>
 
