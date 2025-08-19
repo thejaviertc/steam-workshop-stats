@@ -17,8 +17,22 @@
 	import Notification from "./Notification.svelte";
 
 	export let steamUser: ISteamUser;
-
 	let tab: string = "addons";
+
+	// Sorting state
+	let sortType: "latest" | "views" | "subscribers" | "favorites" | "likes" | "dislikes" =
+		"subscribers";
+
+	// Computed visible addons based on sort type
+	$: visibleAddons = [...steamUser.addons].sort((a, b) => {
+		if (sortType === "latest") return 0;
+		if (sortType === "views") return b.views - a.views;
+		if (sortType === "subscribers") return b.subscribers - a.subscribers;
+		if (sortType === "favorites") return b.favorites - a.favorites;
+		if (sortType === "likes") return b.likes - a.likes;
+		if (sortType === "dislikes") return b.dislikes - a.dislikes;
+		return 0;
+	});
 
 	/**
 	 * Changes the view into the selected tab
@@ -70,6 +84,19 @@
 			</button>
 		</div>
 		{#if tab === "addons"}
+			<!-- Sort control -->
+			<div class="controls mb-4">
+				<label class="mr-2">Sort by:</label>
+				<select bind:value={sortType} class="btn btn-sm">
+					<option value="latest">Time</option>
+					<option value="views">{$_("stats.views")}</option>
+					<option value="subscribers">{$_("stats.subscribers")}</option>
+					<option value="favorites">{$_("stats.favorites")}</option>
+					<option value="likes">{$_("stats.likes")}</option>
+					<option value="dislikes">{$_("stats.dislikes")}</option>
+				</select>
+			</div>
+
 			<h2 class="mb-8">
 				{$_("stats.addonsOf", {
 					values: { username: steamUser.username },
@@ -78,7 +105,7 @@
 			<div
 				class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mx-8"
 			>
-				{#each steamUser.addons as addon}
+				{#each visibleAddons as addon}
 					<Addon
 						id={addon.id}
 						title={addon.title}
