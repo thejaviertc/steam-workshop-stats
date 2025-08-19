@@ -15,23 +15,36 @@
 	import StatTitle from "$components/StatTitle.svelte";
 	import type { ISteamUser } from "$lib/ISteamUser";
 	import Notification from "./Notification.svelte";
+	import SortingType from "$lib/SortingType";
 
 	export let steamUser: ISteamUser;
 	let tab: string = "addons";
 
 	// Sorting state
-	let sortType: "latest" | "views" | "subscribers" | "favorites" | "likes" | "dislikes" =
-		"subscribers";
+	let sortType: SortingType = SortingType.PublishDate;
 
 	// Computed visible addons based on sort type
 	$: visibleAddons = [...steamUser.addons].sort((a, b) => {
-		if (sortType === "latest") return 0;
-		if (sortType === "views") return b.views - a.views;
-		if (sortType === "subscribers") return b.subscribers - a.subscribers;
-		if (sortType === "favorites") return b.favorites - a.favorites;
-		if (sortType === "likes") return b.likes - a.likes;
-		if (sortType === "dislikes") return b.dislikes - a.dislikes;
-		return 0;
+		switch (sortType as SortingType) {
+			case SortingType.Views:
+				return b.views - a.views;
+
+			case SortingType.Suscribers:
+				return b.subscribers - a.subscribers;
+
+			case SortingType.Favorites:
+				return b.favorites - a.favorites;
+
+			case SortingType.Likes:
+				return b.likes - a.likes;
+
+			case SortingType.Dislikes:
+				return b.dislikes - a.dislikes;
+
+			case SortingType.PublishDate:
+			default:
+				return 0;
+		}
 	});
 
 	/**
@@ -88,12 +101,12 @@
 			<div class="controls mb-4">
 				<label class="mr-2">Sort by:</label>
 				<select bind:value={sortType} class="btn btn-sm">
-					<option value="latest">Time</option>
-					<option value="views">{$_("stats.views")}</option>
-					<option value="subscribers">{$_("stats.subscribers")}</option>
-					<option value="favorites">{$_("stats.favorites")}</option>
-					<option value="likes">{$_("stats.likes")}</option>
-					<option value="dislikes">{$_("stats.dislikes")}</option>
+					<option value="{SortingType.PublishDate}">Publish Date</option>
+					<option value="{SortingType.Views}">{$_("stats.views")}</option>
+					<option value="{SortingType.Suscribers}">{$_("stats.subscribers")}</option>
+					<option value="{SortingType.Favorites}">{$_("stats.favorites")}</option>
+					<option value="{SortingType.Likes}">{$_("stats.likes")}</option>
+					<option value="{SortingType.Dislikes}">{$_("stats.dislikes")}</option>
 				</select>
 			</div>
 
