@@ -16,23 +16,12 @@
 	import Notification from "./Notification.svelte";
 
 	export let steamUser: ISteamUser;
+
 	let tab: string = "addons";
 
-	// Sorting state
-	let sortType: "latest" | "views" | "subscribers" | "favorites" | "likes" | "dislikes" =
-		"subscribers";
-
-	// Computed visible addons based on sort type
-	$: visibleAddons = [...steamUser.addons].sort((a, b) => {
-		if (sortType === "latest") return 0;
-		if (sortType === "views") return b.views - a.views;
-		if (sortType === "subscribers") return b.subscribers - a.subscribers;
-		if (sortType === "favorites") return b.favorites - a.favorites;
-		if (sortType === "likes") return b.likes - a.likes;
-		if (sortType === "dislikes") return b.dislikes - a.dislikes;
-		return 0;
-	});
-
+	/**
+	 * Changes the view into the selected tab
+	 */
 	function changeTab(e: Event) {
 		e.preventDefault();
 		tab = (e.target as HTMLButtonElement).value;
@@ -46,12 +35,8 @@
 		})}
 	</h2>
 	<img src={steamUser.profileImageUrl} class="h-44 my-8 rounded-full" alt="Steam Profile" />
-
 	{#if steamUser.addons.length > 0}
-		<!-- Stats summary -->
-		<div
-			class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow-sm"
-		>
+		<div class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow-sm">
 			<StatTitle title={$_("stats.views")} faIcon={faEye} value={steamUser.views} />
 			<StatTitle
 				title={$_("stats.subscribers")}
@@ -66,8 +51,6 @@
 				value={steamUser.dislikes}
 			/>
 		</div>
-
-		<!-- Tab controls -->
 		<div class="invisible lg:visible my-8">
 			<button
 				on:click={changeTab}
@@ -84,30 +67,16 @@
 				{$_("stats.graph")}
 			</button>
 		</div>
-
 		{#if tab === "addons"}
-			<!-- Sort control -->
-			<div class="controls mb-4">
-				<label class="mr-2">Sort by:</label>
-				<select bind:value={sortType} class="btn btn-sm">
-					<option value="latest">Time</option>
-					<option value="views">{$_("stats.views")}</option>
-					<option value="subscribers">{$_("stats.subscribers")}</option>
-					<option value="favorites">{$_("stats.favorites")}</option>
-					<option value="likes">{$_("stats.likes")}</option>
-					<option value="dislikes">{$_("stats.dislikes")}</option>
-				</select>
-			</div>
-
 			<h2 class="mb-8">
-				{$_("stats.addonsOf", { values: { username: steamUser.username } })}
+				{$_("stats.addonsOf", {
+					values: { username: steamUser.username },
+				})}
 			</h2>
-
-			<!-- Add-ons grid -->
 			<div
 				class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mx-8"
 			>
-				{#each visibleAddons as addon}
+				{#each steamUser.addons as addon}
 					<Addon
 						id={addon.id}
 						title={addon.title}
