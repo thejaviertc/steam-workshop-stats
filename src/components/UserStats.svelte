@@ -47,6 +47,9 @@
 			case SortingType.Dislikes:
 				return sortDescendingOrder ? b.dislikes - a.dislikes : a.dislikes - b.dislikes;
 
+			case SortingType.Awards:
+				return sortDescendingOrder ? b.awards - a.awards : a.awards - b.awards;
+
 			case SortingType.PublishDate:
 			default:
 				return sortDescendingOrder ? -1 : 1;
@@ -115,6 +118,7 @@
 						<option value={SortingType.Favorites}>{$_("stats.favorites")}</option>
 						<option value={SortingType.Likes}>{$_("stats.likes")}</option>
 						<option value={SortingType.Dislikes}>{$_("stats.dislikes")}</option>
+						<option value={SortingType.Awards}>{$_("stats.awards")}</option>
 					</select>
 				</fieldset>
 

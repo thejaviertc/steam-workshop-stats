@@ -4,7 +4,8 @@ enum SortingType {
 	Suscribers,
 	Favorites,
 	Likes,
-	Dislikes
+	Dislikes,
+	Awards
 }
 
 export default SortingType;
