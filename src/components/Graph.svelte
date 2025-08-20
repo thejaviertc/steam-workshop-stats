@@ -106,6 +106,15 @@
 					backgroundColor: "rgba(220, 53, 69, 0.5)",
 					minBarLength: 10,
 				},
+				{
+					label: $_("stats.awards"),
+					data: steamUser.addons.map(function (addon: IAddon) {
+						return addon["awards"];
+					}),
+					borderColor: "rgb(255, 140, 0)",
+					backgroundColor: "rgba(255, 140, 0, 0.5)",
+					minBarLength: 10,
+				},
 			],
 		};
 	}

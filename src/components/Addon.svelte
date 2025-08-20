@@ -6,6 +6,7 @@
 		faThumbsDown,
 		faThumbsUp,
 		faUser,
+		faTrophy,
 	} from "@fortawesome/free-solid-svg-icons";
 	import { _ } from "svelte-i18n";
 
@@ -20,6 +21,7 @@
 	export let favorites: number;
 	export let likes: number;
 	export let dislikes: number;
+	export let awards: number;
 	export let stars: number;
 </script>
 
@@ -45,6 +47,7 @@
 			<div class="flex justify-center mt-2">
 				<StatBadge faIcon={faThumbsUp} value={likes} />
 				<StatBadge faIcon={faThumbsDown} value={dislikes} />
+				<StatBadge faIcon={faTrophy} value={awards} />
 			</div>
 		</div>
 		<div class="card-actions justify-center">
