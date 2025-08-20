@@ -2,37 +2,63 @@
 	import {
 		faCircleInfo,
 		faEye,
+		faSortDown,
+		faSortUp,
 		faStar,
 		faThumbsDown,
 		faThumbsUp,
+		faTrophy,
 		faUser,
 	} from "@fortawesome/free-solid-svg-icons";
+	import Fa from "svelte-fa";
 	import { _ } from "svelte-i18n";
 
 	import Addon from "$components/Addon.svelte";
 	import Graph from "$components/Graph.svelte";
 	import StatTitle from "$components/StatTitle.svelte";
 	import type { ISteamUser } from "$lib/ISteamUser";
+	import SortingType from "$lib/SortingType";
 	import Notification from "./Notification.svelte";
 
 	export let steamUser: ISteamUser;
 	let tab: string = "addons";
 
 	// Sorting state
-	let sortType: "latest" | "views" | "subscribers" | "favorites" | "likes" | "dislikes" =
-		"subscribers";
+	let sortType: SortingType = SortingType.PublishDate;
+	let sortDescendingOrder: boolean = true;
 
 	// Computed visible addons based on sort type
 	$: visibleAddons = [...steamUser.addons].sort((a, b) => {
-		if (sortType === "latest") return 0;
-		if (sortType === "views") return b.views - a.views;
-		if (sortType === "subscribers") return b.subscribers - a.subscribers;
-		if (sortType === "favorites") return b.favorites - a.favorites;
-		if (sortType === "likes") return b.likes - a.likes;
-		if (sortType === "dislikes") return b.dislikes - a.dislikes;
-		return 0;
+		switch (sortType as SortingType) {
+			case SortingType.Views:
+				return sortDescendingOrder ? b.views - a.views : a.views - b.views;
+
+			case SortingType.Suscribers:
+				return sortDescendingOrder
+					? b.subscribers - a.subscribers
+					: a.subscribers - b.subscribers;
+
+			case SortingType.Favorites:
+				return sortDescendingOrder ? b.favorites - a.favorites : a.favorites - b.favorites;
+
+			case SortingType.Likes:
+				return sortDescendingOrder ? b.likes - a.likes : a.likes - b.likes;
+
+			case SortingType.Dislikes:
+				return sortDescendingOrder ? b.dislikes - a.dislikes : a.dislikes - b.dislikes;
+
+			case SortingType.Awards:
+				return sortDescendingOrder ? b.awards - a.awards : a.awards - b.awards;
+
+			case SortingType.PublishDate:
+			default:
+				return sortDescendingOrder ? -1 : 1;
+		}
 	});
 
+	/**
+	 * Changes the view into the selected tab
+	 */
 	function changeTab(e: Event) {
 		e.preventDefault();
 		tab = (e.target as HTMLButtonElement).value;
@@ -46,9 +72,7 @@
 		})}
 	</h2>
 	<img src={steamUser.profileImageUrl} class="h-44 my-8 rounded-full" alt="Steam Profile" />
-
 	{#if steamUser.addons.length > 0}
-		<!-- Stats summary -->
 		<div
 			class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow-sm"
 		>
@@ -65,9 +89,8 @@
 				faIcon={faThumbsDown}
 				value={steamUser.dislikes}
 			/>
+			<StatTitle title={$_("stats.awards")} faIcon={faTrophy} value={steamUser.awards} />
 		</div>
-
-		<!-- Tab controls -->
 		<div class="invisible lg:visible my-8">
 			<button
 				on:click={changeTab}
@@ -84,26 +107,37 @@
 				{$_("stats.graph")}
 			</button>
 		</div>
-
 		{#if tab === "addons"}
-			<!-- Sort control -->
-			<div class="controls mb-4">
-				<label class="mr-2">Sort by:</label>
-				<select bind:value={sortType} class="btn btn-sm">
-					<option value="latest">Time</option>
-					<option value="views">{$_("stats.views")}</option>
-					<option value="subscribers">{$_("stats.subscribers")}</option>
-					<option value="favorites">{$_("stats.favorites")}</option>
-					<option value="likes">{$_("stats.likes")}</option>
-					<option value="dislikes">{$_("stats.dislikes")}</option>
-				</select>
+			<div class="flex">
+				<fieldset class="fieldset mx-2 mb-8">
+					<legend class="fieldset-legend text-lg">{$_("sorting.sortBy")}</legend>
+					<select bind:value={sortType} class="select bg-primary border-accent">
+						<option value={SortingType.PublishDate} selected>{$_("stats.publishDate")}</option>
+						<option value={SortingType.Views}>{$_("stats.views")}</option>
+						<option value={SortingType.Suscribers}>{$_("stats.subscribers")}</option>
+						<option value={SortingType.Favorites}>{$_("stats.favorites")}</option>
+						<option value={SortingType.Likes}>{$_("stats.likes")}</option>
+						<option value={SortingType.Dislikes}>{$_("stats.dislikes")}</option>
+						<option value={SortingType.Awards}>{$_("stats.awards")}</option>
+					</select>
+				</fieldset>
+
+				<fieldset class="fieldset mx-2 mb-8">
+					<legend class="fieldset-legend text-lg">{$_("sorting.sortOrder")}</legend>
+					<label class="swap text-2xl">
+						<input type="checkbox" bind:checked={sortDescendingOrder} />
+
+						<Fa icon={faSortDown} class="swap-on fill-current" />
+						<Fa icon={faSortUp} class="swap-off fill-current" />
+					</label>
+				</fieldset>
 			</div>
 
 			<h2 class="mb-8">
-				{$_("stats.addonsOf", { values: { username: steamUser.username } })}
+				{$_("stats.addonsOf", {
+					values: { username: steamUser.username },
+				})}
 			</h2>
-
-			<!-- Add-ons grid -->
 			<div
 				class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mx-8"
 			>
@@ -117,6 +151,7 @@
 						favorites={addon.favorites}
 						likes={addon.likes}
 						dislikes={addon.dislikes}
+						awards={addon.awards}
 						stars={addon.stars}
 					/>
 				{/each}
