@@ -64,7 +64,9 @@
 	</h2>
 	<img src={steamUser.profileImageUrl} class="h-44 my-8 rounded-full" alt="Steam Profile" />
 	{#if steamUser.addons.length > 0}
-		<div class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow-sm">
+		<div
+			class="stats stats-vertical lg:stats-horizontal bg-secondary mx-10 text-center shadow-sm"
+		>
 			<StatTitle title={$_("stats.views")} faIcon={faEye} value={steamUser.views} />
 			<StatTitle
 				title={$_("stats.subscribers")}
@@ -97,18 +99,17 @@
 			</button>
 		</div>
 		{#if tab === "addons"}
-			<!-- Sort control -->
-			<div class="controls mb-4">
-				<label class="mr-2">Sort by:</label>
-				<select bind:value={sortType} class="btn btn-sm">
-					<option value="{SortingType.PublishDate}">Publish Date</option>
-					<option value="{SortingType.Views}">{$_("stats.views")}</option>
-					<option value="{SortingType.Suscribers}">{$_("stats.subscribers")}</option>
-					<option value="{SortingType.Favorites}">{$_("stats.favorites")}</option>
-					<option value="{SortingType.Likes}">{$_("stats.likes")}</option>
-					<option value="{SortingType.Dislikes}">{$_("stats.dislikes")}</option>
+			<fieldset class="fieldset mb-8">
+				<legend class="fieldset-legend text-lg">Sort by:</legend>
+				<select bind:value={sortType} class="select bg-primary border-accent">
+					<option value={SortingType.PublishDate} selected>Publish Date</option>
+					<option value={SortingType.Views}>{$_("stats.views")}</option>
+					<option value={SortingType.Suscribers}>{$_("stats.subscribers")}</option>
+					<option value={SortingType.Favorites}>{$_("stats.favorites")}</option>
+					<option value={SortingType.Likes}>{$_("stats.likes")}</option>
+					<option value={SortingType.Dislikes}>{$_("stats.dislikes")}</option>
 				</select>
-			</div>
+			</fieldset>
 
 			<h2 class="mb-8">
 				{$_("stats.addonsOf", {
