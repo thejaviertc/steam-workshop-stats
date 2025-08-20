@@ -34,6 +34,12 @@
 			</button>
 		</li>
 		<li>
+			<button on:click={changeLanguage} value="ru" class="text-lg">
+				🇷🇺 {$_("language", { locale: "ru" })}
+				<Fa icon={faScrewdriverWrench} />
+			</button>
+		</li>
+		<li>
 			<button on:click={changeLanguage} value="pt-BR" class="text-lg">
 				🇧🇷 {$_("language", { locale: "pt-BR" })}
 				<Fa icon={faScrewdriverWrench} />
