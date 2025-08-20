@@ -36,6 +36,10 @@
 		"graph": "Gráfica",
 		"graphOf": "Gráfica de {username}"
 	},
+	"sorting": {
+		"sortBy": "Ordenar por:",
+		"sortOrder": "Orden:"
+	},
 	"notifications": {
 		"disclaimer": "Con la 2.0.0, se ha migrado la API de NodeJS a ASP.NET. Si encuentras algún error, por favor repórtalo! (También recuerda que la búsqueda puede tardar hasta 30 segundos debido a que la API está en un hosting gratis y tiene que despertarse)"
 	}

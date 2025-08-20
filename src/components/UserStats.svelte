@@ -110,7 +110,7 @@
 		{#if tab === "addons"}
 			<div class="flex">
 				<fieldset class="fieldset mx-2 mb-8">
-					<legend class="fieldset-legend text-lg">Sort by:</legend>
+					<legend class="fieldset-legend text-lg">{$_("sorting.sortBy")}</legend>
 					<select bind:value={sortType} class="select bg-primary border-accent">
 						<option value={SortingType.PublishDate} selected>{$_("stats.publishDate")}</option>
 						<option value={SortingType.Views}>{$_("stats.views")}</option>
@@ -123,7 +123,7 @@
 				</fieldset>
 
 				<fieldset class="fieldset mx-2 mb-8">
-					<legend class="fieldset-legend text-lg">Sort order:</legend>
+					<legend class="fieldset-legend text-lg">{$_("sorting.sortOrder")}</legend>
 					<label class="swap text-2xl">
 						<input type="checkbox" bind:checked={sortDescendingOrder} />
 
