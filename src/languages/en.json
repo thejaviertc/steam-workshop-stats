@@ -30,6 +30,7 @@
 		"likes": "Likes",
 		"dislikes": "Dislikes",
 		"awards": "Awards",
+		"publishDate": "Publish Date",
 		"addons": "Addons",
 		"addonsOf": "Addons of {username}",
 		"graph": "Graph",

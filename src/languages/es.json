@@ -30,6 +30,7 @@
 		"likes": "Me gustas",
 		"dislikes": "No me gustas",
 		"awards": "Premios",
+		"publishDate": "Fecha de Publicación",
 		"addons": "Modificaciones",
 		"addonsOf": "Modificaciones de {username}",
 		"graph": "Gráfica",

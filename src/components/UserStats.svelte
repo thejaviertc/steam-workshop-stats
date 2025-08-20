@@ -112,7 +112,7 @@
 				<fieldset class="fieldset mx-2 mb-8">
 					<legend class="fieldset-legend text-lg">Sort by:</legend>
 					<select bind:value={sortType} class="select bg-primary border-accent">
-						<option value={SortingType.PublishDate} selected>Publish Date</option>
+						<option value={SortingType.PublishDate} selected>{$_("stats.publishDate")}</option>
 						<option value={SortingType.Views}>{$_("stats.views")}</option>
 						<option value={SortingType.Suscribers}>{$_("stats.subscribers")}</option>
 						<option value={SortingType.Favorites}>{$_("stats.favorites")}</option>
