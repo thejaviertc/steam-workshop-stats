@@ -24,7 +24,7 @@
 		"daisyui": "^5.0.50",
 		"eslint": "^9.33.0",
 		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-svelte": "^3.11.0",
+		"eslint-plugin-svelte": "^3.12.1",
 		"globals": "^16.3.0",
 		"jsdom": "^26.1.0",
 		"postcss": "^8.5.6",
