@@ -1,41 +1,46 @@
 {
-	"language": "English",
-	"title": "Steam Workshop Stats",
-	"description": "Analyze your Steam Workshop Addon Stats in one place!",
-	"disclaimer": "Steam Workshop Stats is a hobby project and is not affiliated with Steam or Valve. Steam and the Steam logo are trademarks of Valve Corporation.",
+	"language": "英语",
+	"title": "Steam 创意工坊统计数据",
+	"description": "一站式分析您的 Steam 创意工坊作品统计数据！",
+	"disclaimer": "Steam Workshop Stats是一个爱好项目，不隶属于Steam 或 Valve。Steam 和 Steam 标志是Valve Corporation的商标。",
 	"misc": {
-		"httpError": "An error has occurred",
-		"links": "Links",
-		"moreInfo": "More Info",
-		"githubRepository": "Github Repository",
-		"example": "Example:"
+		"httpError": "出错了",
+		"links": "链接",
+		"moreInfo": "更多信息",
+		"githubRepository": "Github库",
+		"example": "示例："
 	},
 	"actions": {
-		"changeLanguage": "Change Language",
-		"fetchUser": "Fetch User",
-		"trackMyStats": "Track my Stats",
-		"helpTranslating": "Help Translating",
-		"enterProfileUrl": "Enter a Steam Profile URL",
-		"returnHome": "Return Home",
-		"getStats": "Get Stats",
-		"seeInSteam": "See it on Steam"
+		"changeLanguage": "切换语言",
+		"fetchUser": "获取用户",
+		"trackMyStats": "追踪我的统计数据",
+		"helpTranslating": "协助翻译",
+		"enterProfileUrl": "输入Steam个人资料URL",
+		"returnHome": "返回主页",
+		"getStats": "获取统计数据",
+		"seeInSteam": "在Steam上查看"
 	},
 	"stats": {
-		"invalidUrl": "This URL is not valid!",
-		"statsOf": "Stats of {username}",
-		"noAddons": "This user doesn't have any addons!",
-		"views": "Views",
-		"subscribers": "Subscribers",
-		"favorites": "Favorites",
-		"likes": "Likes",
-		"dislikes": "Dislikes",
-		"awards": "Awards",
-		"addons": "Addons",
-		"addonsOf": "Addons of {username}",
-		"graph": "Graph",
-		"graphOf": "Graph of {username}"
+		"invalidUrl": "此 URL 无效！",
+		"statsOf": "{username}的统计数据",
+		"noAddons": "这个用户没有任何作品！",
+		"views": "浏览",
+		"subscribers": "订阅",
+		"favorites": "收藏",
+		"likes": "赞",
+		"dislikes": "踩",
+		"awards": "奖励",
+		"publishDate": "发布日期",
+		"addons": "作品",
+		"addonsOf": "{username}的作品",
+		"graph": "图表",
+		"graphOf": "{username}的图表"
+	},
+	"sorting": {
+		"sortBy": "排序方式：",
+		"sortOrder": "排列顺序："
 	},
 	"notifications": {
-		"disclaimer": "With 2.0.0, the API was migrated from NodeJS to ASP.NET. If there is any error, please report it! (Also remember that this can take up to 30 seconds because the API is on a free hosting, so it has to wake up!)"
+		"disclaimer": "随着 2.0.0 版本发布，API 已从 NodeJS 迁移到 ASP.NET。如果出现任何错误，请反馈给我们！（另外请注意，由于 API 部署在免费托管服务上，可能需要长达 30 秒的时间来“唤醒”。）"
 	}
 }
