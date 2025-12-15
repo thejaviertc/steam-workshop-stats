@@ -29,7 +29,7 @@
 		"jsdom": "^26.1.0",
 		"postcss": "^8.5.6",
 		"prettier": "^3.6.2",
-		"prettier-plugin-svelte": "^3.4.0",
+		"prettier-plugin-svelte": "^3.4.1",
 		"svelte": "^5.38.2",
 		"svelte-check": "^4.3.1",
 		"tailwindcss": "^4.1.12",
