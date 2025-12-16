@@ -20,7 +20,7 @@
 		"@tailwindcss/postcss": "^4.1.12",
 		"@tailwindcss/vite": "^4.1.12",
 		"@typescript-eslint/eslint-plugin": "^8.40.0",
-		"@typescript-eslint/parser": "^8.40.0",
+		"@typescript-eslint/parser": "^8.50.0",
 		"daisyui": "^5.0.50",
 		"eslint": "^9.33.0",
 		"eslint-config-prettier": "^10.1.8",
