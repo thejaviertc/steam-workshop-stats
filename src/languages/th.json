@@ -30,10 +30,15 @@
 		"likes": "คะแนนเชิงบวก",
 		"dislikes": "คะแนนเชิงลบ",
 		"awards": "Awards",
+		"publishDate": "Publish Date",
 		"addons": "ม็อด",
 		"addonsOf": "ม็อดของ {username}",
 		"graph": "กราฟ",
 		"graphOf": "กราฟของ {username}"
+	},
+	"sorting": {
+		"sortBy": "Sort by:",
+		"sortOrder": "Sort order:"
 	},
 	"notifications": {
 		"disclaimer": "เนื่องจากในเวอร์ชัน 2.0.0 API ได้ถูกย้ายจาก NodeJS ไปใช้ ASP.NET โปรดรายงานหากพบข้อผิดพลาด! (อาจใช้เวลานานถึง 30 วินาที เนื่องจากใช้งาน API บนโฮสต์ฟรี ดังนั้นจึงต้องรอการเริ่มทำงาน!)"

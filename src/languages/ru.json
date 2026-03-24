@@ -30,10 +30,15 @@
 		"likes": "Лайки",
 		"dislikes": "Дизлайки",
 		"awards": "Awards",
+		"publishDate": "Publish Date",
 		"addons": "Дополнения",
 		"addonsOf": "Дополнения {username}",
 		"graph": "Graph",
 		"graphOf": "Graph of {username}"
+	},
+	"sorting": {
+		"sortBy": "Sort by:",
+		"sortOrder": "Sort order:"
 	},
 	"notifications": {
 		"disclaimer": "С 2.0.0 API был перенесен из NodeJS в ASP.NET. Если есть какая-либо ошибка, пожалуйста, сообщите о ней! (Уточнение, это может занять до 30 секунд, поскольку API находится на бесплатном хостинге, поэтому ему нужно больше времени!)"
